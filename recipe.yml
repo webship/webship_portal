@@ -1,0 +1,18 @@
+name: 'Webship Portal'
+description: 'The Webship.co portal site template: the Webship Starter with Webtheme, a theme generated from UI Suite UIkit with the Webship.co colors and design. Built with SDC, UIkit and HTMX on top of Drupal and Display Builder.'
+type: 'Site'
+# Site template metadata for the Webship and Drupal CMS installers.
+extra:
+  drupal_cms_installer:
+    creator: 'Webship'
+recipes:
+  # The Webship site template, in the same recipes directory.
+  - webship_starter
+install:
+  - webtheme
+config:
+  strict: false
+  actions:
+    system.theme:
+      simpleConfigUpdate:
+        default: webtheme
