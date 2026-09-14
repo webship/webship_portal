@@ -33,27 +33,6 @@ composer:
   variables:
     # The composer job sets its own DRUPAL_CORE: use the global value.
     DRUPAL_CORE: *drupal_core
-  before_script:
-    # @todo Remove when webreleases 12.0.x has the Display Builder displays and
-    #   requires ~12.0 of webassets, webdev and webpage:
-    #   https://git.drupalcode.org/project/webreleases/-/merge_requests/5
-    - composer config repositories.webreleases vcs https://git.drupalcode.org/issue/webreleases-3591672.git
-    - composer require --no-update "drupal/webreleases:dev-3591672-display-builder as 12.0.x-dev"
-    # @todo Remove when the Web Security default recipe has the anti-spam and
-    #   authentication parts in 12.0.x:
-    #   https://git.drupalcode.org/project/websecurity/-/merge_requests/6
-    - composer config repositories.websecurity vcs https://git.drupalcode.org/issue/websecurity-3591697.git
-    - composer require --no-update "drupal/websecurity:dev-3591697-antispam-authentication as 12.0.x-dev"
-    # @todo Remove when the Web Development default recipe has the UI Suite and
-    #   Display Builder modules in 12.0.x:
-    #   https://git.drupalcode.org/project/webdev/-/merge_requests/8
-    - composer config repositories.webdev vcs https://git.drupalcode.org/issue/webdev-3591729.git
-    - composer require --no-update "drupal/webdev:dev-3591729-ui-suite-display-builder as 12.0.x-dev"
-    # @todo Remove when the Web Page default recipe has the core content views,
-    #   the image styles and the contact webform in 12.0.x:
-    #   https://git.drupalcode.org/project/webpage/-/merge_requests/10
-    - composer config repositories.webpage vcs https://git.drupalcode.org/issue/webpage-3591502.git
-    - composer require --no-update "drupal/webpage:dev-3591502-content-contact as 12.0.x-dev"
 
 # Install Drupal from the recipe, and check the result.
 recipe:

@@ -1,0 +1,48 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: d029ef3a-3e3e-4659-a0e5-0a4aa72c82d7
+  bundle: webpage
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Ship websites in a swift way'
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  moderation_state:
+    -
+      value: published
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /home
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: |-
+        <p>Webship.co helps web developers ship websites in a swift way, with Drupal site templates, recipes and Display Builder.</p>
+        <h2>Documentation</h2>
+        <p>Get started with Webship: create a project, install a site template and build your pages. <a href="/docs">Read the docs</a>.</p>
+        <h2>Products</h2>
+        <p>The Webship distributions, modules and themes, with their releases. <a href="/products">See the products</a>.</p>
+        <h2>Contact</h2>
+        <p>Planning a website or need help with Webship? <a href="/form/contact">Talk to us</a>.</p>
+      format: full_html
+      summary: ''

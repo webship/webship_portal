@@ -3,7 +3,7 @@ description: 'The Webship.co portal site template: a site to manage software, wi
 type: 'Site'
 # Site template metadata for the Webship installer.
 extra:
-  drupal_cms_installer:
+  webship_installer:
     creator: 'Webship'
 # A site template works on its own: it applies the default recipes of the
 # Webship modules, Web Dashboard and core recipes, never another site template.
@@ -74,7 +74,8 @@ config:
     system.site:
       simpleConfigUpdate:
         slogan: 'Ship websites in a swift way'
-        page.front: /node
+        # The front page of the template, in content/node.
+        page.front: /home
     user.role.anonymous:
       grantPermission: 'access content'
     user.role.authenticated:
