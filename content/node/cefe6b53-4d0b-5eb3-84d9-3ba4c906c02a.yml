@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: cefe6b53-4d0b-5eb3-84d9-3ba4c906c02a
+  bundle: release
+  default_langcode: en
+  depends:
+    64774562-4003-5b98-a699-2caa7f3ea6e8: node
+    ddbca6bd-78ba-50d5-8b39-f157eaf6246b: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: '1.0.x-dev'
+  created:
+    -
+      value: 1789387200
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /products/website-starter/releases/1.0.x-dev
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: |-
+        <p>The development release of the Website Starter site template.</p>
+        <p><a class="uk-button uk-button-primary" href="https://www.drupal.org/project/website_starter/releases/1.0.x-dev">Release on Drupal.org</a></p>
+      format: full_html
+      summary: ''
+  field_product:
+    -
+      entity: 64774562-4003-5b98-a699-2caa7f3ea6e8
+  field_release_image:
+    -
+      entity: ddbca6bd-78ba-50d5-8b39-f157eaf6246b
+  field_release_link:
+    -
+      uri: 'https://www.drupal.org/project/website_starter/releases/1.0.x-dev'
+      title: 'Release on Drupal.org'
+      options: {  }

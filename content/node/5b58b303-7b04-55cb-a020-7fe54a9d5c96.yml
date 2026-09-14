@@ -1,0 +1,64 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 5b58b303-7b04-55cb-a020-7fe54a9d5c96
+  bundle: webpage
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'About us'
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /about
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: |-
+        <p class="uk-text-lead">Webship helps web developers ship websites in a swift way, with Drupal site templates, recipes and automated testing.</p>
+        <div class="uk-grid uk-grid-large uk-flex-middle uk-margin-medium-top" uk-grid>
+          <div class="uk-width-1-2@m">
+            <img src="/sites/default/files/webship-portal/webship-site-templates-family.jpg" data-entity-type="file" data-entity-uuid="a83d98d5-fd6c-5948-9298-28829d087607" width="1600" height="1000" alt="Webship site templates: the Website Starter, the Webship Portal and the Webship installer side by side." class="uk-border-rounded uk-box-shadow-medium">
+          </div>
+          <div class="uk-width-1-2@m">
+            <h2>What we do</h2>
+            <ul class="uk-list uk-list-check">
+              <li>Build and maintain the Webship installer and its site templates.</li>
+              <li>Keep the Webship modules working on the current Drupal release.</li>
+              <li>Set up automated functional testing with Webship-js, Playwright and Cucumber.</li>
+              <li>Help teams run their tests on GitLab CI, GitHub Actions or Bitbucket Pipelines.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="uk-grid uk-grid-large uk-flex-middle uk-margin-large-top" uk-grid>
+          <div class="uk-width-1-2@m uk-flex-last@m">
+            <img src="/sites/default/files/webship-portal/webtheme-webship-portal.jpg" data-entity-type="file" data-entity-uuid="27d774e8-0405-5e9c-b948-2c898fb77228" width="1600" height="1000" alt="Webtheme: the Webship Portal front page." class="uk-border-rounded uk-box-shadow-medium">
+          </div>
+          <div class="uk-width-1-2@m">
+            <h2>Open source, on Drupal.org</h2>
+            <p>Everything we ship is GPL-2.0-or-later and developed in the open on Drupal.org and GitHub: issues, merge requests and releases.</p>
+            <a class="uk-button uk-button-primary uk-margin-small-right" href="/products">See the products</a>
+            <a class="uk-button uk-button-default" href="/contact">Contact us</a>
+          </div>
+        </div>
+      format: full_html
+      summary: ''

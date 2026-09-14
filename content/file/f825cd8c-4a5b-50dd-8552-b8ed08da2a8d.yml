@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: f825cd8c-4a5b-50dd-8552-b8ed08da2a8d
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: display-builder-editor.jpg
+  uri:
+    -
+      value: 'public://webship-portal/display-builder-editor.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 124114
+  status:
+    -
+      value: true

@@ -1,0 +1,57 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: d7fc46ab-89f9-501d-9814-d51a7116e5f8
+  bundle: product
+  default_langcode: en
+  depends:
+    1b0bf1b0-0da4-5186-981f-d5f70fc901f5: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Webship Starter'
+  created:
+    -
+      value: 1789387200
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /products/webship-starter
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: |-
+        <p class="uk-text-lead">A site template to manage software: documentation, products and releases, a newsletter and social sharing, in UI Suite UIkit.</p>
+        <p>
+          <a class="uk-button uk-button-primary uk-margin-small-right" href="https://www.drupal.org/project/webship_starter">Project page</a>
+          <a class="uk-button uk-button-default" href="/docs/getting-started">Get started</a>
+        </p>
+        <h2 class="uk-margin-large-top">Releases</h2>
+        <div class="uk-overflow-auto">
+          <table class="uk-table uk-table-divider uk-table-small uk-table-middle">
+            <thead><tr><th>Version</th><th>Date</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><a href="/products/webship-starter/releases/1.0.x-dev">1.0.x-dev</a></td><td>2026-09-14</td><td>The development release of the Webship Starter site template.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      format: full_html
+      summary: 'A site template to manage software: documentation, products and releases, a newsletter and social sharing, in UI Suite UIkit.'
+  field_image:
+    -
+      entity: 1b0bf1b0-0da4-5186-981f-d5f70fc901f5

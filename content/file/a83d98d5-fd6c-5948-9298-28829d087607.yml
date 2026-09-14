@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: a83d98d5-fd6c-5948-9298-28829d087607
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: webship-site-templates-family.jpg
+  uri:
+    -
+      value: 'public://webship-portal/webship-site-templates-family.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 201917
+  status:
+    -
+      value: true

@@ -1,0 +1,44 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 911c62de-7de6-5d9d-9794-c1a3669122c7
+  bundle: webdoc
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Dashboards'
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /docs/dashboards
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: |-
+        <p>Web Dashboard gives each role a default dashboard, built with Display Builder.</p>
+        <h2>Webmaster</h2>
+        <p>For site administrators: content by type, the site status report, who is online and the recent content.</p>
+        <img src="/sites/default/files/webship-portal/webmaster-dashboard.jpg" data-entity-type="file" data-entity-uuid="dbd5533a-fccf-5c0e-b021-cfce5085301e" width="1600" height="1000" alt="Web Dashboard: the Webmaster dashboard with content and site status." class="uk-border-rounded uk-box-shadow-medium">
+        <h2>Editorial</h2>
+        <p>For content editors: their recent drafts, shortcuts to add pages, documentation and releases, and the media library.</p>
+        <p>Open <em>Dashboard</em> in the admin toolbar, then <em>Personalize</em> to arrange your own dashboard.</p>
+
+        <p class="uk-margin-large-top"><a class="uk-button uk-button-default" href="/docs">Back to the documentation</a></p>
+      format: full_html
+      summary: ''

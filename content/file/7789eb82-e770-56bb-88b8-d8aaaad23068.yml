@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 7789eb82-e770-56bb-88b8-d8aaaad23068
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: website-starter-front-page.jpg
+  uri:
+    -
+      value: 'public://webship-portal/website-starter-front-page.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 137372
+  status:
+    -
+      value: true

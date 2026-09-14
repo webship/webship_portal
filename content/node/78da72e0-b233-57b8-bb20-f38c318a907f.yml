@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 78da72e0-b233-57b8-bb20-f38c318a907f
+  bundle: release
+  default_langcode: en
+  depends:
+    a2202b04-56ea-553c-9f6d-5fad85787802: node
+    d0c390a0-8757-5e72-8837-85f622d5fa67: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: '11.0.1'
+  created:
+    -
+      value: 1784980800
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /products/webtheme/releases/11.0.1
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: |-
+        <p>Bug fixes for Webtheme 11.0.0.</p>
+        <p><a class="uk-button uk-button-primary" href="https://www.drupal.org/project/webtheme/releases/11.0.1">Release on Drupal.org</a></p>
+      format: full_html
+      summary: ''
+  field_product:
+    -
+      entity: a2202b04-56ea-553c-9f6d-5fad85787802
+  field_release_image:
+    -
+      entity: d0c390a0-8757-5e72-8837-85f622d5fa67
+  field_release_link:
+    -
+      uri: 'https://www.drupal.org/project/webtheme/releases/11.0.1'
+      title: 'Release on Drupal.org'
+      options: {  }

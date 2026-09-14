@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: dbd5533a-fccf-5c0e-b021-cfce5085301e
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: webmaster-dashboard.jpg
+  uri:
+    -
+      value: 'public://webship-portal/webmaster-dashboard.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 121772
+  status:
+    -
+      value: true

@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 389f0cf6-5240-567c-b265-b39c996af323
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Documentation'
+  menu_name:
+    -
+      value: footer
+  link:
+    -
+      uri: 'internal:/docs'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 0
+  expanded:
+    -
+      value: false

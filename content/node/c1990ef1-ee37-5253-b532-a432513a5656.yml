@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: c1990ef1-ee37-5253-b532-a432513a5656
+  bundle: release
+  default_langcode: en
+  depends:
+    b82c8d91-311d-5dac-a50c-7fb4a8c622d9: node
+    e782f83f-b9ca-5354-94f7-e036dabc7420: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: '11.0.0-rc1'
+  created:
+    -
+      value: 1784980800
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /products/webship/releases/11.0.0-rc1
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: |-
+        <p>The release candidate of Webship 11.0.0, on Drupal ~11.4.0, with green automated tests.</p>
+        <p><a class="uk-button uk-button-primary" href="https://www.drupal.org/project/webship/releases/11.0.0-rc1">Release on Drupal.org</a></p>
+      format: full_html
+      summary: ''
+  field_product:
+    -
+      entity: b82c8d91-311d-5dac-a50c-7fb4a8c622d9
+  field_release_image:
+    -
+      entity: e782f83f-b9ca-5354-94f7-e036dabc7420
+  field_release_link:
+    -
+      uri: 'https://www.drupal.org/project/webship/releases/11.0.0-rc1'
+      title: 'Release on Drupal.org'
+      options: {  }

@@ -1,6 +1,19 @@
 antibot
+ddev
+docroot
 drupical
+favicon
+filemime
+filesize
+htmx
+linkedin
+media
+metatags
+navbar
+offcanvas
+pathauto
 tagify
+uikit
 webadmin
 webassets
 webconfig
@@ -16,4 +29,7 @@ websecurity
 webseo
 webshare
 webship
+webshipco
 webtheme
+xlarge
+youtube

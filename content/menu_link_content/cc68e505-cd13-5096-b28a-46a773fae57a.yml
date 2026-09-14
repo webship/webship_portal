@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: cc68e505-cd13-5096-b28a-46a773fae57a
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'X'
+  menu_name:
+    -
+      value: social-media-menu
+  link:
+    -
+      uri: 'https://x.com/webshipco'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: true
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 2
+  expanded:
+    -
+      value: false

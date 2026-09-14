@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 03f45568-e85a-57b8-acfa-357e90788e45
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'GitHub'
+  menu_name:
+    -
+      value: social-media-menu
+  link:
+    -
+      uri: 'https://github.com/webship'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: true
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 0
+  expanded:
+    -
+      value: false

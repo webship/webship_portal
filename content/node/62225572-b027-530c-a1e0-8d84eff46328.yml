@@ -1,0 +1,52 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 62225572-b027-530c-a1e0-8d84eff46328
+  bundle: webdoc
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Choose a site template'
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /docs/choose-a-site-template
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: |-
+        <p>A site template is a Drupal recipe that builds a complete site. Pick the one that matches your project.</p>
+        <table class="uk-table uk-table-divider uk-table-small">
+          <thead><tr><th>Site template</th><th>For</th></tr></thead>
+          <tbody>
+            <tr><td>Website Starter</td><td>A company site or a blog, with a UIkit showcase.</td></tr>
+            <tr><td>Webship Starter</td><td>Documentation, products and releases, in UI Suite UIkit.</td></tr>
+            <tr><td>Webship Portal</td><td>A software portal like Webship.co, in Webtheme.</td></tr>
+          </tbody>
+        </table>
+        <h2>From the installer</h2>
+        <p>Open the site in the browser: the Webship installer lists the site templates. Choose one and continue.</p>
+        <img src="/sites/default/files/webship-portal/webship-installer-site-templates.jpg" data-entity-type="file" data-entity-uuid="8b823ce5-87a6-515d-a329-9be8a2db935d" width="1600" height="1000" alt="Webship installer: choosing a site template." class="uk-border-rounded uk-box-shadow-medium">
+        <h2>With Drush</h2>
+        <pre><code>ddev drush site:install recipes/webship_portal -y
+        ddev launch</code></pre>
+
+        <p class="uk-margin-large-top"><a class="uk-button uk-button-default" href="/docs">Back to the documentation</a></p>
+      format: full_html
+      summary: ''

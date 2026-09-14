@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.newsletter_subscribe
+  module:
+    - system
+    - webform
+  theme:
+    - webtheme
+id: webtheme_newsletter_subscribe
+theme: webtheme
+region: content
+weight: 10
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Subscribe to the newsletter'
+  label_display: visible
+  provider: webform
+  webform_id: newsletter_subscribe
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  # The newsletter signup below the front page sections, as on Webship.co.
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

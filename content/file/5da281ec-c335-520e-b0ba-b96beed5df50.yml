@@ -1,0 +1,24 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 5da281ec-c335-520e-b0ba-b96beed5df50
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: webship-starter-documentation.jpg
+  uri:
+    -
+      value: 'public://webship-portal/webship-starter-documentation.jpg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 165961
+  status:
+    -
+      value: true

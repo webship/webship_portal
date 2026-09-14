@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: e09bffef-e62e-5af2-8e6c-4b237ce01bbd
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'Newsletter'
+  menu_name:
+    -
+      value: footer
+  link:
+    -
+      uri: 'internal:/form/newsletter-subscribe'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 20
+  expanded:
+    -
+      value: false

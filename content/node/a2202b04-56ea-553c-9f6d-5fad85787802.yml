@@ -1,0 +1,59 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: a2202b04-56ea-553c-9f6d-5fad85787802
+  bundle: product
+  default_langcode: en
+  depends:
+    d0c390a0-8757-5e72-8837-85f622d5fa67: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Webtheme'
+  created:
+    -
+      value: 1789387200
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /products/webtheme
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: |-
+        <p class="uk-text-lead">The theme of Webship.co: UIkit and SDC components with the Webship.co colors, generated from UI Suite UIkit in 12.0.x.</p>
+        <p>
+          <a class="uk-button uk-button-primary uk-margin-small-right" href="https://www.drupal.org/project/webtheme">Project page</a>
+          <a class="uk-button uk-button-default" href="/docs/getting-started">Get started</a>
+        </p>
+        <h2 class="uk-margin-large-top">Releases</h2>
+        <div class="uk-overflow-auto">
+          <table class="uk-table uk-table-divider uk-table-small uk-table-middle">
+            <thead><tr><th>Version</th><th>Date</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><a href="/products/webtheme/releases/12.0.x-dev">12.0.x-dev</a></td><td>2026-09-14</td><td>Webtheme generated from UI Suite UIkit: navbar and offcanvas regions, HTMX navigation, footer logo and copyright.</td></tr>
+              <tr><td><a href="/products/webtheme/releases/11.0.1">11.0.1</a></td><td>2026-07-25</td><td>Bug fixes for Webtheme 11.0.0.</td></tr>
+              <tr><td><a href="/products/webtheme/releases/11.0.0">11.0.0</a></td><td>2026-05-30</td><td>The stable release of Webtheme for Drupal 11.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      format: full_html
+      summary: 'The theme of Webship.co: UIkit and SDC components with the Webship.co colors, generated from UI Suite UIkit in 12.0.x.'
+  field_image:
+    -
+      entity: d0c390a0-8757-5e72-8837-85f622d5fa67

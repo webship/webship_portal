@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 2c92581d-397c-5de1-bba2-ce67dfdaeb8e
+  bundle: release
+  default_langcode: en
+  depends:
+    b82c8d91-311d-5dac-a50c-7fb4a8c622d9: node
+    e782f83f-b9ca-5354-94f7-e036dabc7420: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: '12.0.x-dev'
+  created:
+    -
+      value: 1789387200
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /products/webship/releases/12.0.x-dev
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: |-
+        <p>The development release of the installer: it lists the site templates from their extra.webship_installer metadata.</p>
+        <p><a class="uk-button uk-button-primary" href="https://www.drupal.org/project/webship/releases/12.0.x-dev">Release on Drupal.org</a></p>
+      format: full_html
+      summary: ''
+  field_product:
+    -
+      entity: b82c8d91-311d-5dac-a50c-7fb4a8c622d9
+  field_release_image:
+    -
+      entity: e782f83f-b9ca-5354-94f7-e036dabc7420
+  field_release_link:
+    -
+      uri: 'https://www.drupal.org/project/webship/releases/12.0.x-dev'
+      title: 'Release on Drupal.org'
+      options: {  }

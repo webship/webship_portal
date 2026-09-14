@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 2e26ee1b-500d-5f63-b36d-b4f9b70d1449
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    -
+      value: true
+  title:
+    -
+      value: 'About us'
+  menu_name:
+    -
+      value: footer
+  link:
+    -
+      uri: 'internal:/about'
+      title: ''
+      options: {  }
+  external:
+    -
+      value: false
+  rediscover:
+    -
+      value: false
+  weight:
+    -
+      value: 10
+  expanded:
+    -
+      value: false

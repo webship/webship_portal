@@ -16,7 +16,7 @@ default:
       target_id: 1
   title:
     -
-      value: 'Ship websites in a swift way'
+      value: 'Home'
   promote:
     -
       value: false
@@ -26,9 +26,6 @@ default:
   moderation_state:
     -
       value: published
-  revision_translation_affected:
-    -
-      value: true
   path:
     -
       alias: /home
@@ -37,12 +34,117 @@ default:
   body:
     -
       value: |-
-        <p>Webship.co helps web developers ship websites in a swift way, with Drupal site templates, recipes and Display Builder.</p>
-        <h2>Documentation</h2>
-        <p>Get started with Webship: create a project, install a site template and build your pages. <a href="/docs">Read the docs</a>.</p>
-        <h2>Products</h2>
-        <p>The Webship distributions, modules and themes, with their releases. <a href="/products">See the products</a>.</p>
-        <h2>Contact</h2>
-        <p>Planning a website or need help with Webship? <a href="/form/contact">Talk to us</a>.</p>
+        <div class="uk-section uk-section-primary uk-light uk-padding uk-border-rounded uk-margin-large-bottom">
+          <div class="uk-grid uk-grid-large uk-flex-middle" uk-grid>
+            <div class="uk-width-1-2@m">
+              <h1 class="uk-heading-medium">Ship websites in a swift way</h1>
+              <p class="uk-text-large">Webship brings Drupal site templates, an installer, documentation, products and releases together, ready to install with Composer and DDEV.</p>
+              <p>
+                <a class="uk-button uk-button-default uk-margin-small-right uk-margin-small-bottom" href="/docs">Documentation</a>
+                <a class="uk-button uk-button-secondary uk-margin-small-right uk-margin-small-bottom" href="/products">Products</a>
+                <a class="uk-button uk-button-text uk-margin-small-bottom" href="/contact">Contact us</a>
+              </p>
+            </div>
+            <div class="uk-width-1-2@m">
+              <img src="/sites/default/files/webship-portal/webship-site-templates-family.jpg" data-entity-type="file" data-entity-uuid="a83d98d5-fd6c-5948-9298-28829d087607" width="1600" height="1000" alt="Webship site templates: the Website Starter, the Webship Portal and the Webship installer side by side." class="uk-border-rounded uk-box-shadow-large">
+            </div>
+          </div>
+        </div>
+
+        <h2 class="uk-heading-line uk-text-center"><span>What Webship offers</span></h2>
+        <div class="uk-grid-match uk-child-width-1-2@s uk-child-width-1-3@m uk-margin-medium-top" uk-grid>
+          <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-height-1-1">
+              <span class="uk-text-primary" uk-icon="icon: file-text; ratio: 1.6"></span>
+              <h3 class="uk-card-title uk-margin-small-top">Site templates</h3>
+              <p>Start from a complete site: the Website Starter for a company or a blog, the Webship Portal to manage software, the Webship Starter for documentation.</p>
+              <a class="uk-button uk-button-text" href="/products/website-starter">Learn more</a>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-height-1-1">
+              <span class="uk-text-primary" uk-icon="icon: download; ratio: 1.6"></span>
+              <h3 class="uk-card-title uk-margin-small-top">The Webship installer</h3>
+              <p>Choose a site template in the installer, or install one with Drush. Every template works on its own, with no extra setup.</p>
+              <a class="uk-button uk-button-text" href="/docs/choose-a-site-template">Learn more</a>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-height-1-1">
+              <span class="uk-text-primary" uk-icon="icon: album; ratio: 1.6"></span>
+              <h3 class="uk-card-title uk-margin-small-top">Documentation</h3>
+              <p>Guides to install and use Webship, at /docs. Web Doc pages can also be organized in books with their own navigation.</p>
+              <a class="uk-button uk-button-text" href="/docs">Learn more</a>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-height-1-1">
+              <span class="uk-text-primary" uk-icon="icon: tag; ratio: 1.6"></span>
+              <h3 class="uk-card-title uk-margin-small-top">Products and releases</h3>
+              <p>A page for each product with its release notes, versions and download links, listed at /products.</p>
+              <a class="uk-button uk-button-text" href="/products">Learn more</a>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-height-1-1">
+              <span class="uk-text-primary" uk-icon="icon: mail; ratio: 1.6"></span>
+              <h3 class="uk-card-title uk-margin-small-top">Newsletter</h3>
+              <p>A newsletter subscription form, built with Webform, with anti-spam protection.</p>
+              <a class="uk-button uk-button-text" href="/form/newsletter-subscribe">Learn more</a>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-height-1-1">
+              <span class="uk-text-primary" uk-icon="icon: paint-bucket; ratio: 1.6"></span>
+              <h3 class="uk-card-title uk-margin-small-top">Display Builder and UIkit</h3>
+              <p>Arrange every page with Display Builder and SDC components, in Webtheme, generated from UI Suite UIkit.</p>
+              <a class="uk-button uk-button-text" href="/docs/build-pages-with-display-builder">Learn more</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="uk-grid uk-grid-large uk-flex-middle uk-margin-xlarge-top" uk-grid>
+          <div class="uk-width-1-2@m">
+            <img src="/sites/default/files/webship-portal/webship-installer-site-templates.jpg" data-entity-type="file" data-entity-uuid="8b823ce5-87a6-515d-a329-9be8a2db935d" width="1600" height="1000" alt="Webship installer: choosing a site template." class="uk-border-rounded uk-box-shadow-medium">
+          </div>
+          <div class="uk-width-1-2@m">
+            <h2>Pick a site template, get a full site</h2>
+            <p>The Webship installer lists the site templates next to each other. Each one applies the Webship recipes it needs: content types, media, SEO, security, dashboards and a theme.</p>
+            <ul class="uk-list uk-list-bullet">
+              <li>Website Starter, Webship Starter and Webship Portal.</li>
+              <li>Drupal 11.4 and PHP 8.4, installed with DDEV.</li>
+              <li>No extra modules to enable after the install.</li>
+            </ul>
+            <a class="uk-button uk-button-primary" href="/docs/choose-a-site-template">Choose a site template</a>
+          </div>
+        </div>
+
+        <div class="uk-grid uk-grid-large uk-flex-middle uk-margin-xlarge-top" uk-grid>
+          <div class="uk-width-1-2@m uk-flex-last@m">
+            <img src="/sites/default/files/webship-portal/display-builder-editor.jpg" data-entity-type="file" data-entity-uuid="f825cd8c-4a5b-50dd-8552-b8ed08da2a8d" width="1600" height="1000" alt="Display Builder: the editor of a content display." class="uk-border-rounded uk-box-shadow-medium">
+          </div>
+          <div class="uk-width-1-2@m">
+            <h2>Design pages with Display Builder</h2>
+            <p>Content types are displayed with Display Builder: drag components and fields, preview, and publish. Webtheme provides the UIkit components, colors and icons of Webship.co.</p>
+            <a class="uk-button uk-button-primary" href="/docs/build-pages-with-display-builder">Build pages</a>
+          </div>
+        </div>
+
+        <div class="uk-grid uk-grid-large uk-flex-middle uk-margin-xlarge-top" uk-grid>
+          <div class="uk-width-1-2@m">
+            <img src="/sites/default/files/webship-portal/webmaster-dashboard.jpg" data-entity-type="file" data-entity-uuid="dbd5533a-fccf-5c0e-b021-cfce5085301e" width="1600" height="1000" alt="Web Dashboard: the Webmaster dashboard with content and site status." class="uk-border-rounded uk-box-shadow-medium">
+          </div>
+          <div class="uk-width-1-2@m">
+            <h2>Dashboards for the whole team</h2>
+            <p>Site administrators get the Webmaster dashboard with the site status and recent content. Content editors get the Editorial dashboard with their drafts and shortcuts.</p>
+            <a class="uk-button uk-button-primary" href="/docs/dashboards">Read about the dashboards</a>
+          </div>
+        </div>
+
+        <div class="uk-card uk-card-secondary uk-card-body uk-border-rounded uk-text-center uk-margin-xlarge-top">
+          <h2 class="uk-margin-remove-top">Planning a website with Webship?</h2>
+          <p>Tell us about your project, or subscribe to the newsletter below to hear about new releases.</p>
+          <a class="uk-button uk-button-primary" href="/contact">Contact us</a>
+        </div>
       format: full_html
       summary: ''

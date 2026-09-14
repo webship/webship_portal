@@ -1,0 +1,47 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 278db0e6-0099-5f09-aa36-fac02d91e2e6
+  bundle: webdoc
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Theme the site with Webtheme'
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /docs/theme-the-site-with-webtheme
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: |-
+        <p>Webtheme is generated from UI Suite UIkit, with the Webship.co colors: SDC components, UIkit and HTMX navigation.</p>
+        <img src="/sites/default/files/webship-portal/webtheme-webship-portal.jpg" data-entity-type="file" data-entity-uuid="27d774e8-0405-5e9c-b948-2c898fb77228" width="1600" height="1000" alt="Webtheme: the Webship Portal front page." class="uk-border-rounded uk-box-shadow-medium">
+        <h2>Theme settings</h2>
+        <ul class="uk-list uk-list-bullet">
+          <li>Logo and favicon.</li>
+          <li>UIkit from the CDN or from local libraries.</li>
+          <li>Sticky navbar, HTMX navigation, the footer logo and copyright.</li>
+        </ul>
+        <h2>Regions</h2>
+        <p>The navbar has left, center and right regions, the offcanvas holds the menus on phones, and the footer holds the footer and social media menus.</p>
+
+        <p class="uk-margin-large-top"><a class="uk-button uk-button-default" href="/docs">Back to the documentation</a></p>
+      format: full_html
+      summary: ''

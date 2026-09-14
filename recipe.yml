@@ -52,17 +52,24 @@ config:
   import:
     olivero:
       - block.block.olivero_help
-    # The blocks of Webtheme are optional config: the ones that need no
-    # content and no search.
+    # The blocks of Webtheme are optional config, placed in the regions of
+    # its UIkit page: the site branding, main and account menus in the navbar,
+    # the main and account menus in the offcanvas on small screens, the
+    # breadcrumbs in the header, the footer and social media menus and
+    # "Powered by" in the footer. The social media menu itself is config of
+    # the template, installed with these blocks.
     webtheme:
       - block.block.webtheme_account_menu
+      - block.block.webtheme_account_menu_offcanvas
       - block.block.webtheme_breadcrumbs
       - block.block.webtheme_content
-      - block.block.webtheme_footer
+      - block.block.webtheme_footer_menu
       - block.block.webtheme_help
       - block.block.webtheme_main_menu
+      - block.block.webtheme_main_menu_offcanvas
       - block.block.webtheme_messages
-      - block.block.webtheme_page_title
+      - block.block.webtheme_powered
+      - block.block.webtheme_primary_admin_actions
       - block.block.webtheme_primary_local_tasks
       - block.block.webtheme_secondary_local_tasks
       - block.block.webtheme_site_branding
@@ -73,8 +80,8 @@ config:
         default: webtheme
     system.site:
       simpleConfigUpdate:
-        slogan: 'Ship websites in a swift way'
-        # The front page of the template, in content/node.
+        # The front page of the template, in content/node. No slogan.
+        slogan: ''
         page.front: /home
     user.role.anonymous:
       grantPermission: 'access content'

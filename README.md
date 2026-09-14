@@ -40,8 +40,10 @@ ddev drush recipe recipes/webship_portal
 ## What you get
 
 - **Content types**: Webpage, with the media library (images, documents, audio, video) of Web Assets.
-- **Webtheme** as the default theme, with its blocks placed: site branding, main and account menus,
-  breadcrumbs, page title, local tasks, footer and social media menus.
+- **Webtheme** as the default theme, generated from UI Suite UIkit, with its blocks placed in the regions of
+  its UIkit page: site branding, main and account menus in the navbar, the main and account menus in the offcanvas
+  on small screens, breadcrumbs in the header, page title, local tasks and actions, and the footer and social media menus
+  in the footer.
 - [Web Doc](https://www.drupal.org/project/webdoc): documentation book pages at `/docs`.
 - [Web Releases](https://www.drupal.org/project/webreleases): products and release notes, at `/products`.
 - [Web Newsletter](https://www.drupal.org/project/webnewsletter): a newsletter subscription webform.
@@ -54,6 +56,28 @@ ddev drush recipe recipes/webship_portal
   aliases, metatags and the XML sitemap; [Web Security](https://www.drupal.org/project/websecurity) with anti-spam
   protection and login by email or username.
 - **Editing and configuration**: the editor and configuration management features of Webship.
+
+## Default content
+
+A fresh install looks like a complete site, in the structure of Webship.co:
+
+- **Front page**: a hero with calls to action, six feature cards (site templates, the installer, documentation,
+  products and releases, the newsletter, Display Builder and UIkit), three image sections and the newsletter signup.
+- **Documentation** at `/docs`: an index and six guides (getting started, install with Composer, choose a site
+  template, dashboards, build pages with Display Builder, theme the site with Webtheme).
+- **Products** at `/products`: the Webship installer, Webtheme, the Website Starter and the Webship Starter, each
+  with an image and its release notes.
+- **About us** at `/about` and **Contact** at `/contact`.
+- **Menus**: the main, footer and social media menus.
+- **Media**: seven images in the media library.
+
+No slogan is set: the pages are titled with their own title and the site name.
+
+## Image credits
+
+The images in `content/file` were created from screenshots of Webship's own software (the Webship installer,
+the Website Starter, the Webship Starter, the Webship Portal with Webtheme, Web Dashboard and Display Builder),
+framed in a browser window. They are distributed with this project under GPL-2.0-or-later.
 
 ## Requirements
 

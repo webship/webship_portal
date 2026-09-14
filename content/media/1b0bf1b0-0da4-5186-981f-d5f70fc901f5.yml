@@ -1,0 +1,25 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 1b0bf1b0-0da4-5186-981f-d5f70fc901f5
+  bundle: image
+  default_langcode: en
+  depends:
+    5da281ec-c335-520e-b0ba-b96beed5df50: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'Webship Starter: a documentation page'
+  field_media_image:
+    -
+      alt: 'Webship Starter: a documentation page.'
+      title: ''
+      width: 1600
+      height: 1000
+      entity: 5da281ec-c335-520e-b0ba-b96beed5df50

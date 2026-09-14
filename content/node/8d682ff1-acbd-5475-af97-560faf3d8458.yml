@@ -1,0 +1,46 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 8d682ff1-acbd-5475-af97-560faf3d8458
+  bundle: webdoc
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Install with Composer'
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /docs/install-with-composer
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: |-
+        <p>Create a Drupal project with the site templates, then start it with DDEV.</p>
+        <pre><code>composer create-project drupal/website my_site
+        cd my_site
+        ddev config --project-type=drupal --docroot=web
+        ddev start</code></pre>
+        <h2>Add a site template</h2>
+        <pre><code>ddev composer require drupal/webship_portal</code></pre>
+        <p>Composer places the site template in <code>recipes/webship_portal</code>, with the Webship modules and Webtheme it needs.</p>
+        <div class="uk-alert-primary" uk-alert><p>Use <code>ddev composer</code> and <code>ddev drush</code>, so the commands run in the web container with the right PHP version.</p></div>
+
+        <p class="uk-margin-large-top"><a class="uk-button uk-button-default" href="/docs">Back to the documentation</a></p>
+      format: full_html
+      summary: ''

@@ -1,0 +1,46 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 6609cd41-5e33-5b70-8e85-d81c95a2d320
+  bundle: webdoc
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Build pages with Display Builder'
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /docs/build-pages-with-display-builder
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: |-
+        <p>Every content type of the site is displayed with Display Builder, so you arrange pages without writing templates.</p>
+        <img src="/sites/default/files/webship-portal/display-builder-editor.jpg" data-entity-type="file" data-entity-uuid="f825cd8c-4a5b-50dd-8552-b8ed08da2a8d" width="1600" height="1000" alt="Display Builder: the editor of a content display." class="uk-border-rounded uk-box-shadow-medium">
+        <h2>Edit a display</h2>
+        <ol>
+          <li>Go to <em>Structure &gt; Content types</em> and choose <em>Manage display</em> for a content type.</li>
+          <li>Open the Display Builder editor, and drag components, blocks and fields from the libraries.</li>
+          <li>Preview the result, then publish.</li>
+        </ol>
+        <p>Undo, redo and the history keep every change, so you can go back to an earlier version.</p>
+
+        <p class="uk-margin-large-top"><a class="uk-button uk-button-default" href="/docs">Back to the documentation</a></p>
+      format: full_html
+      summary: ''

@@ -1,0 +1,54 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 93cf2c15-d53b-5463-9cca-2d60e8bb7cbf
+  bundle: release
+  default_langcode: en
+  depends:
+    b82c8d91-311d-5dac-a50c-7fb4a8c622d9: node
+    e782f83f-b9ca-5354-94f7-e036dabc7420: media
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: '11.0.0-beta1'
+  created:
+    -
+      value: 1752926400
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  path:
+    -
+      alias: /products/webship/releases/11.0.0-beta1
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: |-
+        <p>The first beta of Webship 11 on Drupal 11: the Webship modules and Webtheme, installed with recipes.</p>
+        <p><a class="uk-button uk-button-primary" href="https://www.drupal.org/project/webship/releases/11.0.0-beta1">Release on Drupal.org</a></p>
+      format: full_html
+      summary: ''
+  field_product:
+    -
+      entity: b82c8d91-311d-5dac-a50c-7fb4a8c622d9
+  field_release_image:
+    -
+      entity: e782f83f-b9ca-5354-94f7-e036dabc7420
+  field_release_link:
+    -
+      uri: 'https://www.drupal.org/project/webship/releases/11.0.0-beta1'
+      title: 'Release on Drupal.org'
+      options: {  }

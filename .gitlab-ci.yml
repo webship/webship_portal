@@ -62,7 +62,22 @@ recipe:
     - test "$($DRUSH config:get webform.webform.newsletter_subscribe id --format=string)" = "newsletter_subscribe"
     - $DRUSH pm:list --status=enabled --format=list | grep -qx webshare
     - $DRUSH pm:list --status=enabled --format=list | grep -qx webdashboard
-    # The blocks of Webtheme are placed.
-    - test "$($DRUSH config:get block.block.webtheme_main_menu region --format=string)" = "primary_menu"
-    # The Documentation page of the template is imported.
-    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "webdoc")->count()->execute();')" -gt 0
+    # The blocks of Webtheme are placed in the regions of its UIkit page.
+    - test "$($DRUSH config:get block.block.webtheme_site_branding region --format=string)" = "navbar_left"
+    - test "$($DRUSH config:get block.block.webtheme_main_menu region --format=string)" = "navbar_center"
+    - test "$($DRUSH config:get block.block.webtheme_account_menu region --format=string)" = "navbar_right"
+    - test "$($DRUSH config:get block.block.webtheme_main_menu_offcanvas region --format=string)" = "offcanvas"
+    - test "$($DRUSH config:get block.block.webtheme_account_menu_offcanvas region --format=string)" = "offcanvas"
+    - test "$($DRUSH config:get block.block.webtheme_footer_menu region --format=string)" = "footer"
+    - test "$($DRUSH config:get block.block.webtheme_social_media_menu region --format=string)" = "footer"
+    - test "$($DRUSH config:get block.block.webtheme_content region --format=string)" = "content"
+    - test "$($DRUSH config:get block.block.webtheme_newsletter_subscribe region --format=string)" = "content"
+    # No slogan.
+    - test -z "$($DRUSH config:get system.site slogan --format=string)"
+    # The default content of the template is imported: the documentation
+    # pages, the products with their releases and the media images.
+    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "webdoc")->count()->execute();')" -gt 5
+    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "product")->count()->execute();')" -gt 3
+    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "release")->count()->execute();')" -gt 7
+    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("media")->accessCheck(FALSE)->condition("bundle", "image")->count()->execute();')" -gt 6
+    - test "$($DRUSH php:eval 'print \Drupal::service("path_alias.manager")->getPathByAlias("/about");')" != "/about"
