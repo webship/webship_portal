@@ -41,15 +41,6 @@ default:
           <a class="uk-button uk-button-primary uk-margin-small-right" href="https://www.drupal.org/project/webship_starter">Project page</a>
           <a class="uk-button uk-button-default" href="/docs/getting-started">Get started</a>
         </p>
-        <h2 class="uk-margin-large-top">Releases</h2>
-        <div class="uk-overflow-auto">
-          <table class="uk-table uk-table-divider uk-table-small uk-table-middle">
-            <thead><tr><th>Version</th><th>Date</th><th>Notes</th></tr></thead>
-            <tbody>
-              <tr><td><a href="/products/webship-starter/releases/1.0.x-dev">1.0.x-dev</a></td><td>2026-09-14</td><td>The development release of the Webship Starter site template.</td></tr>
-            </tbody>
-          </table>
-        </div>
       format: full_html
       summary: 'A site template to manage software: documentation, products and releases, a newsletter and social sharing, in UI Suite UIkit.'
   field_image:

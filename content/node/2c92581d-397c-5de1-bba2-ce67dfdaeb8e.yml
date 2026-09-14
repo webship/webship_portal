@@ -6,7 +6,6 @@ _meta:
   default_langcode: en
   depends:
     b82c8d91-311d-5dac-a50c-7fb4a8c622d9: node
-    34e10f91-2363-51cb-8660-7467904a7238: media
 default:
   revision_uid:
     -
@@ -38,17 +37,13 @@ default:
     -
       value: |-
         <p>The development release of the installer: it lists the site templates from their extra.webship_installer metadata.</p>
-        <p><a class="uk-button uk-button-primary" href="https://www.drupal.org/project/webship/releases/12.0.x-dev">Release on Drupal.org</a></p>
       format: full_html
-      summary: ''
+      summary: 'The development release of the installer: it lists the site templates from their extra.webship_installer metadata.'
   field_product:
     -
       entity: b82c8d91-311d-5dac-a50c-7fb4a8c622d9
-  field_release_image:
-    -
-      entity: 34e10f91-2363-51cb-8660-7467904a7238
   field_release_link:
     -
       uri: 'https://www.drupal.org/project/webship/releases/12.0.x-dev'
-      title: 'Release on Drupal.org'
+      title: 'Release notes'
       options: {  }

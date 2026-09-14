@@ -6,7 +6,6 @@ _meta:
   default_langcode: en
   depends:
     b82c8d91-311d-5dac-a50c-7fb4a8c622d9: node
-    34e10f91-2363-51cb-8660-7467904a7238: media
 default:
   revision_uid:
     -
@@ -38,17 +37,13 @@ default:
     -
       value: |-
         <p>The release candidate of Webship 11.0.0, on Drupal ~11.4.0, with green automated tests.</p>
-        <p><a class="uk-button uk-button-primary" href="https://www.drupal.org/project/webship/releases/11.0.0-rc1">Release on Drupal.org</a></p>
       format: full_html
-      summary: ''
+      summary: 'The release candidate of Webship 11.0.0, on Drupal ~11.4.0, with green automated tests.'
   field_product:
     -
       entity: b82c8d91-311d-5dac-a50c-7fb4a8c622d9
-  field_release_image:
-    -
-      entity: 34e10f91-2363-51cb-8660-7467904a7238
   field_release_link:
     -
       uri: 'https://www.drupal.org/project/webship/releases/11.0.0-rc1'
-      title: 'Release on Drupal.org'
+      title: 'Release notes'
       options: {  }

@@ -41,17 +41,6 @@ default:
           <a class="uk-button uk-button-primary uk-margin-small-right" href="https://www.drupal.org/project/webship">Project page</a>
           <a class="uk-button uk-button-default" href="/docs/getting-started">Get started</a>
         </p>
-        <h2 class="uk-margin-large-top">Releases</h2>
-        <div class="uk-overflow-auto">
-          <table class="uk-table uk-table-divider uk-table-small uk-table-middle">
-            <thead><tr><th>Version</th><th>Date</th><th>Notes</th></tr></thead>
-            <tbody>
-              <tr><td><a href="/products/webship/releases/12.0.x-dev">12.0.x-dev</a></td><td>2026-09-14</td><td>The development release of the installer: it lists the site templates from their extra.webship_installer metadata.</td></tr>
-              <tr><td><a href="/products/webship/releases/11.0.0-rc1">11.0.0-rc1</a></td><td>2026-07-25</td><td>The release candidate of Webship 11.0.0, on Drupal ~11.4.0, with green automated tests.</td></tr>
-              <tr><td><a href="/products/webship/releases/11.0.0-beta1">11.0.0-beta1</a></td><td>2025-07-19</td><td>The first beta of Webship 11 on Drupal 11: the Webship modules and Webtheme, installed with recipes.</td></tr>
-            </tbody>
-          </table>
-        </div>
       format: full_html
       summary: 'The Webship installer profile: it lists the Webship site templates and installs the one you choose, on Drupal 11.4 and later.'
   field_image:

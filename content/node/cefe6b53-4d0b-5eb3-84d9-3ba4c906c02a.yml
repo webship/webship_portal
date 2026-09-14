@@ -6,7 +6,6 @@ _meta:
   default_langcode: en
   depends:
     64774562-4003-5b98-a699-2caa7f3ea6e8: node
-    928ff4ef-fd5a-5dd9-bdc4-31922161d0a8: media
 default:
   revision_uid:
     -
@@ -38,17 +37,13 @@ default:
     -
       value: |-
         <p>The development release of the Website Starter site template.</p>
-        <p><a class="uk-button uk-button-primary" href="https://www.drupal.org/project/website_starter/releases/1.0.x-dev">Release on Drupal.org</a></p>
       format: full_html
-      summary: ''
+      summary: 'The development release of the Website Starter site template.'
   field_product:
     -
       entity: 64774562-4003-5b98-a699-2caa7f3ea6e8
-  field_release_image:
-    -
-      entity: 928ff4ef-fd5a-5dd9-bdc4-31922161d0a8
   field_release_link:
     -
       uri: 'https://www.drupal.org/project/website_starter/releases/1.0.x-dev'
-      title: 'Release on Drupal.org'
+      title: 'Release notes'
       options: {  }
