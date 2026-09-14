@@ -32,7 +32,7 @@ default:
     -
       value: |-
         <p>Webtheme is generated from UI Suite UIkit, with the Webship.co colors: SDC components, UIkit and HTMX navigation.</p>
-        <img src="/sites/default/files/webship-portal/webtheme-webship-portal.jpg" data-entity-type="file" data-entity-uuid="27d774e8-0405-5e9c-b948-2c898fb77228" width="1600" height="1000" alt="Webtheme: the Webship Portal front page." class="uk-border-rounded uk-box-shadow-medium">
+        <img src="/sites/default/files/webship-portal/webship-portal-product-shot.jpg" data-entity-type="file" data-entity-uuid="bededed4-d775-598a-9866-e82d7a529608" width="1800" height="1200" alt="The Webship Portal front page in Webtheme." class="uk-border-rounded uk-box-shadow-medium">
         <h2>Theme settings</h2>
         <ul class="uk-list uk-list-bullet">
           <li>Logo and favicon.</li>

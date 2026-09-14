@@ -37,7 +37,7 @@ default:
         <p class="uk-text-lead">Webship helps web developers ship websites in a swift way, with Drupal site templates, recipes and automated testing.</p>
         <div class="uk-grid uk-grid-large uk-flex-middle uk-margin-medium-top" uk-grid>
           <div class="uk-width-1-2@m">
-            <img src="/sites/default/files/webship-portal/webship-site-templates-family.jpg" data-entity-type="file" data-entity-uuid="a83d98d5-fd6c-5948-9298-28829d087607" width="1600" height="1000" alt="Webship site templates: the Website Starter, the Webship Portal and the Webship installer side by side." class="uk-border-rounded uk-box-shadow-medium">
+            <img src="/sites/default/files/webship-portal/designer-two-screen-setup.jpg" data-entity-type="file" data-entity-uuid="c1ee34f8-c6b3-5200-a36e-9628111c725e" width="1800" height="1202" alt="A designer's desk at night with two screens showing code and a web page." class="uk-border-rounded uk-box-shadow-medium">
           </div>
           <div class="uk-width-1-2@m">
             <h2>What we do</h2>
@@ -51,7 +51,7 @@ default:
         </div>
         <div class="uk-grid uk-grid-large uk-flex-middle uk-margin-large-top" uk-grid>
           <div class="uk-width-1-2@m uk-flex-last@m">
-            <img src="/sites/default/files/webship-portal/webtheme-webship-portal.jpg" data-entity-type="file" data-entity-uuid="27d774e8-0405-5e9c-b948-2c898fb77228" width="1600" height="1000" alt="Webtheme: the Webship Portal front page." class="uk-border-rounded uk-box-shadow-medium">
+            <img src="/sites/default/files/webship-portal/webship-portal-product-shot.jpg" data-entity-type="file" data-entity-uuid="bededed4-d775-598a-9866-e82d7a529608" width="1800" height="1200" alt="The Webship Portal front page in Webtheme." class="uk-border-rounded uk-box-shadow-medium">
           </div>
           <div class="uk-width-1-2@m">
             <h2>Open source, on Drupal.org</h2>

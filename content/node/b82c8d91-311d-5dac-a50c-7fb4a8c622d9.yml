@@ -5,7 +5,7 @@ _meta:
   bundle: product
   default_langcode: en
   depends:
-    e782f83f-b9ca-5354-94f7-e036dabc7420: media
+    34e10f91-2363-51cb-8660-7467904a7238: media
 default:
   revision_uid:
     -
@@ -56,4 +56,4 @@ default:
       summary: 'The Webship installer profile: it lists the Webship site templates and installs the one you choose, on Drupal 11.4 and later.'
   field_image:
     -
-      entity: e782f83f-b9ca-5354-94f7-e036dabc7420
+      entity: 34e10f91-2363-51cb-8660-7467904a7238

@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: file
-  uuid: 7789eb82-e770-56bb-88b8-d8aaaad23068
+  uuid: f405f0c9-ac5f-5dab-abde-2f22e8011c45
   default_langcode: en
 default:
   uid:
@@ -9,16 +9,16 @@ default:
       target_id: 1
   filename:
     -
-      value: website-starter-front-page.jpg
+      value: team-planning-laptops.jpg
   uri:
     -
-      value: 'public://webship-portal/website-starter-front-page.jpg'
+      value: 'public://webship-portal/team-planning-laptops.jpg'
   filemime:
     -
       value: image/jpeg
   filesize:
     -
-      value: 137372
+      value: 331095
   status:
     -
       value: true

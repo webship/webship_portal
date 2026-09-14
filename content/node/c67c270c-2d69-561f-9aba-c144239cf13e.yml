@@ -6,7 +6,7 @@ _meta:
   default_langcode: en
   depends:
     d7fc46ab-89f9-501d-9814-d51a7116e5f8: node
-    1b0bf1b0-0da4-5186-981f-d5f70fc901f5: media
+    1cd52b67-2bed-5c1c-b317-90d43a2244b8: media
 default:
   revision_uid:
     -
@@ -46,7 +46,7 @@ default:
       entity: d7fc46ab-89f9-501d-9814-d51a7116e5f8
   field_release_image:
     -
-      entity: 1b0bf1b0-0da4-5186-981f-d5f70fc901f5
+      entity: 1cd52b67-2bed-5c1c-b317-90d43a2244b8
   field_release_link:
     -
       uri: 'https://www.drupal.org/project/webship_starter/releases/1.0.x-dev'

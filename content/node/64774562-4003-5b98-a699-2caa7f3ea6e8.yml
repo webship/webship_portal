@@ -5,7 +5,7 @@ _meta:
   bundle: product
   default_langcode: en
   depends:
-    ddbca6bd-78ba-50d5-8b39-f157eaf6246b: media
+    928ff4ef-fd5a-5dd9-bdc4-31922161d0a8: media
 default:
   revision_uid:
     -
@@ -54,4 +54,4 @@ default:
       summary: 'A site template for a company site or a blog, with a UIkit showcase and demo content, built with Display Builder.'
   field_image:
     -
-      entity: ddbca6bd-78ba-50d5-8b39-f157eaf6246b
+      entity: 928ff4ef-fd5a-5dd9-bdc4-31922161d0a8

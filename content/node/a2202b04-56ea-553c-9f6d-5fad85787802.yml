@@ -5,7 +5,7 @@ _meta:
   bundle: product
   default_langcode: en
   depends:
-    d0c390a0-8757-5e72-8837-85f622d5fa67: media
+    3606595d-0415-5186-8821-7cee9cd4e3fa: media
 default:
   revision_uid:
     -
@@ -56,4 +56,4 @@ default:
       summary: 'The theme of Webship.co: UIkit and SDC components with the Webship.co colors, generated from UI Suite UIkit in 12.0.x.'
   field_image:
     -
-      entity: d0c390a0-8757-5e72-8837-85f622d5fa67
+      entity: 3606595d-0415-5186-8821-7cee9cd4e3fa

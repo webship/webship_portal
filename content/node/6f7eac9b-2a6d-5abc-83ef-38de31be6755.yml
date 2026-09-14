@@ -44,7 +44,7 @@ default:
           <li><a href="/docs/choose-a-site-template">Choose a site template</a>: in the installer, or with Drush.</li>
           <li><a href="/docs/dashboards">Use the dashboards</a> to manage the content of the site.</li>
         </ol>
-        <img src="/sites/default/files/webship-portal/webship-installer-site-templates.jpg" data-entity-type="file" data-entity-uuid="8b823ce5-87a6-515d-a329-9be8a2db935d" width="1600" height="1000" alt="Webship installer: choosing a site template." class="uk-border-rounded uk-box-shadow-medium">
+        <img src="/sites/default/files/webship-portal/developer-laptop-code.jpg" data-entity-type="file" data-entity-uuid="1c8572c9-9fde-580c-b429-8a7348519fca" width="1800" height="1200" alt="A developer writing code on a laptop." class="uk-border-rounded uk-box-shadow-medium">
 
         <p class="uk-margin-large-top"><a class="uk-button uk-button-default" href="/docs">Back to the documentation</a></p>
       format: full_html

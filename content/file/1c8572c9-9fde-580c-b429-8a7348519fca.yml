@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: file
-  uuid: f825cd8c-4a5b-50dd-8552-b8ed08da2a8d
+  uuid: 1c8572c9-9fde-580c-b429-8a7348519fca
   default_langcode: en
 default:
   uid:
@@ -9,16 +9,16 @@ default:
       target_id: 1
   filename:
     -
-      value: display-builder-editor.jpg
+      value: developer-laptop-code.jpg
   uri:
     -
-      value: 'public://webship-portal/display-builder-editor.jpg'
+      value: 'public://webship-portal/developer-laptop-code.jpg'
   filemime:
     -
       value: image/jpeg
   filesize:
     -
-      value: 124114
+      value: 289238
   status:
     -
       value: true

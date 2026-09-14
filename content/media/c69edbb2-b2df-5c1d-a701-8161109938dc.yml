@@ -1,0 +1,25 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: c69edbb2-b2df-5c1d-a701-8161109938dc
+  bundle: image
+  default_langcode: en
+  depends:
+    f405f0c9-ac5f-5dab-abde-2f22e8011c45: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'Two people planning a project with laptops and printed notes'
+  field_media_image:
+    -
+      alt: 'Two people planning a project with laptops and printed notes.'
+      title: ''
+      width: 1800
+      height: 1202
+      entity: f405f0c9-ac5f-5dab-abde-2f22e8011c45

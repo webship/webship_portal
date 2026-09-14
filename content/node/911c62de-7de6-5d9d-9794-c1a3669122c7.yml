@@ -34,7 +34,7 @@ default:
         <p>Web Dashboard gives each role a default dashboard, built with Display Builder.</p>
         <h2>Webmaster</h2>
         <p>For site administrators: content by type, the site status report, who is online and the recent content.</p>
-        <img src="/sites/default/files/webship-portal/webmaster-dashboard.jpg" data-entity-type="file" data-entity-uuid="dbd5533a-fccf-5c0e-b021-cfce5085301e" width="1600" height="1000" alt="Web Dashboard: the Webmaster dashboard with content and site status." class="uk-border-rounded uk-box-shadow-medium">
+        <img src="/sites/default/files/webship-portal/team-planning-laptops.jpg" data-entity-type="file" data-entity-uuid="f405f0c9-ac5f-5dab-abde-2f22e8011c45" width="1800" height="1202" alt="Two people planning a project with laptops and printed notes." class="uk-border-rounded uk-box-shadow-medium">
         <h2>Editorial</h2>
         <p>For content editors: their recent drafts, shortcuts to add pages, documentation and releases, and the media library.</p>
         <p>Open <em>Dashboard</em> in the admin toolbar, then <em>Personalize</em> to arrange your own dashboard.</p>

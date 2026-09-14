@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: file
-  uuid: 27d774e8-0405-5e9c-b948-2c898fb77228
+  uuid: 451c9dff-6ef7-5b16-92f6-ee5f64482f7c
   default_langcode: en
 default:
   uid:
@@ -9,16 +9,16 @@ default:
       target_id: 1
   filename:
     -
-      value: webtheme-webship-portal.jpg
+      value: code-editor-laptop.jpg
   uri:
     -
-      value: 'public://webship-portal/webtheme-webship-portal.jpg'
+      value: 'public://webship-portal/code-editor-laptop.jpg'
   filemime:
     -
       value: image/jpeg
   filesize:
     -
-      value: 177237
+      value: 208809
   status:
     -
       value: true

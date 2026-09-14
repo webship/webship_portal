@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: file
-  uuid: 8b823ce5-87a6-515d-a329-9be8a2db935d
+  uuid: 73d375c1-2197-53f7-a64b-6696c24ed816
   default_langcode: en
 default:
   uid:
@@ -9,16 +9,16 @@ default:
       target_id: 1
   filename:
     -
-      value: webship-installer-site-templates.jpg
+      value: code-on-monitor.jpg
   uri:
     -
-      value: 'public://webship-portal/webship-installer-site-templates.jpg'
+      value: 'public://webship-portal/code-on-monitor.jpg'
   filemime:
     -
       value: image/jpeg
   filesize:
     -
-      value: 229032
+      value: 380726
   status:
     -
       value: true

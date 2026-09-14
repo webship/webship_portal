@@ -69,15 +69,24 @@ A fresh install looks like a complete site, in the structure of Webship.co:
   with an image and its release notes.
 - **About us** at `/about` and **Contact** at `/contact`.
 - **Menus**: the main, footer and social media menus.
-- **Media**: seven images in the media library.
+- **Media**: six images in the media library: five CC0 photos and a product shot of the portal.
 
 No slogan is set: the pages are titled with their own title and the site name.
 
 ## Image credits
 
-The images in `content/file` were created from screenshots of Webship's own software (the Webship installer,
-the Website Starter, the Webship Starter, the Webship Portal with Webtheme, Web Dashboard and Display Builder),
-framed in a browser window. They are distributed with this project under GPL-2.0-or-later.
+The photos in `content/file` are released under CC0 (public domain dedication), and were resized for the web:
+
+| File | Photo | Author | License |
+| --- | --- | --- | --- |
+| `designer-two-screen-setup.jpg` | [Designer's two-screen setup](https://commons.wikimedia.org/wiki/File:Designer%27s_two-screen_setup_(Unsplash).jpg) | Lee Campbell | CC0 |
+| `developer-laptop-code.jpg` | [Laptop coding programs](https://commons.wikimedia.org/wiki/File:Laptop_coding_programs_(Unsplash).jpg) | Tirza van Dijk | CC0 |
+| `code-on-monitor.jpg` | [Code on computer monitor](https://commons.wikimedia.org/wiki/File:Code_on_computer_monitor_(Unsplash).jpg) | Markus Spiske | CC0 |
+| `code-editor-laptop.jpg` | [Code editor on a laptop](https://commons.wikimedia.org/wiki/File:Pexels-luis-gomes-546819.jpg) | Luis Gomes | CC0 |
+| `team-planning-laptops.jpg` | [Planning with laptops](https://commons.wikimedia.org/wiki/File:Helloquence-61189.jpg) | Helloquence | CC0 |
+
+`webship-portal-product-shot.jpg` is a screenshot of the Webship Portal front page with Webtheme, distributed
+with this project under GPL-2.0-or-later.
 
 ## Requirements
 

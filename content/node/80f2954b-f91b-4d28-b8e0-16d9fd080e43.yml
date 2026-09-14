@@ -45,7 +45,7 @@ default:
             </ul>
           </div>
           <div class="uk-width-1-2@m">
-            <img src="/sites/default/files/webship-portal/webship-starter-documentation.jpg" data-entity-type="file" data-entity-uuid="5da281ec-c335-520e-b0ba-b96beed5df50" width="1600" height="1000" alt="Webship Starter: a documentation page." class="uk-border-rounded uk-box-shadow-medium">
+            <img src="/sites/default/files/webship-portal/code-editor-laptop.jpg" data-entity-type="file" data-entity-uuid="451c9dff-6ef7-5b16-92f6-ee5f64482f7c" width="1800" height="1195" alt="A code editor with test code on a laptop screen." class="uk-border-rounded uk-box-shadow-medium">
           </div>
         </div>
       format: full_html

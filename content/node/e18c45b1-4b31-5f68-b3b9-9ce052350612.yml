@@ -6,7 +6,7 @@ _meta:
   default_langcode: en
   depends:
     a2202b04-56ea-553c-9f6d-5fad85787802: node
-    d0c390a0-8757-5e72-8837-85f622d5fa67: media
+    3606595d-0415-5186-8821-7cee9cd4e3fa: media
 default:
   revision_uid:
     -
@@ -46,7 +46,7 @@ default:
       entity: a2202b04-56ea-553c-9f6d-5fad85787802
   field_release_image:
     -
-      entity: d0c390a0-8757-5e72-8837-85f622d5fa67
+      entity: 3606595d-0415-5186-8821-7cee9cd4e3fa
   field_release_link:
     -
       uri: 'https://www.drupal.org/project/webtheme/releases/11.0.0'

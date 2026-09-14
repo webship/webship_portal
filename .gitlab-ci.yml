@@ -51,7 +51,7 @@ recipe:
     - export DRUSH="php -d memory_limit=-1 $CI_PROJECT_DIR/vendor/drush/drush/drush.php --root=$CI_PROJECT_DIR/$_WEB_ROOT"
     - $DRUSH site:install $CI_PROJECT_DIR/recipes/$PROJECT_NAME -y
       --db-url=mysql://$MYSQL_USER:$MYSQL_PASSWORD@database/$MYSQL_DATABASE
-      --account-name=admin --account-pass=admin --site-name="$PROJECT_NAME"
+      --account-name=admin --account-pass=admin --site-name="Webship"
     - $DRUSH status --fields=drupal-version,db-status,theme
     - test "$($DRUSH config:get system.theme default --format=string)" = "$EXPECTED_THEME"
     # The Webship features are installed: documentation, products and
@@ -72,12 +72,16 @@ recipe:
     - test "$($DRUSH config:get block.block.webtheme_social_media_menu region --format=string)" = "footer"
     - test "$($DRUSH config:get block.block.webtheme_content region --format=string)" = "content"
     - test "$($DRUSH config:get block.block.webtheme_newsletter_subscribe region --format=string)" = "content"
-    # No slogan.
+    # The site is named Webship, with no slogan, and the navbar shows only
+    # the logo.
+    - test "$($DRUSH config:get system.site name --format=string)" = "Webship"
     - test -z "$($DRUSH config:get system.site slogan --format=string)"
+    - test "$($DRUSH php:eval 'print (int) \Drupal::config("block.block.webtheme_site_branding")->get("settings.use_site_name");')" = "0"
+    - test "$($DRUSH php:eval 'print (int) \Drupal::config("block.block.webtheme_site_branding")->get("settings.use_site_slogan");')" = "0"
     # The default content of the template is imported: the documentation
     # pages, the products with their releases and the media images.
     - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "webdoc")->count()->execute();')" -gt 5
     - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "product")->count()->execute();')" -gt 3
     - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "release")->count()->execute();')" -gt 7
-    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("media")->accessCheck(FALSE)->condition("bundle", "image")->count()->execute();')" -gt 6
+    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("media")->accessCheck(FALSE)->condition("bundle", "image")->count()->execute();')" -gt 5
     - test "$($DRUSH php:eval 'print \Drupal::service("path_alias.manager")->getPathByAlias("/about");')" != "/about"

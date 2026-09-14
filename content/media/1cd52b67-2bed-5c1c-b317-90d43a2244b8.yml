@@ -1,0 +1,25 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 1cd52b67-2bed-5c1c-b317-90d43a2244b8
+  bundle: image
+  default_langcode: en
+  depends:
+    451c9dff-6ef7-5b16-92f6-ee5f64482f7c: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'A code editor with test code on a laptop screen'
+  field_media_image:
+    -
+      alt: 'A code editor with test code on a laptop screen.'
+      title: ''
+      width: 1800
+      height: 1195
+      entity: 451c9dff-6ef7-5b16-92f6-ee5f64482f7c

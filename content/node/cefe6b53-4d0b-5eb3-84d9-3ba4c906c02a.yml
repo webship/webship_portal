@@ -6,7 +6,7 @@ _meta:
   default_langcode: en
   depends:
     64774562-4003-5b98-a699-2caa7f3ea6e8: node
-    ddbca6bd-78ba-50d5-8b39-f157eaf6246b: media
+    928ff4ef-fd5a-5dd9-bdc4-31922161d0a8: media
 default:
   revision_uid:
     -
@@ -46,7 +46,7 @@ default:
       entity: 64774562-4003-5b98-a699-2caa7f3ea6e8
   field_release_image:
     -
-      entity: ddbca6bd-78ba-50d5-8b39-f157eaf6246b
+      entity: 928ff4ef-fd5a-5dd9-bdc4-31922161d0a8
   field_release_link:
     -
       uri: 'https://www.drupal.org/project/website_starter/releases/1.0.x-dev'

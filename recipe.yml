@@ -78,8 +78,15 @@ config:
     system.theme:
       simpleConfigUpdate:
         default: webtheme
+    # The navbar shows only the Webship logo, linked to the front page.
+    block.block.webtheme_site_branding:
+      setProperties:
+        settings.use_site_logo: true
+        settings.use_site_name: false
+        settings.use_site_slogan: false
     system.site:
       simpleConfigUpdate:
+        name: 'Webship'
         # The front page of the template, in content/node. No slogan.
         slogan: ''
         page.front: /home

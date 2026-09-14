@@ -1,7 +1,7 @@
 _meta:
   version: '1.0'
   entity_type: file
-  uuid: a83d98d5-fd6c-5948-9298-28829d087607
+  uuid: c1ee34f8-c6b3-5200-a36e-9628111c725e
   default_langcode: en
 default:
   uid:
@@ -9,16 +9,16 @@ default:
       target_id: 1
   filename:
     -
-      value: webship-site-templates-family.jpg
+      value: designer-two-screen-setup.jpg
   uri:
     -
-      value: 'public://webship-portal/webship-site-templates-family.jpg'
+      value: 'public://webship-portal/designer-two-screen-setup.jpg'
   filemime:
     -
       value: image/jpeg
   filesize:
     -
-      value: 201917
+      value: 159459
   status:
     -
       value: true

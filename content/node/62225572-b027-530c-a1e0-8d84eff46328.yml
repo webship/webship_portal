@@ -42,7 +42,7 @@ default:
         </table>
         <h2>From the installer</h2>
         <p>Open the site in the browser: the Webship installer lists the site templates. Choose one and continue.</p>
-        <img src="/sites/default/files/webship-portal/webship-installer-site-templates.jpg" data-entity-type="file" data-entity-uuid="8b823ce5-87a6-515d-a329-9be8a2db935d" width="1600" height="1000" alt="Webship installer: choosing a site template." class="uk-border-rounded uk-box-shadow-medium">
+        <img src="/sites/default/files/webship-portal/developer-laptop-code.jpg" data-entity-type="file" data-entity-uuid="1c8572c9-9fde-580c-b429-8a7348519fca" width="1800" height="1200" alt="A developer writing code on a laptop." class="uk-border-rounded uk-box-shadow-medium">
         <h2>With Drush</h2>
         <pre><code>ddev drush site:install recipes/webship_portal -y
         ddev launch</code></pre>

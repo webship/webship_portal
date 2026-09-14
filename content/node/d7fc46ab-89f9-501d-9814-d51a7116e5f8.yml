@@ -5,7 +5,7 @@ _meta:
   bundle: product
   default_langcode: en
   depends:
-    1b0bf1b0-0da4-5186-981f-d5f70fc901f5: media
+    1cd52b67-2bed-5c1c-b317-90d43a2244b8: media
 default:
   revision_uid:
     -
@@ -54,4 +54,4 @@ default:
       summary: 'A site template to manage software: documentation, products and releases, a newsletter and social sharing, in UI Suite UIkit.'
   field_image:
     -
-      entity: 1b0bf1b0-0da4-5186-981f-d5f70fc901f5
+      entity: 1cd52b67-2bed-5c1c-b317-90d43a2244b8

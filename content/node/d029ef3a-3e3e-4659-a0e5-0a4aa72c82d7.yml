@@ -46,7 +46,7 @@ default:
               </p>
             </div>
             <div class="uk-width-1-2@m">
-              <img src="/sites/default/files/webship-portal/webship-site-templates-family.jpg" data-entity-type="file" data-entity-uuid="a83d98d5-fd6c-5948-9298-28829d087607" width="1600" height="1000" alt="Webship site templates: the Website Starter, the Webship Portal and the Webship installer side by side." class="uk-border-rounded uk-box-shadow-large">
+              <img src="/sites/default/files/webship-portal/designer-two-screen-setup.jpg" data-entity-type="file" data-entity-uuid="c1ee34f8-c6b3-5200-a36e-9628111c725e" width="1800" height="1202" alt="A designer's desk at night with two screens showing code and a web page." class="uk-border-rounded uk-box-shadow-large">
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@ default:
 
         <div class="uk-grid uk-grid-large uk-flex-middle uk-margin-xlarge-top" uk-grid>
           <div class="uk-width-1-2@m">
-            <img src="/sites/default/files/webship-portal/webship-installer-site-templates.jpg" data-entity-type="file" data-entity-uuid="8b823ce5-87a6-515d-a329-9be8a2db935d" width="1600" height="1000" alt="Webship installer: choosing a site template." class="uk-border-rounded uk-box-shadow-medium">
+            <img src="/sites/default/files/webship-portal/developer-laptop-code.jpg" data-entity-type="file" data-entity-uuid="1c8572c9-9fde-580c-b429-8a7348519fca" width="1800" height="1200" alt="A developer writing code on a laptop." class="uk-border-rounded uk-box-shadow-medium">
           </div>
           <div class="uk-width-1-2@m">
             <h2>Pick a site template, get a full site</h2>
@@ -121,7 +121,7 @@ default:
 
         <div class="uk-grid uk-grid-large uk-flex-middle uk-margin-xlarge-top" uk-grid>
           <div class="uk-width-1-2@m uk-flex-last@m">
-            <img src="/sites/default/files/webship-portal/display-builder-editor.jpg" data-entity-type="file" data-entity-uuid="f825cd8c-4a5b-50dd-8552-b8ed08da2a8d" width="1600" height="1000" alt="Display Builder: the editor of a content display." class="uk-border-rounded uk-box-shadow-medium">
+            <img src="/sites/default/files/webship-portal/code-editor-laptop.jpg" data-entity-type="file" data-entity-uuid="451c9dff-6ef7-5b16-92f6-ee5f64482f7c" width="1800" height="1195" alt="A code editor with test code on a laptop screen." class="uk-border-rounded uk-box-shadow-medium">
           </div>
           <div class="uk-width-1-2@m">
             <h2>Design pages with Display Builder</h2>
@@ -132,7 +132,7 @@ default:
 
         <div class="uk-grid uk-grid-large uk-flex-middle uk-margin-xlarge-top" uk-grid>
           <div class="uk-width-1-2@m">
-            <img src="/sites/default/files/webship-portal/webmaster-dashboard.jpg" data-entity-type="file" data-entity-uuid="dbd5533a-fccf-5c0e-b021-cfce5085301e" width="1600" height="1000" alt="Web Dashboard: the Webmaster dashboard with content and site status." class="uk-border-rounded uk-box-shadow-medium">
+            <img src="/sites/default/files/webship-portal/team-planning-laptops.jpg" data-entity-type="file" data-entity-uuid="f405f0c9-ac5f-5dab-abde-2f22e8011c45" width="1800" height="1202" alt="Two people planning a project with laptops and printed notes." class="uk-border-rounded uk-box-shadow-medium">
           </div>
           <div class="uk-width-1-2@m">
             <h2>Dashboards for the whole team</h2>

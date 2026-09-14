@@ -1,0 +1,25 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: f0948b45-3b94-5e59-b49b-3621fc0e195f
+  bundle: image
+  default_langcode: en
+  depends:
+    c1ee34f8-c6b3-5200-a36e-9628111c725e: file
+default:
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  name:
+    -
+      value: 'A designer''s desk at night with two screens showing code and a web page'
+  field_media_image:
+    -
+      alt: 'A designer''s desk at night with two screens showing code and a web page.'
+      title: ''
+      width: 1800
+      height: 1202
+      entity: c1ee34f8-c6b3-5200-a36e-9628111c725e
