@@ -1,0 +1,15 @@
+_meta:
+  version: '1.0'
+  entity_type: path_alias
+  uuid: 647852e4-6f02-43fd-b55a-366c9398b03d
+  default_langcode: en
+default:
+  path:
+    -
+      value: /webform/contact
+  alias:
+    -
+      value: /contact
+  status:
+    -
+      value: true

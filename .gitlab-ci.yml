@@ -1,0 +1,89 @@
+################
+# GitLab CI for the Webship Portal site template (a drupal-recipe project).
+#
+# The drupal.org GitLab templates build a Drupal site with this recipe in
+# recipes/webship_portal, then run composer-lint and cspell. The `recipe` job
+# below installs Drupal from the recipe to prove that it applies.
+# Documentation: https://project.pages.drupalcode.org/gitlab_templates/
+################
+include:
+  - project: $_GITLAB_TEMPLATES_REPO
+    ref: $_GITLAB_TEMPLATES_REF
+    file:
+      - '/includes/include.drupalci.main.yml'
+      - '/includes/include.drupalci.variables.yml'
+      - '/includes/include.drupalci.workflows.yml'
+
+variables:
+  _TARGET_PHP: '8.4'
+  DRUPAL_CORE: &drupal_core '11.4.x-dev'
+  # No PHP, CSS, JavaScript or PHPUnit tests here: the recipe YAML is checked
+  # by applying the recipe.
+  SKIP_ESLINT: '1'
+  SKIP_PHPCS: '1'
+  SKIP_PHPSTAN: '1'
+  SKIP_PHPUNIT: '1'
+  SKIP_STYLELINT: '1'
+  # Node modules are only needed by cspell, which installs them itself.
+  _COMPOSER_YARN_INSTALL: '0'
+  # composer-lint and cspell must pass.
+  _ALL_VALIDATE_ALLOW_FAILURE: '0'
+
+composer:
+  variables:
+    # The composer job sets its own DRUPAL_CORE: use the global value.
+    DRUPAL_CORE: *drupal_core
+  before_script:
+    # @todo Remove when webreleases 12.0.x has the Display Builder displays and
+    #   requires ~12.0 of webassets, webdev and webpage:
+    #   https://git.drupalcode.org/project/webreleases/-/merge_requests/5
+    - composer config repositories.webreleases vcs https://git.drupalcode.org/issue/webreleases-3591672.git
+    - composer require --no-update "drupal/webreleases:dev-3591672-display-builder as 12.0.x-dev"
+    # @todo Remove when the Web Security default recipe has the anti-spam and
+    #   authentication parts in 12.0.x:
+    #   https://git.drupalcode.org/project/websecurity/-/merge_requests/6
+    - composer config repositories.websecurity vcs https://git.drupalcode.org/issue/websecurity-3591697.git
+    - composer require --no-update "drupal/websecurity:dev-3591697-antispam-authentication as 12.0.x-dev"
+    # @todo Remove when the Web Development default recipe has the UI Suite and
+    #   Display Builder modules in 12.0.x:
+    #   https://git.drupalcode.org/project/webdev/-/merge_requests/8
+    - composer config repositories.webdev vcs https://git.drupalcode.org/issue/webdev-3591729.git
+    - composer require --no-update "drupal/webdev:dev-3591729-ui-suite-display-builder as 12.0.x-dev"
+    # @todo Remove when the Web Page default recipe has the core content views,
+    #   the image styles and the contact webform in 12.0.x:
+    #   https://git.drupalcode.org/project/webpage/-/merge_requests/10
+    - composer config repositories.webpage vcs https://git.drupalcode.org/issue/webpage-3591502.git
+    - composer require --no-update "drupal/webpage:dev-3591502-content-contact as 12.0.x-dev"
+
+# Install Drupal from the recipe, and check the result.
+recipe:
+  extends: .testing-job-base
+  needs: [composer]
+  # Only the database: no browser is needed.
+  services:
+    - name: $_CONFIG_DOCKERHUB_ROOT/$_TARGET_DB_TYPE-$_TARGET_DB_VERSION:$_TARGET_DB_IMAGE_TAG
+      alias: database
+  variables:
+    EXPECTED_THEME: 'webtheme'
+  script:
+    - cd $CI_PROJECT_DIR
+    - test "$COMPOSER_END_CODE" = "0"
+    # Run the Drush PHP script directly: vendor/bin/drush is a shell proxy.
+    - export DRUSH="php -d memory_limit=-1 $CI_PROJECT_DIR/vendor/drush/drush/drush.php --root=$CI_PROJECT_DIR/$_WEB_ROOT"
+    - $DRUSH site:install $CI_PROJECT_DIR/recipes/$PROJECT_NAME -y
+      --db-url=mysql://$MYSQL_USER:$MYSQL_PASSWORD@database/$MYSQL_DATABASE
+      --account-name=admin --account-pass=admin --site-name="$PROJECT_NAME"
+    - $DRUSH status --fields=drupal-version,db-status,theme
+    - test "$($DRUSH config:get system.theme default --format=string)" = "$EXPECTED_THEME"
+    # The Webship features are installed: documentation, products and
+    # releases, the newsletter form, social sharing and the dashboards.
+    - test "$($DRUSH config:get node.type.webdoc type --format=string)" = "webdoc"
+    - test "$($DRUSH config:get node.type.product type --format=string)" = "product"
+    - test "$($DRUSH config:get node.type.release type --format=string)" = "release"
+    - test "$($DRUSH config:get webform.webform.newsletter_subscribe id --format=string)" = "newsletter_subscribe"
+    - $DRUSH pm:list --status=enabled --format=list | grep -qx webshare
+    - $DRUSH pm:list --status=enabled --format=list | grep -qx webdashboard
+    # The blocks of Webtheme are placed.
+    - test "$($DRUSH config:get block.block.webtheme_main_menu region --format=string)" = "primary_menu"
+    # The Documentation page of the template is imported.
+    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "webdoc")->count()->execute();')" -gt 0

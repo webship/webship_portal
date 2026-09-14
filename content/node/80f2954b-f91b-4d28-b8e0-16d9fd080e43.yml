@@ -1,0 +1,47 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 80f2954b-f91b-4d28-b8e0-16d9fd080e43
+  bundle: webdoc
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Documentation
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: /docs
+      langcode: en
+      pathauto: 0
+  body:
+    -
+      value: |-
+        <p>Welcome to the Webship documentation. Webship helps web developers ship websites in a swift way: a Drupal site template built with recipes and Display Builder, in the Webtheme theme.</p>
+        <h2>Getting started</h2>
+        <p>Create a new project with Composer and DDEV, then install the site from the browser or with Drush. The installer applies the Webship Portal site template for you: pages, documentation, products and releases, a newsletter and social sharing.</p>
+        <h2>Building pages</h2>
+        <p>Every content type is displayed with Display Builder. Open <em>Structure &gt; Content types &gt; Manage display</em> to arrange the fields, and <em>Structure &gt; Block layout</em> to change the header, navigation and footer of the whole site.</p>
+        <h2>Writing documentation</h2>
+        <p>Documentation pages are book pages. Add a child page from the book navigation to grow a guide, and reorder the pages from the book outline.</p>
+        <h2>Theming</h2>
+        <p>Webtheme is the theme of Webship.co. Change the logo, the favicon and the site branding colors from the theme settings.</p>
+      format: full_html
+      summary: ''

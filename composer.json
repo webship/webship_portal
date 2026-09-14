@@ -1,12 +1,25 @@
 {
     "name": "drupal/webship_portal",
     "type": "drupal-recipe",
-    "description": "The Webship.co portal site template: the Webship Starter with Webtheme, a theme generated from UI Suite UIkit with the Webship.co colors and design.",
+    "description": "The Webship.co portal site template: a site to manage software, with documentation, products and releases, a newsletter and social sharing, in the Webtheme theme with the Webship.co colors and design. Built on top of Drupal and Display Builder. No Canvas, no Layout Builder.",
     "homepage": "https://www.drupal.org/project/webship_portal",
     "license": "GPL-2.0-or-later",
+    "keywords": ["Drupal", "recipe", "Display Builder", "Webtheme", "portal", "Webship"],
     "require": {
         "drupal/core": "^11.4 || ^12",
-        "drupal/webship_starter": "^1.0@dev",
+        "drupal/webadmin": "~12.0@dev",
+        "drupal/webassets": "~12.0@dev",
+        "drupal/webconfig": "~12.0@dev",
+        "drupal/webdash": "^1.0@dev",
+        "drupal/webdev": "~12.0@dev",
+        "drupal/webdoc": "~12.0@dev",
+        "drupal/webeditor": "~12.0@dev",
+        "drupal/webnewsletter": "~12.0@dev",
+        "drupal/webpage": "~12.0@dev",
+        "drupal/webreleases": "~12.0@dev",
+        "drupal/websecurity": "~12.0@dev",
+        "drupal/webseo": "~12.0@dev",
+        "drupal/webshare": "2.0.x-dev",
         "drupal/webtheme": "12.0.x-dev"
     }
 }
