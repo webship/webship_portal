@@ -90,7 +90,7 @@ default:
               <span class="uk-text-primary" uk-icon="icon: mail; ratio: 1.6"></span>
               <h3 class="uk-card-title uk-margin-small-top">Newsletter</h3>
               <p>A newsletter subscription form, built with Webform, with anti-spam protection.</p>
-              <a class="uk-button uk-button-text" href="/form/newsletter-subscribe">Learn more</a>
+              <a class="uk-button uk-button-text" href="/newsletter/subscribe">Learn more</a>
             </div>
           </div>
           <div>

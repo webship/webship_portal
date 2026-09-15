@@ -96,8 +96,8 @@ config:
       grantPermissions:
         - 'access content'
         - 'delete own files'
-        - 'access administration pages'
-    # Content editors manage the content of every content type of the site.
+    # Content editors manage the content of every content type of the site,
+    # and move content through the editorial workflow.
     user.role.content_editor:
       grantPermissions:
         - 'access content overview'
@@ -109,7 +109,13 @@ config:
         - 'edit terms in tags'
         - 'delete own files'
         - 'revert all revisions'
+        - 'use editorial transition archive'
+        - 'use editorial transition archived_draft'
+        - 'use editorial transition archived_published'
+        - 'use editorial transition create_new_draft'
+        - 'use editorial transition publish'
         - 'view all revisions'
+        - 'view latest version'
         - 'view the administration theme'
       grantPermissionsForEachNodeType:
         - 'create %bundle content'

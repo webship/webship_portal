@@ -16,7 +16,7 @@ default:
       value: footer
   link:
     -
-      uri: 'internal:/form/newsletter-subscribe'
+      uri: 'internal:/newsletter/subscribe'
       title: ''
       options: {  }
   external:
