@@ -7,19 +7,19 @@
     "keywords": ["Drupal", "recipe", "Display Builder", "Webtheme", "portal", "Webship"],
     "require": {
         "drupal/core": "^11.4 || ^12",
-        "drupal/webadmin": "~12.0@dev",
-        "drupal/webassets": "~12.0@dev",
-        "drupal/webconfig": "~12.0@dev",
-        "drupal/webdash": "^1.0@dev",
-        "drupal/webdev": "~12.0@dev",
-        "drupal/webdoc": "~12.0@dev",
-        "drupal/webeditor": "~12.0@dev",
-        "drupal/webnewsletter": "~12.0@dev",
-        "drupal/webpage": "~12.0@dev",
-        "drupal/webreleases": "~12.0@dev",
-        "drupal/websecurity": "~12.0@dev",
-        "drupal/webseo": "~12.0@dev",
+        "drupal/webadmin": "~12.0@beta",
+        "drupal/webassets": "~12.0@beta",
+        "drupal/webconfig": "~12.0@beta",
+        "drupal/webdash": "^1.0@beta",
+        "drupal/webdev": "~12.0@beta",
+        "drupal/webdoc": "~12.0@beta",
+        "drupal/webeditor": "~12.0@beta",
+        "drupal/webnewsletter": "~12.0@beta",
+        "drupal/webpage": "~12.0@beta",
+        "drupal/webreleases": "~12.0@beta",
+        "drupal/websecurity": "~12.0@beta",
+        "drupal/webseo": "~12.0@beta",
         "drupal/webshare": "2.0.x-dev",
-        "drupal/webtheme": "12.0.x-dev"
+        "drupal/webtheme": "~12.0@beta"
     }
 }
