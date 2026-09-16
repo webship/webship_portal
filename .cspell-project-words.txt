@@ -21,6 +21,7 @@ tagify
 tirza
 uikit
 webadmin
+webai
 webassets
 webconfig
 webdash
