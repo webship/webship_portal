@@ -28,7 +28,7 @@ recipes:
   - core/recipes/administrator_role
   - core/recipes/content_editor_role
   # The Webship administration, SEO and security features. Web Admin comes
-  # after the core admin theme recipe: it sets Gin as the admin theme.
+  # after the core admin theme recipe: it sets the administration theme.
   - modules/contrib/webadmin/recipes/default
   - modules/contrib/webseo/recipes/default
   - modules/contrib/websecurity/recipes/default
