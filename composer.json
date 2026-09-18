@@ -4,6 +4,13 @@
     "description": "The Webship.co portal site template: a site to manage software, with documentation, products and releases, a newsletter and social sharing, in the Webtheme theme with the Webship.co colors and design. Built on top of Drupal and Display Builder. No Canvas, no Layout Builder.",
     "homepage": "https://www.drupal.org/project/webship_portal",
     "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Webship",
+            "homepage": "https://webship.co",
+            "role": "Maintainer"
+        }
+    ],
     "keywords": ["Drupal", "recipe", "Display Builder", "Webtheme", "portal", "Webship"],
     "require": {
         "drupal/core": "^11.4 || ^12",
