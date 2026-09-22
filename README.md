@@ -25,7 +25,7 @@ cd ~/workspace/projects/my-portal
 ddev config --project-type=drupal11 --docroot=web --php-version=8.4
 ddev start
 ddev composer create-project drupal/website:^1.0@alpha
-ddev drush si -y webship --account-name=webmaster --site-name="My Portal" installer_site_template_form.add_ons=webship_portal
+ddev drush site:install ../recipes/webship_portal -y --account-name=webmaster --site-name="My Portal"
 ddev launch
 ```
 
