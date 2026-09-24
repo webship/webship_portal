@@ -1,0 +1,748 @@
+langcode: en
+status: true
+dependencies:
+  module:
+  - display_builder_page_layout
+  theme:
+  - webtheme
+id: home
+label: Home
+weight: -5
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /home
+profile: default
+sources:
+- source_id: component
+  source:
+    component:
+      component_id: webtheme:navbar
+      variant_id: null
+      props:
+        container:
+          source_id: select
+          source:
+            value: default
+        sticky:
+          source_id: checkbox
+          source:
+            value: true
+      slots:
+        left:
+          sources:
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:logo
+                variant_id: null
+                props:
+                  url:
+                    source_id: url
+                    source:
+                      value: /
+                  image:
+                    source_id: url
+                    source:
+                      value: /themes/contrib/ui_suite_uikit/logo.svg
+                  image_alt:
+                    source_id: textfield
+                    source:
+                      value: Home
+                  navbar_item:
+                    source_id: checkbox
+                    source:
+                      value: true
+                slots:
+                  label:
+                    sources:
+                    - source_id: token
+                      source:
+                        value: '[site:name]'
+        center:
+          sources:
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:navbar_nav
+                variant_id: null
+                props:
+                  attributes:
+                    source_id: attributes
+                    source:
+                      value: class="uk-visible@m"
+                  items:
+                    source_id: menu
+                    source:
+                      menu: main
+                      level: 1
+                      depth: 2
+                      set_active_trail: true
+                      expand_all_items: true
+                slots: {}
+        right:
+          sources:
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:navbar_nav
+                variant_id: null
+                props:
+                  attributes:
+                    source_id: attributes
+                    source:
+                      value: class="uk-visible@m"
+                  items:
+                    source_id: menu
+                    source:
+                      menu: account
+                      level: 1
+                      depth: 1
+                      set_active_trail: false
+                      expand_all_items: false
+                slots: {}
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:navbar_toggle
+                variant_id: null
+                props:
+                  attributes:
+                    source_id: attributes
+                    source:
+                      value: class="uk-hidden@m"
+                  target:
+                    source_id: textfield
+                    source:
+                      value: website-offcanvas
+                slots: {}
+- source_id: component
+  source:
+    component:
+      component_id: webtheme:offcanvas
+      variant_id: null
+      props:
+        offcanvas_id:
+          source_id: textfield
+          source:
+            value: website-offcanvas
+        mode:
+          source_id: select
+          source:
+            value: push
+        flip:
+          source_id: checkbox
+          source:
+            value: true
+        overlay:
+          source_id: checkbox
+          source:
+            value: true
+        close:
+          source_id: checkbox
+          source:
+            value: true
+      slots:
+        content:
+          sources:
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:nav
+                variant_id:
+                  source_id: select
+                  source:
+                    value: primary
+                props:
+                  accordion:
+                    source_id: checkbox
+                    source:
+                      value: true
+                  items:
+                    source_id: menu
+                    source:
+                      menu: main
+                      level: 1
+                      depth: 0
+                      set_active_trail: true
+                      expand_all_items: true
+                slots: {}
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:divider
+                variant_id: null
+                props: {}
+                slots: {}
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:nav
+                variant_id: null
+                props:
+                  items:
+                    source_id: menu
+                    source:
+                      menu: account
+                      level: 1
+                      depth: 1
+                      set_active_trail: false
+                      expand_all_items: false
+                slots: {}
+- source_id: component
+  source:
+    component:
+      component_id: webtheme:section
+      variant_id: null
+      props:
+        size:
+          source_id: select
+          source:
+            value: small
+        container:
+          source_id: select
+          source:
+            value: default
+        landmark:
+          source_id: select
+          source:
+            value: main
+      slots:
+        content:
+          sources:
+          - source_id: block
+            source:
+              plugin_id: system_messages_block
+              system_messages_block: {}
+          - source_id: block
+            source:
+              plugin_id: system_breadcrumb_block
+              system_breadcrumb_block: {}
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:section
+                variant_id:
+                  source_id: select
+                  source:
+                    value: primary
+                props:
+                  size:
+                    source_id: select
+                    source:
+                      value: default
+                  container:
+                    source_id: select
+                    source:
+                      value: default
+                slots:
+                  content:
+                    sources:
+                    - source_id: component
+                      source:
+                        component:
+                          component_id: webtheme:grid_2_columns
+                          variant_id: null
+                          props:
+                            gutter:
+                              source_id: select
+                              source:
+                                value: large
+                          slots:
+                            column_1:
+                              sources:
+                              - source_id: component
+                                source:
+                                  component:
+                                    component_id: webtheme:heading
+                                    variant_id: null
+                                    props:
+                                      heading_level:
+                                        source_id: select
+                                        source:
+                                          value: 1
+                                    slots:
+                                      title:
+                                        sources:
+                                        - source_id: textfield
+                                          source:
+                                            value: Ship websites in a swift way
+                              - source_id: component
+                                source:
+                                  component:
+                                    component_id: webtheme:button_group
+                                    variant_id: null
+                                    props: {}
+                                    slots:
+                                      buttons:
+                                        sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:button
+                                              variant_id:
+                                                source_id: select
+                                                source:
+                                                  value: default
+                                              props:
+                                                url:
+                                                  source_id: url
+                                                  source:
+                                                    value: /docs
+                                              slots:
+                                                label:
+                                                  sources:
+                                                  - source_id: textfield
+                                                    source:
+                                                      value: Documentation
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:button
+                                              variant_id:
+                                                source_id: select
+                                                source:
+                                                  value: secondary
+                                              props:
+                                                url:
+                                                  source_id: url
+                                                  source:
+                                                    value: /products
+                                              slots:
+                                                label:
+                                                  sources:
+                                                  - source_id: textfield
+                                                    source:
+                                                      value: Products
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:button
+                                              variant_id:
+                                                source_id: select
+                                                source:
+                                                  value: default
+                                              props:
+                                                url:
+                                                  source_id: url
+                                                  source:
+                                                    value: /contact
+                                              slots:
+                                                label:
+                                                  sources:
+                                                  - source_id: textfield
+                                                    source:
+                                                      value: Contact us
+                              - source_id: textarea
+                                source:
+                                  value: <p class="uk-text-large">Webship brings Drupal site templates, an installer, documentation, products and releases together, ready to install with Composer and DDEV.</p>
+                            column_2:
+                              sources:
+                              - source_id: textarea
+                                source:
+                                  value: <img src="/sites/default/files/webship-portal/designer-two-screen-setup.jpg" data-entity-type="file" data-entity-uuid="c1ee34f8-c6b3-5200-a36e-9628111c725e" width="1800"
+                                    height="1202" alt="A designer's desk at night with two screens showing code and a web page." class="uk-border-rounded uk-box-shadow-large">
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:heading
+                variant_id:
+                  source_id: select
+                  source:
+                    value: line
+                props:
+                  heading_level:
+                    source_id: select
+                    source:
+                      value: 2
+                slots:
+                  title:
+                    sources:
+                    - source_id: textfield
+                      source:
+                        value: What Webship offers
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:grid_3_columns
+                variant_id: null
+                props:
+                  gutter:
+                    source_id: select
+                    source:
+                      value: medium
+                  match:
+                    source_id: checkbox
+                    source:
+                      value: true
+                slots:
+                  column_1:
+                    sources:
+                    - source_id: textarea
+                      source:
+                        value: '<div><div class="uk-card uk-card-default uk-card-hover uk-card-body uk-height-1-1"><span class="uk-text-primary" uk-icon="icon: file-text; ratio: 1.6"></span><h3 class="uk-card-title
+                          uk-margin-small-top">Site templates</h3><p>Start from a complete site: the Website Starter for a company or a blog, the Webship Portal to manage software, the Webship Starter for
+                          documentation.</p><a class="uk-button uk-button-text" href="/products/website-starter">Learn more</a></div></div><div><div class="uk-card uk-card-default uk-card-hover uk-card-body
+                          uk-height-1-1"><span class="uk-text-primary" uk-icon="icon: tag; ratio: 1.6"></span><h3 class="uk-card-title uk-margin-small-top">Products and releases</h3><p>A page for each product
+                          with its release notes, versions and download links, listed at /products.</p><a class="uk-button uk-button-text" href="/products">Learn more</a></div></div>'
+                  column_2:
+                    sources:
+                    - source_id: textarea
+                      source:
+                        value: '<div><div class="uk-card uk-card-default uk-card-hover uk-card-body uk-height-1-1"><span class="uk-text-primary" uk-icon="icon: download; ratio: 1.6"></span><h3 class="uk-card-title
+                          uk-margin-small-top">The Webship installer</h3><p>Choose a site template in the installer, or install one with Drush. Every template works on its own, with no extra setup.</p><a
+                          class="uk-button uk-button-text" href="/docs/choose-a-site-template">Learn more</a></div></div><div><div class="uk-card uk-card-default uk-card-hover uk-card-body uk-height-1-1"><span
+                          class="uk-text-primary" uk-icon="icon: mail; ratio: 1.6"></span><h3 class="uk-card-title uk-margin-small-top">Newsletter</h3><p>A newsletter subscription form, built with Webform,
+                          with anti-spam protection.</p><a class="uk-button uk-button-text" href="/newsletter/subscribe">Learn more</a></div></div>'
+                  column_3:
+                    sources:
+                    - source_id: textarea
+                      source:
+                        value: '<div><div class="uk-card uk-card-default uk-card-hover uk-card-body uk-height-1-1"><span class="uk-text-primary" uk-icon="icon: album; ratio: 1.6"></span><h3 class="uk-card-title
+                          uk-margin-small-top">Documentation</h3><p>Guides to install and use Webship, at /docs. Web Doc pages can also be organized in books with their own navigation.</p><a class="uk-button
+                          uk-button-text" href="/docs">Learn more</a></div></div><div><div class="uk-card uk-card-default uk-card-hover uk-card-body uk-height-1-1"><span class="uk-text-primary" uk-icon="icon:
+                          paint-bucket; ratio: 1.6"></span><h3 class="uk-card-title uk-margin-small-top">Display Builder and UIkit</h3><p>Arrange every page with Display Builder and SDC components, in Webtheme,
+                          generated from UI Suite UIkit.</p><a class="uk-button uk-button-text" href="/docs/build-pages-with-display-builder">Learn more</a></div></div>'
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:grid_2_columns
+                variant_id: null
+                props:
+                  gutter:
+                    source_id: select
+                    source:
+                      value: large
+                slots:
+                  column_1:
+                    sources:
+                    - source_id: textarea
+                      source:
+                        value: <img src="/sites/default/files/webship-portal/developer-laptop-code.jpg" data-entity-type="file" data-entity-uuid="1c8572c9-9fde-580c-b429-8a7348519fca" width="1800" height="1200"
+                          alt="A developer writing code on a laptop." class="uk-border-rounded uk-box-shadow-medium">
+                  column_2:
+                    sources:
+                    - source_id: component
+                      source:
+                        component:
+                          component_id: webtheme:heading
+                          variant_id: null
+                          props:
+                            heading_level:
+                              source_id: select
+                              source:
+                                value: 2
+                          slots:
+                            title:
+                              sources:
+                              - source_id: textfield
+                                source:
+                                  value: Pick a site template, get a full site
+                    - source_id: textarea
+                      source:
+                        value: '<p>The Webship installer lists the site templates next to each other. Each one applies the Webship recipes it needs: content types, media, SEO, security, dashboards and a
+                          theme.</p><ul class="uk-list uk-list-bullet"><li>Website Starter, Webship Starter and Webship Portal.</li><li>Drupal 11.4 and PHP 8.4, installed with DDEV.</li><li>No extra modules
+                          to enable after the install.</li></ul>'
+                    - source_id: component
+                      source:
+                        component:
+                          component_id: webtheme:button_group
+                          variant_id: null
+                          props: {}
+                          slots:
+                            buttons:
+                              sources:
+                              - source_id: component
+                                source:
+                                  component:
+                                    component_id: webtheme:button
+                                    variant_id:
+                                      source_id: select
+                                      source:
+                                        value: primary
+                                    props:
+                                      url:
+                                        source_id: url
+                                        source:
+                                          value: /docs/choose-a-site-template
+                                    slots:
+                                      label:
+                                        sources:
+                                        - source_id: textfield
+                                          source:
+                                            value: Choose a site template
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:grid_2_columns
+                variant_id: null
+                props:
+                  gutter:
+                    source_id: select
+                    source:
+                      value: large
+                slots:
+                  column_1:
+                    sources:
+                    - source_id: textarea
+                      source:
+                        value: <img src="/sites/default/files/webship-portal/code-editor-laptop.jpg" data-entity-type="file" data-entity-uuid="451c9dff-6ef7-5b16-92f6-ee5f64482f7c" width="1800" height="1195"
+                          alt="A code editor with test code on a laptop screen." class="uk-border-rounded uk-box-shadow-medium">
+                  column_2:
+                    sources:
+                    - source_id: component
+                      source:
+                        component:
+                          component_id: webtheme:heading
+                          variant_id: null
+                          props:
+                            heading_level:
+                              source_id: select
+                              source:
+                                value: 2
+                          slots:
+                            title:
+                              sources:
+                              - source_id: textfield
+                                source:
+                                  value: Design pages with Display Builder
+                    - source_id: textarea
+                      source:
+                        value: '<p>Content types are displayed with Display Builder: drag components and fields, preview, and publish. Webtheme provides the UIkit components, colors and icons of Webship.co.</p>'
+                    - source_id: component
+                      source:
+                        component:
+                          component_id: webtheme:button_group
+                          variant_id: null
+                          props: {}
+                          slots:
+                            buttons:
+                              sources:
+                              - source_id: component
+                                source:
+                                  component:
+                                    component_id: webtheme:button
+                                    variant_id:
+                                      source_id: select
+                                      source:
+                                        value: primary
+                                    props:
+                                      url:
+                                        source_id: url
+                                        source:
+                                          value: /docs/build-pages-with-display-builder
+                                    slots:
+                                      label:
+                                        sources:
+                                        - source_id: textfield
+                                          source:
+                                            value: Build pages
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:grid_2_columns
+                variant_id: null
+                props:
+                  gutter:
+                    source_id: select
+                    source:
+                      value: large
+                slots:
+                  column_1:
+                    sources:
+                    - source_id: textarea
+                      source:
+                        value: <img src="/sites/default/files/webship-portal/team-planning-laptops.jpg" data-entity-type="file" data-entity-uuid="f405f0c9-ac5f-5dab-abde-2f22e8011c45" width="1800" height="1202"
+                          alt="Two people planning a project with laptops and printed notes." class="uk-border-rounded uk-box-shadow-medium">
+                  column_2:
+                    sources:
+                    - source_id: component
+                      source:
+                        component:
+                          component_id: webtheme:heading
+                          variant_id: null
+                          props:
+                            heading_level:
+                              source_id: select
+                              source:
+                                value: 2
+                          slots:
+                            title:
+                              sources:
+                              - source_id: textfield
+                                source:
+                                  value: Dashboards for the whole team
+                    - source_id: textarea
+                      source:
+                        value: <p>Site administrators get the Webmaster dashboard with the site status and recent content. Content editors get the Editorial dashboard with their drafts and shortcuts.</p>
+                    - source_id: component
+                      source:
+                        component:
+                          component_id: webtheme:button_group
+                          variant_id: null
+                          props: {}
+                          slots:
+                            buttons:
+                              sources:
+                              - source_id: component
+                                source:
+                                  component:
+                                    component_id: webtheme:button
+                                    variant_id:
+                                      source_id: select
+                                      source:
+                                        value: primary
+                                    props:
+                                      url:
+                                        source_id: url
+                                        source:
+                                          value: /docs/dashboards
+                                    slots:
+                                      label:
+                                        sources:
+                                        - source_id: textfield
+                                          source:
+                                            value: Read about the dashboards
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:card
+                variant_id:
+                  source_id: select
+                  source:
+                    value: secondary
+                props:
+                  hover:
+                    source_id: checkbox
+                    source:
+                      value: false
+                slots:
+                  title:
+                    sources:
+                    - source_id: textfield
+                      source:
+                        value: Planning a website with Webship?
+                  content:
+                    sources:
+                    - source_id: textarea
+                      source:
+                        value: <p>Tell us about your project, or subscribe to the newsletter below to hear about new releases.</p>
+                    - source_id: component
+                      source:
+                        component:
+                          component_id: webtheme:button_group
+                          variant_id: null
+                          props: {}
+                          slots:
+                            buttons:
+                              sources:
+                              - source_id: component
+                                source:
+                                  component:
+                                    component_id: webtheme:button
+                                    variant_id:
+                                      source_id: select
+                                      source:
+                                        value: primary
+                                    props:
+                                      url:
+                                        source_id: url
+                                        source:
+                                          value: /contact
+                                    slots:
+                                      label:
+                                        sources:
+                                        - source_id: textfield
+                                          source:
+                                            value: Contact us
+- source_id: component
+  source:
+    component:
+      component_id: webtheme:section
+      variant_id:
+        source_id: select
+        source:
+          value: secondary
+      props:
+        size:
+          source_id: select
+          source:
+            value: small
+        container:
+          source_id: select
+          source:
+            value: default
+      slots:
+        content:
+          sources:
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:grid_2_columns
+                variant_id: null
+                props:
+                  vertical_align:
+                    source_id: select
+                    source:
+                      value: middle
+                slots:
+                  column_1:
+                    sources:
+                    - source_id: component
+                      source:
+                        component:
+                          component_id: webtheme:subnav
+                          variant_id:
+                            source_id: select
+                            source:
+                              value: divider
+                          props:
+                            items:
+                              source_id: menu
+                              source:
+                                menu: footer
+                                level: 1
+                                depth: 1
+                                set_active_trail: false
+                                expand_all_items: false
+                          slots: {}
+                    - source_id: component
+                      source:
+                        component:
+                          component_id: webtheme:subnav
+                          variant_id: null
+                          props:
+                            items:
+                              source_id: menu
+                              source:
+                                menu: social-media-menu
+                                level: 1
+                                depth: 1
+                                set_active_trail: false
+                                expand_all_items: false
+                          slots: {}
+                  column_2:
+                    sources:
+                    - source_id: component
+                      source:
+                        component:
+                          component_id: webtheme:totop
+                          variant_id: null
+                          props:
+                            attributes:
+                              source_id: attributes
+                              source:
+                                value: class="uk-float-right"
+                          slots: {}
+                    - source_id: block
+                      source:
+                        plugin_id: block_content:a3c5e5e2-5d0e-4c8a-9f1b-2f6b0c7f9e11
+                        block_content:a3c5e5e2-5d0e-4c8a-9f1b-2f6b0c7f9e11:
+                          status: true
+                          info: ''
+                          view_mode: full
+                    - source_id: block
+                      source:
+                        plugin_id: system_powered_by_block
+                        system_powered_by_block: {}

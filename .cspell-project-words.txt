@@ -19,6 +19,7 @@ pathauto
 spiske
 tagify
 tirza
+totop
 uikit
 webadmin
 webai

@@ -6,47 +6,22 @@ _meta:
   default_langcode: en
 default:
   revision_uid:
-    -
-      target_id: 1
+  - target_id: 1
   status:
-    -
-      value: true
+  - value: true
   uid:
-    -
-      target_id: 1
+  - target_id: 1
   title:
-    -
-      value: 'Documentation'
+  - value: Documentation
   promote:
-    -
-      value: false
+  - value: false
   sticky:
-    -
-      value: false
+  - value: false
   path:
-    -
-      alias: /docs
-      langcode: en
-      pathauto: 0
+  - alias: /docs
+    langcode: en
+    pathauto: 0
   body:
-    -
-      value: |-
-        <p class="uk-text-lead">Welcome to the Webship documentation: install a site template, build pages and manage the site.</p>
-        <div class="uk-grid uk-grid-large" uk-grid>
-          <div class="uk-width-1-2@m">
-            <h2>Guides</h2>
-            <ul class="uk-list uk-list-divider">
-          <li><a href="/docs/getting-started">Getting started</a></li>
-          <li><a href="/docs/install-with-composer">Install with Composer</a></li>
-          <li><a href="/docs/choose-a-site-template">Choose a site template</a></li>
-          <li><a href="/docs/dashboards">Dashboards</a></li>
-          <li><a href="/docs/build-pages-with-display-builder">Build pages with Display Builder</a></li>
-          <li><a href="/docs/theme-the-site-with-webtheme">Theme the site with Webtheme</a></li>
-            </ul>
-          </div>
-          <div class="uk-width-1-2@m">
-            <img src="/sites/default/files/webship-portal/code-editor-laptop.jpg" data-entity-type="file" data-entity-uuid="451c9dff-6ef7-5b16-92f6-ee5f64482f7c" width="1800" height="1195" alt="A code editor with test code on a laptop screen." class="uk-border-rounded uk-box-shadow-medium">
-          </div>
-        </div>
-      format: full_html
-      summary: ''
+  - value: ''
+    format: full_html
+    summary: ''

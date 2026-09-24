@@ -1,0 +1,356 @@
+langcode: en
+status: true
+dependencies:
+  module:
+  - display_builder_page_layout
+  theme:
+  - webtheme
+id: docs
+label: Documentation
+weight: -5
+conditions:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /docs
+profile: default
+sources:
+- source_id: component
+  source:
+    component:
+      component_id: webtheme:navbar
+      variant_id: null
+      props:
+        container:
+          source_id: select
+          source:
+            value: default
+        sticky:
+          source_id: checkbox
+          source:
+            value: true
+      slots:
+        left:
+          sources:
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:logo
+                variant_id: null
+                props:
+                  url:
+                    source_id: url
+                    source:
+                      value: /
+                  image:
+                    source_id: url
+                    source:
+                      value: /themes/contrib/ui_suite_uikit/logo.svg
+                  image_alt:
+                    source_id: textfield
+                    source:
+                      value: Home
+                  navbar_item:
+                    source_id: checkbox
+                    source:
+                      value: true
+                slots:
+                  label:
+                    sources:
+                    - source_id: token
+                      source:
+                        value: '[site:name]'
+        center:
+          sources:
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:navbar_nav
+                variant_id: null
+                props:
+                  attributes:
+                    source_id: attributes
+                    source:
+                      value: class="uk-visible@m"
+                  items:
+                    source_id: menu
+                    source:
+                      menu: main
+                      level: 1
+                      depth: 2
+                      set_active_trail: true
+                      expand_all_items: true
+                slots: {}
+        right:
+          sources:
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:navbar_nav
+                variant_id: null
+                props:
+                  attributes:
+                    source_id: attributes
+                    source:
+                      value: class="uk-visible@m"
+                  items:
+                    source_id: menu
+                    source:
+                      menu: account
+                      level: 1
+                      depth: 1
+                      set_active_trail: false
+                      expand_all_items: false
+                slots: {}
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:navbar_toggle
+                variant_id: null
+                props:
+                  attributes:
+                    source_id: attributes
+                    source:
+                      value: class="uk-hidden@m"
+                  target:
+                    source_id: textfield
+                    source:
+                      value: website-offcanvas
+                slots: {}
+- source_id: component
+  source:
+    component:
+      component_id: webtheme:offcanvas
+      variant_id: null
+      props:
+        offcanvas_id:
+          source_id: textfield
+          source:
+            value: website-offcanvas
+        mode:
+          source_id: select
+          source:
+            value: push
+        flip:
+          source_id: checkbox
+          source:
+            value: true
+        overlay:
+          source_id: checkbox
+          source:
+            value: true
+        close:
+          source_id: checkbox
+          source:
+            value: true
+      slots:
+        content:
+          sources:
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:nav
+                variant_id:
+                  source_id: select
+                  source:
+                    value: primary
+                props:
+                  accordion:
+                    source_id: checkbox
+                    source:
+                      value: true
+                  items:
+                    source_id: menu
+                    source:
+                      menu: main
+                      level: 1
+                      depth: 0
+                      set_active_trail: true
+                      expand_all_items: true
+                slots: {}
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:divider
+                variant_id: null
+                props: {}
+                slots: {}
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:nav
+                variant_id: null
+                props:
+                  items:
+                    source_id: menu
+                    source:
+                      menu: account
+                      level: 1
+                      depth: 1
+                      set_active_trail: false
+                      expand_all_items: false
+                slots: {}
+- source_id: component
+  source:
+    component:
+      component_id: webtheme:section
+      variant_id: null
+      props:
+        size:
+          source_id: select
+          source:
+            value: small
+        container:
+          source_id: select
+          source:
+            value: default
+        landmark:
+          source_id: select
+          source:
+            value: main
+      slots:
+        content:
+          sources:
+          - source_id: block
+            source:
+              plugin_id: system_messages_block
+              system_messages_block: {}
+          - source_id: block
+            source:
+              plugin_id: system_breadcrumb_block
+              system_breadcrumb_block: {}
+          - source_id: page_title
+            source: {}
+          - source_id: textarea
+            source:
+              value: '<p class="uk-text-lead">Welcome to the Webship documentation: install a site template, build pages and manage the site.</p>'
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:grid_2_columns
+                variant_id: null
+                props:
+                  gutter:
+                    source_id: select
+                    source:
+                      value: large
+                slots:
+                  column_1:
+                    sources:
+                    - source_id: component
+                      source:
+                        component:
+                          component_id: webtheme:heading
+                          variant_id: null
+                          props:
+                            heading_level:
+                              source_id: select
+                              source:
+                                value: 2
+                          slots:
+                            title:
+                              sources:
+                              - source_id: textfield
+                                source:
+                                  value: Guides
+                    - source_id: textarea
+                      source:
+                        value: <ul class="uk-list uk-list-divider"><li><a href="/docs/getting-started">Getting started</a></li><li><a href="/docs/install-with-composer">Install with Composer</a></li><li><a
+                          href="/docs/choose-a-site-template">Choose a site template</a></li><li><a href="/docs/dashboards">Dashboards</a></li><li><a href="/docs/build-pages-with-display-builder">Build
+                          pages with Display Builder</a></li><li><a href="/docs/theme-the-site-with-webtheme">Theme the site with Webtheme</a></li></ul>
+                  column_2:
+                    sources:
+                    - source_id: textarea
+                      source:
+                        value: <img src="/sites/default/files/webship-portal/code-editor-laptop.jpg" data-entity-type="file" data-entity-uuid="451c9dff-6ef7-5b16-92f6-ee5f64482f7c" width="1800" height="1195"
+                          alt="A code editor with test code on a laptop screen." class="uk-border-rounded uk-box-shadow-medium">
+- source_id: component
+  source:
+    component:
+      component_id: webtheme:section
+      variant_id:
+        source_id: select
+        source:
+          value: secondary
+      props:
+        size:
+          source_id: select
+          source:
+            value: small
+        container:
+          source_id: select
+          source:
+            value: default
+      slots:
+        content:
+          sources:
+          - source_id: component
+            source:
+              component:
+                component_id: webtheme:grid_2_columns
+                variant_id: null
+                props:
+                  vertical_align:
+                    source_id: select
+                    source:
+                      value: middle
+                slots:
+                  column_1:
+                    sources:
+                    - source_id: component
+                      source:
+                        component:
+                          component_id: webtheme:subnav
+                          variant_id:
+                            source_id: select
+                            source:
+                              value: divider
+                          props:
+                            items:
+                              source_id: menu
+                              source:
+                                menu: footer
+                                level: 1
+                                depth: 1
+                                set_active_trail: false
+                                expand_all_items: false
+                          slots: {}
+                    - source_id: component
+                      source:
+                        component:
+                          component_id: webtheme:subnav
+                          variant_id: null
+                          props:
+                            items:
+                              source_id: menu
+                              source:
+                                menu: social-media-menu
+                                level: 1
+                                depth: 1
+                                set_active_trail: false
+                                expand_all_items: false
+                          slots: {}
+                  column_2:
+                    sources:
+                    - source_id: component
+                      source:
+                        component:
+                          component_id: webtheme:totop
+                          variant_id: null
+                          props:
+                            attributes:
+                              source_id: attributes
+                              source:
+                                value: class="uk-float-right"
+                          slots: {}
+                    - source_id: block
+                      source:
+                        plugin_id: block_content:a3c5e5e2-5d0e-4c8a-9f1b-2f6b0c7f9e11
+                        block_content:a3c5e5e2-5d0e-4c8a-9f1b-2f6b0c7f9e11:
+                          status: true
+                          info: ''
+                          view_mode: full
+                    - source_id: block
+                      source:
+                        plugin_id: system_powered_by_block
+                        system_powered_by_block: {}
