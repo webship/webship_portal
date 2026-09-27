@@ -54,6 +54,8 @@ recipe:
       --account-name=admin --account-pass=admin --site-name="Webship"
     - $DRUSH status --fields=drupal-version,db-status,theme
     - test "$($DRUSH config:get system.theme default --format=string)" = "$EXPECTED_THEME"
+    # Web Admin makes UIkit Admin the administration theme.
+    - test "$($DRUSH config:get system.theme admin --format=string)" = "uikit_admin"
     # The Webship features are installed: documentation, products and
     # releases, the newsletter form, social sharing and the dashboards.
     - test "$($DRUSH config:get node.type.webdoc type --format=string)" = "webdoc"
