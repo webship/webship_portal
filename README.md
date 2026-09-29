@@ -89,6 +89,30 @@ The photos in `content/file` are released under CC0 (public domain dedication), 
 `webship-portal-product-shot.jpg` is a screenshot of the Webship Portal front page with Webtheme, distributed
 with this project under GPL-2.0-or-later.
 
+## Page layouts and the administration theme
+
+The page layouts are built for Webtheme, the front theme, and stay out of the pages UIkit Admin renders:
+
+- The Home, About and Documentation layouts add the *Current theme* condition
+  (`current_theme: webtheme`) to the path they target.
+- There is no default layout: the other pages use the block layout of Webtheme, and the log in, password
+  reset and registration screens that [Web Admin](https://www.drupal.org/project/webadmin) shows in UIkit
+  Admin keep their own page.
+- The header of the layouts shows the Webtheme logo, like the pages with the block layout. Earlier
+  releases pointed it at the logo of UI Suite UIkit, a theme a portal site does not require.
+
+A site installed from an earlier release gets the condition with:
+
+```shell
+ddev drush php:eval '
+foreach (\Drupal::entityTypeManager()->getStorage("page_layout")->loadMultiple() as $layout) {
+  if (!$layout->isDefault() && !$layout->getConditions()->has("current_theme")) {
+    $layout->getConditions()->addInstanceId("current_theme", ["id" => "current_theme", "negate" => FALSE, "theme" => "webtheme"]);
+    $layout->save();
+  }
+}'
+```
+
 ## Requirements
 
 - Drupal 11.4 or later.

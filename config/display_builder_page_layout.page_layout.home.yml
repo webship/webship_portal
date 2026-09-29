@@ -13,6 +13,10 @@ conditions:
     id: request_path
     negate: false
     pages: /home
+  current_theme:
+    id: current_theme
+    negate: false
+    theme: webtheme
 profile: default
 sources:
 - source_id: component
@@ -45,7 +49,7 @@ sources:
                   image:
                     source_id: url
                     source:
-                      value: /themes/contrib/ui_suite_uikit/logo.svg
+                      value: /themes/contrib/webtheme/logo.svg
                   image_alt:
                     source_id: textfield
                     source:
@@ -54,12 +58,7 @@ sources:
                     source_id: checkbox
                     source:
                       value: true
-                slots:
-                  label:
-                    sources:
-                    - source_id: token
-                      source:
-                        value: '[site:name]'
+                slots: {}
         center:
           sources:
           - source_id: component
