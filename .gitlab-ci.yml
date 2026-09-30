@@ -28,6 +28,8 @@ variables:
   _COMPOSER_YARN_INSTALL: '0'
   # composer-lint and cspell must pass.
   _ALL_VALIDATE_ALLOW_FAILURE: '0'
+  # The default content keeps the wording of Webship.co and its code samples.
+  _CSPELL_IGNORE_PATHS: '"content/**"'
 
 composer:
   variables:
@@ -51,13 +53,15 @@ recipe:
     - export DRUSH="php -d memory_limit=-1 $CI_PROJECT_DIR/vendor/drush/drush/drush.php --root=$CI_PROJECT_DIR/$_WEB_ROOT"
     - $DRUSH site:install $CI_PROJECT_DIR/recipes/$PROJECT_NAME -y
       --db-url=mysql://$MYSQL_USER:$MYSQL_PASSWORD@database/$MYSQL_DATABASE
-      --account-name=admin --account-pass=admin --site-name="Webship"
+      --account-name=admin --account-pass=admin --site-name="Webship.co"
     - $DRUSH status --fields=drupal-version,db-status,theme
     - test "$($DRUSH config:get system.theme default --format=string)" = "$EXPECTED_THEME"
     # Web Admin makes UIkit Admin the administration theme.
     - test "$($DRUSH config:get system.theme admin --format=string)" = "uikit_admin"
     # The Webship features are installed: documentation, products and
-    # releases, the newsletter form, social sharing and the dashboards.
+    # releases, the blog, the newsletter form, social sharing and the
+    # dashboards.
+    - test "$($DRUSH config:get node.type.webblog type --format=string)" = "webblog"
     - test "$($DRUSH config:get node.type.webdoc type --format=string)" = "webdoc"
     - test "$($DRUSH config:get node.type.product type --format=string)" = "product"
     - test "$($DRUSH config:get node.type.release type --format=string)" = "release"
@@ -73,17 +77,21 @@ recipe:
     - test "$($DRUSH config:get block.block.webtheme_footer_menu region --format=string)" = "footer"
     - test "$($DRUSH config:get block.block.webtheme_social_media_menu region --format=string)" = "footer"
     - test "$($DRUSH config:get block.block.webtheme_content region --format=string)" = "content"
-    - test "$($DRUSH config:get block.block.webtheme_newsletter_subscribe region --format=string)" = "content"
-    # The site is named Webship, with no slogan, and the navbar shows only
+    # One page layout frames every page, and a page can carry its own display.
+    - test "$($DRUSH config:get display_builder_page_layout.page_layout.default id --format=string)" = "default"
+    - test "$($DRUSH php:eval 'print count(\Drupal::entityTypeManager()->getStorage("page_layout")->loadByProperties(["status" => TRUE]));')" = "1"
+    - test "$($DRUSH config:get core.entity_view_display.node.webpage.full third_party_settings.display_builder.override_field --format=string)" = "field_page_display"
+    # The bulk actions of the content overview.
+    - test "$($DRUSH config:get system.action.node_unpublish_action id --format=string)" = "node_unpublish_action"
+    # The site is named Webship.co, with no slogan, and the navbar shows only
     # the logo.
-    - test "$($DRUSH config:get system.site name --format=string)" = "Webship"
+    - test "$($DRUSH config:get system.site name --format=string)" = "Webship.co"
     - test -z "$($DRUSH config:get system.site slogan --format=string)"
     - test "$($DRUSH php:eval 'print (int) \Drupal::config("block.block.webtheme_site_branding")->get("settings.use_site_name");')" = "0"
     - test "$($DRUSH php:eval 'print (int) \Drupal::config("block.block.webtheme_site_branding")->get("settings.use_site_slogan");')" = "0"
-    # The default content of the template is imported: the documentation
-    # pages, the products with their releases and the media images.
-    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "webdoc")->count()->execute();')" -gt 5
-    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "product")->count()->execute();')" -gt 3
-    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "release")->count()->execute();')" -gt 7
-    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("media")->accessCheck(FALSE)->condition("bundle", "image")->count()->execute();')" -gt 5
-    - test "$($DRUSH php:eval 'print \Drupal::service("path_alias.manager")->getPathByAlias("/about");')" != "/about"
+    # The default content of the template is imported: the pages, the
+    # documentation, the products with their releases, the blog posts and
+    # the media images.
+    # The front page and the pages of the main menu resolve.
+    - test "$($DRUSH config:get system.site page.front --format=string)" = "/home"
+    # The main menu has one Products link.

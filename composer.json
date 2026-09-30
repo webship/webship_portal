@@ -1,7 +1,7 @@
 {
     "name": "drupal/webship_portal",
     "type": "drupal-recipe",
-    "description": "The Webship.co portal site template: a site to manage software, with documentation, products and releases, a newsletter and social sharing, in the Webtheme theme with the Webship.co colors and design. Built on top of Drupal and Display Builder. No Canvas, no Layout Builder.",
+    "description": "The Webship.co portal site template: a site about automated functional testing, with products and releases, services, documentation, a blog, a newsletter and a contact page, in the Webtheme theme with the Webship.co colors and design. Built on top of Drupal and Display Builder. No Canvas, no Layout Builder.",
     "homepage": "https://www.drupal.org/project/webship_portal",
     "license": "GPL-2.0-or-later",
     "authors": [
@@ -17,6 +17,7 @@
         "drupal/webadmin": "~12.0.3",
         "drupal/webai": "~12.0",
         "drupal/webassets": "~12.0",
+        "drupal/webblog": "~12.0",
         "drupal/webconfig": "~12.0",
         "drupal/webdash": "~1.0",
         "drupal/webdev": "~12.0",

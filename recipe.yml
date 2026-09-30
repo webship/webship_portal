@@ -1,5 +1,5 @@
 name: 'Webship Portal'
-description: 'The Webship.co portal site template: a site to manage software, with documentation, products and releases, a newsletter and social sharing, in the Webtheme theme with the Webship.co colors and design. Built on top of Drupal and Display Builder. No Canvas, no Layout Builder.'
+description: 'The Webship.co portal site template: a site about automated functional testing, with products and releases, services, documentation, a blog, a newsletter and a contact page, in the Webtheme theme with the Webship.co colors and design. Built on top of Drupal and Display Builder. No Canvas, no Layout Builder.'
 type: 'Site'
 # Site template metadata for the Webship installer.
 extra:
@@ -45,11 +45,16 @@ recipes:
   # recipe installs modules with config entity installation disabled, so
   # the install hook of the Web AI module cannot apply its own recipe.
   - modules/contrib/webai/recipes/default
-  # The Webship features: documentation, products and releases, a newsletter.
+  # The Webship features: documentation, products and releases, a blog and a
+  # newsletter.
   - modules/contrib/webdoc/recipes/default
   - modules/contrib/webreleases/recipes/default
+  - modules/contrib/webblog/recipes/default
   - modules/contrib/webnewsletter/recipes/default
 install:
+  # The search form of the documentation.
+  - search
+  - search_node
   # Social sharing.
   - webshare
   # Theme.
@@ -57,6 +62,18 @@ install:
 config:
   strict: false
   import:
+    # The bulk actions of the content overview: publish, unpublish, delete.
+    node:
+      - system.action.node_delete_action
+      - system.action.node_make_sticky_action
+      - system.action.node_make_unsticky_action
+      - system.action.node_promote_action
+      - system.action.node_publish_action
+      - system.action.node_save_action
+      - system.action.node_unpromote_action
+      - system.action.node_unpublish_action
+    # The search page and the view modes of the search index.
+    search_node: '*'
     olivero:
       - block.block.olivero_help
     # The blocks of Webtheme are optional config, placed in the regions of
@@ -99,6 +116,17 @@ config:
     system.theme:
       simpleConfigUpdate:
         default: webtheme
+    # The Webship icon in the browser tab of every page: the site, the sign-in
+    # screens and the administration pages.
+    system.theme.global:
+      simpleConfigUpdate:
+        favicon.use_default: false
+        favicon.path: 'themes/contrib/webtheme/favicon.ico'
+    # The Webship.co logo carries the name: the sign-in screens show the logo
+    # alone. Needs UIkit Admin 4.0.3.
+    uikit_admin.settings:
+      simpleConfigUpdate:
+        sign_in_brand: logo
     # The navbar shows only the Webship logo, linked to the front page.
     block.block.webtheme_site_branding:
       setProperties:
@@ -107,16 +135,105 @@ config:
         settings.use_site_slogan: false
     system.site:
       simpleConfigUpdate:
-        name: 'Webship'
+        name: 'Webship.co'
         # The front page of the template, in content/node. No slogan.
         slogan: ''
         page.front: /home
+    # The products page is a page of the template, at /products, which groups
+    # the products: the listing page of Web Releases gives it the path.
+    views.view.products:
+      simpleConfigUpdate:
+        display.products_page.display_options.enabled: false
+    # Release versions keep their dots in the URL: /releases/2.0.6.
+    pathauto.settings:
+      simpleConfigUpdate:
+        punctuation.period: 2
+    # A page can carry its own display, built with Display Builder: the home,
+    # services, documentation, about and contact pages of the template do. A
+    # page without one shows its body.
+    core.entity_view_display.node.webpage.full:
+      setThirdPartySettings:
+        -
+          module: display_builder
+          key: override_field
+          value: field_page_display
+        -
+          module: display_builder
+          key: override_profile
+          value: default
+    # The page layout prints the title of every page, so a blog post shows
+    # its image, its date and its text.
+    core.entity_view_display.node.webblog.full:
+      setThirdPartySetting:
+        module: display_builder
+        key: sources
+        value:
+          -
+            source_id: entity_field
+            source:
+              derivable_context: 'field:node:webblog:field_media'
+              'field:node:webblog:field_media':
+                value:
+                  sources:
+                    -
+                      source_id: 'field_formatter:node:webblog:field_media'
+                      source:
+                        type: entity_reference_entity_view
+                        label: hidden
+                        settings:
+                          view_mode: ultrawide
+                        third_party_settings: {  }
+                        weight: -10
+          -
+            source_id: entity_field
+            source:
+              derivable_context: 'field:node:webblog:created'
+              'field:node:webblog:created':
+                value:
+                  sources:
+                    -
+                      source_id: 'field_formatter:node:webblog:created'
+                      source:
+                        type: timestamp
+                        label: hidden
+                        settings:
+                          date_format: custom
+                          custom_date_format: 'M d, Y'
+                          timezone: ''
+                        third_party_settings: {  }
+                        weight: -9
+          -
+            source_id: entity_field
+            source:
+              derivable_context: 'field:node:webblog:body'
+              'field:node:webblog:body':
+                value:
+                  sources:
+                    -
+                      source_id: 'field_formatter:node:webblog:body'
+                      source:
+                        type: text_default
+                        label: hidden
+                        settings: {  }
+                        third_party_settings: {  }
+                        weight: -7
+    # Every content type moves through the editorial workflow, so an editor
+    # can save a draft and unpublish content.
+    workflows.workflow.editorial:
+      addNodeTypes:
+        - product
+        - release
+        - webblog
+        - webdoc
     user.role.anonymous:
-      grantPermission: 'access content'
+      grantPermissions:
+        - 'access content'
+        - 'search content'
     user.role.authenticated:
       grantPermissions:
         - 'access content'
         - 'delete own files'
+        - 'search content'
     # Content editors manage the content of every content type of the site,
     # and move content through the editorial workflow.
     user.role.content_editor:
@@ -124,6 +241,7 @@ config:
         - 'access content overview'
         - 'access contextual links'
         - 'access files overview'
+        - 'access taxonomy overview'
         - 'administer url aliases'
         - 'create terms in tags'
         - 'create url aliases'
@@ -135,17 +253,77 @@ config:
         - 'use editorial transition archived_published'
         - 'use editorial transition create_new_draft'
         - 'use editorial transition publish'
+        - 'use display builder default'
         - 'view all revisions'
+        - 'view any unpublished content'
         - 'view latest version'
         - 'view the administration theme'
       grantPermissionsForEachNodeType:
         - 'create %bundle content'
         - 'delete %bundle revisions'
+        - 'delete any %bundle content'
         - 'delete own %bundle content'
+        - 'edit any %bundle content'
         - 'edit own %bundle content'
-    # Anti-spam protection on the contact webform of the site.
+    # The contact form of Webship.co, with anti-spam protection.
     webform.webform.contact:
       simpleConfigUpdate:
+        elements: |-
+          contact_paragraph:
+            '#type': webform_markup
+            '#markup': "<h2>We'd love to talk to you</h2><p>Leave us your details and we will contact you soon.</p>"
+          layout_1:
+            '#type': webform_flexbox
+            name:
+              '#type': textfield
+              '#title': 'Your Name'
+              '#placeholder': 'Your full name'
+              '#required': true
+              '#default_value': '[current-user:display-name]'
+            company_name:
+              '#type': textfield
+              '#title': 'Company name'
+              '#placeholder': 'Your company name'
+          layout_2:
+            '#type': webform_flexbox
+            email:
+              '#type': email
+              '#title': 'Business email'
+              '#placeholder': 'Your business email'
+              '#required': true
+              '#default_value': '[current-user:mail]'
+            phone_number:
+              '#type': textfield
+              '#title': 'Phone number'
+              '#placeholder': 'Your phone number'
+          layout_3:
+            '#type': webform_flexbox
+            team_size:
+              '#type': select
+              '#title': 'Team Size'
+              '#options':
+                '1-10': '1-10 employees'
+                '11-50': '11-50 employees'
+                '51-100': '51-100 employees'
+                '101-500': '101-500 employees'
+                '501-1000': '501-1,000 employees'
+                '1000+': '1,000+ employees'
+            job_title:
+              '#type': textfield
+              '#title': 'Job title'
+              '#placeholder': 'Your job title'
+          message:
+            '#type': textarea
+            '#title': 'Your message'
+            '#placeholder': 'Your message'
+            '#required': true
+          privacy:
+            '#type': webform_markup
+            '#markup': '<p>By contacting us through this form, you agree to our <a href="/privacy-policy">Privacy Policy</a>.</p>'
+          actions:
+            '#type': webform_actions
+            '#title': 'Submit button(s)'
+            '#submit__label': Submit
         third_party_settings:
           antibot:
             antibot: true
