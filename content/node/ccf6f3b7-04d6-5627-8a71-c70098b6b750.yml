@@ -1,0 +1,52 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: ccf6f3b7-04d6-5627-8a71-c70098b6b750
+  bundle: release
+  default_langcode: en
+  depends:
+    9330776f-0e98-5a3f-b89e-fedaa121e4b3: node
+    b94997cf-e998-55ad-800c-07dddac505d1: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: 11.0.0-beta1
+  created:
+    - value: 1752924957
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /products/webship-portal/releases/11.0.0-beta1
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>This beta version focuses on aligning with Drupal 11.2.0, enhancing stability, and cleaning up deprecated modules and configurations.<br>It also updates several key modules and components, including Gin Theme, Default Content removal in favor of Recipes, and Node.js upgrade for better CI performance.<br><br>Highlighted important changes</p>
+        <ul class="uk-list uk-list-bullet"><li>Issue <a href="https://www.drupal.org/i/3532000">#3532000</a>: Updated <strong>Drupal Core</strong> from<code> ~11.1.0</code> to <code>~11.2.0</code> for <strong>Webship</strong></li><li>Issue <a href="https://www.drupal.org/i/3531974">#3531974</a>: Updated <strong>Gin Admin Theme</strong> from <code>~4.0</code> to <code>~5.0</code></li></ul>
+        <h2>Added:</h2>
+        <ul class="uk-list uk-list-bullet"><li>N/A</li></ul>
+        <h3>Changed:</h3>
+        <ul class="uk-list uk-list-bullet"><li>Issue <a href="https://www.drupal.org/i/3532270">#3532270</a>: Removed patch Call to a member function getEntityTypeId() on null (Layout Builder)</li><li>Issue <a href="https://www.drupal.org/i/3525081">#3525081</a> Removed the <strong>Webtheme Default Content</strong> module from the Webtheme project as we moved to recipes</li><li>Issue <a href="https://www.drupal.org/i/3525139">#3525139</a>: Change default content for the Webship profile for better testing cases</li><li>Issue <a href="https://www.drupal.org/i/3525138">#3525138</a>: Removed the Default Content module importing default content is in Drupal Core's Recipes API</li><li>Issue <a href="https://www.drupal.org/i/3536945">#3536945</a>: Change the src_folders path in the nightwatch.conf.js file</li></ul>
+        <h3>Updates:</h3>
+        <ul class="uk-list uk-list-bullet"><li>Issue <a href="https://www.drupal.org/i/3531634">#3531634</a>: Updated <strong>Drupal Core</strong> from <code>~11.1.0</code> to <code>~11.2.0</code> for <strong>Web Admin module</strong></li><li>Issue <a href="https://www.drupal.org/i/3531992">#3531992</a>: Updated <strong>Gin Toolbar</strong> from <code>~1.0</code> to <code>~3.0</code></li><li>Issue <a href="https://www.drupal.org/i/3531637">#3531637</a>: Updated <strong>Drupal Core</strong> from ~<code>11.1.0</code> to <code>~11.2.0</code> for <strong>Web Assets module</strong></li><li>Issue <a href="https://www.drupal.org/i/3526731">#3526731</a>: Updated <strong>Media Directories Module</strong> from <code>~2.1.0</code> to <code>~2.2.0</code></li><li>Issue <a href="https://www.drupal.org/i/3531638">#3531638</a>: Updated <strong>Drupal Core</strong> from <code>~11.1.0</code> to <code>~11.2.0</code> for <strong>Web Blog module</strong></li><li>Issue <a href="https://www.drupal.org/i/3531640">#3531640</a>: Updated <strong>Drupal Core</strong> from <code>~11.1.0</code> to ~<code>11.2.0</code> for <strong>Web Config module</strong></li><li>Issue <a href="https://www.drupal.org/i/3530755">#3530755</a>: Updated Diff module from <code>~1.0</code> to<code> ~2.0</code></li><li>Issue <a href="https://www.drupal.org/i/3531772">#3531772</a>: Updated <strong>Drupal Core</strong> from <code>~11.1.0</code> to <code>~11.2.0</code> for <strong>Web Development module</strong></li><li>Issue <a href="https://www.drupal.org/i/3531774">#3531774</a>: Updated <strong>Drupal Core</strong> from <code>~11.1.0</code> to <code>~11.2.0</code> for <strong>Web Doc module</strong></li><li>Issue <a href="https://www.drupal.org/i/3531776">#3531776</a>: Updated <strong>Drupal Core</strong> from <code>~11.1.0</code> to <code>~11.2.0</code> for <strong>Web Editor module</strong></li><li>Issue <a href="https://www.drupal.org/i/3531777">#3531777</a>: Updated <strong>Drupal Core</strong> from <code>~11.1.0</code> to <code>~11.2.0</code> for <strong>Web Newsletter module</strong></li><li>Issue <a href="https://www.drupal.org/i/3531779">#3531779</a>: Updated <strong>Drupal Core</strong> from <code>~11.1.0</code> to <code>~11.2.0</code> for <strong>Web Patches module</strong></li><li>Issue <a href="https://www.drupal.org/i/3531784">#3531784</a>: Updated <strong>Drupal Core</strong> from <code>~11.1.0 </code>to <code>~11.2.0</code> for <strong>Web Releases module</strong></li><li>Issue <a href="https://www.drupal.org/i/3531787">#3531787</a>: Updated <strong>Drupal Core</strong> from <code>~11.1.0</code> to ~<code>11.2.0</code> for <strong>Web Security module</strong></li><li>Issue <a href="https://www.drupal.org/i/3531791">#3531791</a>: Updated <strong>Drupal Core</strong> from <code>~11.1.0</code> to ~<code>11.2.0</code> for <strong>Web SEO module</strong></li><li>Issue <a href="https://www.drupal.org/i/3531793">#3531793</a>: Updated <strong>Drupal Core</strong> from <code>~11.1.0</code> to <code>~11.2.0</code> for <strong>Webpage module</strong></li><li>Issue <a href="https://www.drupal.org/i/3531795">#3531795</a>: Updated <strong>Drupal Core</strong> from <code>~11.1.0</code> to <code>~11.2.0</code> for <strong>Webtheme module</strong></li><li>Issue <a href="https://www.drupal.org/i/3535676">#3535676</a>: Upgraded nodejs from 18.x to 20.x in circlci file</li></ul>
+        <h3>Fixes:</h3>
+        <ul class="uk-list uk-list-bullet"><li>Issue <a href="https://www.drupal.org/i/3525086">#3525086</a>: Fixed User warning: The following theme is missing from the file system: classy</li></ul>
+      format: full_html
+      summary: This beta version focuses on aligning with Drupal 11.2.0, enhancing stability, and cleaning up deprecated modules and configurations. It also updates several key modules and components, including Gin Theme, Default Content removal in favor of Recipes, and Node.js upgrade for better CI performance. Highlighted important changes
+  field_product:
+    - entity: 9330776f-0e98-5a3f-b89e-fedaa121e4b3
+  field_release_image:
+    - entity: b94997cf-e998-55ad-800c-07dddac505d1
+  field_release_link:
+    - uri: https://www.drupal.org/project/webship/releases/11.0.0-beta1
+      title: Drupal.org release
+      options: {}

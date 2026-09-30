@@ -1,0 +1,66 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 8e01a2ae-2aea-5b8a-9e75-2c387617618c
+  bundle: webblog
+  default_langcode: en
+  depends:
+    77dc5e5c-a0a0-5eec-b7ed-a5a5937aa0aa: media
+    ec02b88e-a0cb-5181-872b-0ee70c03af75: file
+    8c5eb157-1522-5e83-b9ec-ab878528700d: file
+    ad45ec5a-04ab-5eaf-9177-b9a5b01a5b84: file
+    dbac44e2-bb35-58c1-9635-7d37463db27a: file
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Patterns vs. Anti-Patterns
+  created:
+    - value: 1778662337
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /blog/patterns-vs.-anti-patterns
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>Building a robust automated functional testing suite is like constructing a skyscraper. If your foundation is built on "anti-patterns" habits that seem helpful but cause long-term damage, the whole structure will eventually collapse under the weight of its own maintenance.</p>
+        <p>This guide explores the most common anti-patterns in automated functional testing and the modern patterns that must replace them to build a resilient, scalable QA process.</p>
+        <img src="/sites/default/files/webship-portal/blog-patterns-vs-anti-pattern-01-testing-pyramid.png" data-entity-type="file" data-entity-uuid="ec02b88e-a0cb-5181-872b-0ee70c03af75" width="800" height="320" alt="Test distribution: an inverted pyramid heavy on manual UI tests, against a pyramid with many unit tests, fewer integration tests and few end-to-end tests." loading="lazy"><p><strong>1. The Strategy: The Testing Pyramid vs. The Anti-Pattern</strong><br>One of the most common failures in automation is getting the distribution of tests wrong.</p>
+        <p><strong>The Anti-Pattern</strong><br>This model, often observed in struggling test suites, focuses heavily on automated UI tests (which are slow and brittle) and manual testing, with very few unit or integration tests at the base. This leads to slow feedback loops and extremely high maintenance costs.</p>
+        <p><strong>The Modern Pattern: The Test Pyramid</strong><br>The pyramid emphasizes a broad base of fast, isolated Unit Tests, a middle layer of Integration/API Tests, and a thin top layer of End-to-End (E2E) UI Tests. This strategy ensures fast, reliable feedback where you need it most.</p>
+        <p><strong>2. The Language: Imperative vs. Declarative</strong><br>How you describe your tests determines how often they break.</p>
+        <p><strong>The Anti-Pattern: Imperative Gherkin</strong><br>Writing scripts that describe how to do something technically:</p>
+        <pre><code>When I type "admin" in the "username" field
+         And I click the "Login" button</code></pre>
+        <p>If the UI changes (e.g., the button becomes a link or the field ID changes), the test fails even though the underlying functional feature works.</p>
+        <p><strong>The Modern Pattern: Declarative Gherkin</strong><br>Writing scripts that describe what the user is doing conceptually:</p>
+        <pre><code>When I log in with valid credentials
+        Then I should see my personal dashboard</code></pre>
+        <p>The "how" is hidden in the underlying step definitions, making the test suite readable for business stakeholders and far easier to maintain.</p>
+        <img src="/sites/default/files/webship-portal/blog-patterns-vs-anti-pattern-03-parallel-tests.png" data-entity-type="file" data-entity-uuid="8c5eb157-1522-5e83-b9ec-ab878528700d" width="800" height="310" alt="Execution: sequential tests that depend on each other and take hours, against independent tests that run in parallel in minutes." loading="lazy"><p><strong>3. Execution: Sequential vs. Parallel</strong><br>Speed is critical for effective CI/CD pipelines.</p>
+        <p><strong>The Anti-Pattern: The Serial Bottleneck</strong><br>Designing tests that must run in a specific order (e.g., Test A creates a user that Test B uses). This dependency makes it impossible to run tests in parallel, causing your full test run to take hours instead of minutes.</p>
+        <p><strong>The Modern Pattern: Atomic &amp; Independent Tests</strong><br>Every test should be "Self-Contained." Each test creates its own data and cleans up after itself. This independence allows you to run dozens of tests simultaneously across multiple containers, drastically reducing execution time.</p>
+        <img src="/sites/default/files/webship-portal/blog-patterns-vs-anti-pattern-04-auto-waiting.jpg" data-entity-type="file" data-entity-uuid="ad45ec5a-04ab-5eaf-9177-b9a5b01a5b84" width="800" height="310" alt="Stability: a hardcoded five second sleep, against auto-waiting that acts when the element is visible and stable." loading="lazy"><p><strong>4. Stability: Hardcoded Delays vs. Auto-Waiting</strong><br>Flaky tests erode trust in automation.</p>
+        <p><strong>The Anti-Pattern: "The Sleep Command"</strong><br>Using <code>Thread.sleep(5000)</code> or other hardcoded waits to give a page time to load. This makes tests arbitrarily slow (if the page loads in 1s, you waste 4s) and simultaneously brittle (if the page takes 6s, the test fails).</p>
+        <p><strong>The Modern Pattern: Intelligent Auto-Waiting</strong><br>Modern tools like Playwright or Cypress utilize "Actionability Checks." They automatically and intelligently wait for an element to be visible, stable, and enabled before attempting to interact with it.</p>
+        <img src="/sites/default/files/webship-portal/blog-patterns-vs-anti-pattern-05-jit-data.jpg" data-entity-type="file" data-entity-uuid="dbac44e2-bb35-58c1-9635-7d37463db27a" width="800" height="320" alt="Data management: a shared static dataset where runs collide, against data created through the API for each run and cleaned up after it." loading="lazy"><p><strong>5. Data Management: Static vs. Dynamic</strong><br>Data collisions are a major source of false negatives.</p>
+        <p><strong>The Anti-Pattern: Shared "Golden" Datasets</strong><br>Relying on a pre-populated database with static records like "Test_User_1." If two developers (or different CI builds) run the tests at the same time, they collide by overwriting each other’s data.</p>
+        <p><strong>The Modern Pattern: Just-In-Time (JIT) Data</strong><br>Tests use API calls to "inject" the exact data they need right before the UI steps begin.</p>
+        <ul class="uk-list uk-list-bullet"><li>Example: To test a "Delete Post" feature, the test should first call the API to create a unique post, then use the UI to delete that specific post.</li></ul>
+        <p><strong>Summary Table</strong></p>
+        <table class="uk-table uk-table-divider uk-table-small"><tbody><tr><td><strong>Feature</strong></td><td><strong>Anti-Pattern (The Trap)</strong></td><td><strong>Modern Pattern (The Solution)</strong></td></tr><tr><td><strong>Strategy</strong></td><td>Anti-Pattern (UI/Manual Heavy)</td><td>Test Pyramid (Base-Heavy)</td></tr><tr><td><strong>Gherkin Language</strong></td><td>Technical implementation details</td><td>Business intent and user behavior</td></tr><tr><td><strong>Timing/Waits</strong></td><td>Hardcoded Sleep or fixed waits</td><td>Dynamic/Smart Auto-waiting</td></tr><tr><td><strong>Data Management</strong></td><td>Shared, static datasets (collisions)</td><td>Unique, API-injected data (JIT)</td></tr><tr><td><strong>Failure Handling</strong></td><td>Retrying flaky tests blindly</td><td>Root-cause analysis &amp; self-healing</td></tr></tbody></table>
+        <p><strong>Final Thought</strong><br>The goal of automation is not to eliminate manual testing, but to eliminate repetitive testing. By moving from anti-patterns to patterns, you transform your test suite from a source of frustration and maintenance into a critical source of confidence and development velocity.</p>
+      format: full_html
+      summary: Building a robust automated functional testing suite is like constructing a skyscraper. If your foundation is built on "anti-patterns" habits that seem helpful but cause long-term damage, the whole structure will eventually collapse under the weight of its…
+  field_media:
+    - entity: 77dc5e5c-a0a0-5eec-b7ed-a5a5937aa0aa

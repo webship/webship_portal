@@ -1,0 +1,482 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 6e745134-911a-57c2-b32d-c282e55a81f2
+  bundle: webpage
+  default_langcode: en
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Home
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /home
+      langcode: en
+      pathauto: 0
+  body:
+    - value: ''
+      format: full_html
+      summary: ''
+  field_page_display:
+    - source_id: component
+      source:
+        component:
+          component_id: webtheme:container
+          variant_id: null
+          props: {}
+          slots:
+            content:
+              sources:
+                - source_id: component
+                  source:
+                    component:
+                      component_id: webtheme:section
+                      variant_id:
+                        source_id: select
+                        source:
+                          value: primary
+                      props:
+                        container:
+                          source_id: select
+                          source:
+                            value: default
+                      slots:
+                        content:
+                          sources:
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:grid_2_columns
+                                  variant_id: null
+                                  props:
+                                    gap:
+                                      source_id: select
+                                      source:
+                                        value: large
+                                    match:
+                                      source_id: checkbox
+                                      source:
+                                        value: true
+                                  slots:
+                                    column_1:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:heading
+                                              variant_id: null
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 1
+                                                size:
+                                                  source_id: select
+                                                  source:
+                                                    value: medium
+                                              slots:
+                                                title:
+                                                  sources:
+                                                    - source_id: textfield
+                                                      source:
+                                                        value: We love to help you automate testing
+                                        - source_id: textarea
+                                          source:
+                                            value: <p class="uk-text-lead">Automated functional acceptance testing, to ship websites in a swift way.</p>
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:button_group
+                                              variant_id: null
+                                              props: {}
+                                              slots:
+                                                buttons:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:button
+                                                          variant_id:
+                                                            source_id: select
+                                                            source:
+                                                              value: primary
+                                                          props:
+                                                            url:
+                                                              source_id: url
+                                                              source:
+                                                                value: /products
+                                                          slots:
+                                                            label:
+                                                              sources:
+                                                                - source_id: textfield
+                                                                  source:
+                                                                    value: Products
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:button
+                                                          variant_id:
+                                                            source_id: select
+                                                            source:
+                                                              value: default
+                                                          props:
+                                                            url:
+                                                              source_id: url
+                                                              source:
+                                                                value: /contact
+                                                          slots:
+                                                            label:
+                                                              sources:
+                                                                - source_id: textfield
+                                                                  source:
+                                                                    value: Contact us
+                                    column_2:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:video
+                                              variant_id: null
+                                              props:
+                                                src:
+                                                  source_id: textfield
+                                                  source:
+                                                    value: /themes/contrib/webtheme/assets/video/love-to-help.mp4
+                                                label:
+                                                  source_id: textfield
+                                                  source:
+                                                    value: 'The Webship.co animation: love to help with automated functional testing.'
+                                                autoplay:
+                                                  source_id: checkbox
+                                                  source:
+                                                    value: true
+                                                loop:
+                                                  source_id: checkbox
+                                                  source:
+                                                    value: true
+                                                cover:
+                                                  source_id: checkbox
+                                                  source:
+                                                    value: true
+                                                rounded:
+                                                  source_id: checkbox
+                                                  source:
+                                                    value: true
+                                              slots: {}
+                - source_id: component
+                  source:
+                    component:
+                      component_id: webtheme:section
+                      variant_id: null
+                      props:
+                        container:
+                          source_id: select
+                          source:
+                            value: default
+                        size:
+                          source_id: select
+                          source:
+                            value: small
+                      slots:
+                        content:
+                          sources:
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:heading
+                                  variant_id: null
+                                  props:
+                                    heading_level:
+                                      source_id: select
+                                      source:
+                                        value: 2
+                                    attributes:
+                                      source_id: attributes
+                                      source:
+                                        value: class="uk-h3"
+                                  slots:
+                                    title:
+                                      sources:
+                                        - source_id: textfield
+                                          source:
+                                            value: Love to help in speeding up the work of having Automated Functional Acceptance Testing for products to ship websites in a swift way.
+                            - source_id: textarea
+                              source:
+                                value: <h3 class="uk-h4">We LOVE to help with:</h3><ul class="uk-list uk-list-bullet"><li>Automated Functional Testing setup and configurations for projects.</li><li>Writing Cucumber descriptions, Gherkin scripts for web apps.</li><li>Setup robot servers, and Web-drivers to work on a local development and private CI/CD servers.</li><li>Run with public or private CI/CD remote servers. like <a href="https://github.com/features/actions">GitHub Actions</a>, <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a>, <a href="https://bitbucket.org/product/features/pipelines">Bitbucket Pipelines</a>.</li></ul>
+                - source_id: component
+                  source:
+                    component:
+                      component_id: webtheme:section
+                      variant_id: null
+                      props:
+                        container:
+                          source_id: select
+                          source:
+                            value: default
+                        size:
+                          source_id: select
+                          source:
+                            value: small
+                      slots:
+                        content:
+                          sources:
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:heading
+                                  variant_id:
+                                    source_id: select
+                                    source:
+                                      value: line
+                                  props:
+                                    heading_level:
+                                      source_id: select
+                                      source:
+                                        value: 2
+                                  slots:
+                                    title:
+                                      sources:
+                                        - source_id: textfield
+                                          source:
+                                            value: Blog
+                            - source_id: block
+                              source:
+                                plugin_id: views_block:blog-latest
+                                views_block:blog-latest:
+                                  label_display: '0'
+                                  views_label: ''
+                                  items_per_page: none
+                            - source_id: textarea
+                              source:
+                                value: <p class="uk-margin-medium-top"><a class="uk-button uk-button-default" href="/blog">See all posts</a></p>
+                - source_id: component
+                  source:
+                    component:
+                      component_id: webtheme:section
+                      variant_id: null
+                      props:
+                        container:
+                          source_id: select
+                          source:
+                            value: default
+                        size:
+                          source_id: select
+                          source:
+                            value: small
+                      slots:
+                        content:
+                          sources:
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:heading
+                                  variant_id:
+                                    source_id: select
+                                    source:
+                                      value: line
+                                  props:
+                                    heading_level:
+                                      source_id: select
+                                      source:
+                                        value: 2
+                                  slots:
+                                    title:
+                                      sources:
+                                        - source_id: textfield
+                                          source:
+                                            value: Latest release
+                            - source_id: block
+                              source:
+                                plugin_id: views_block:latest_release-latest
+                                views_block:latest_release-latest:
+                                  label_display: '0'
+                                  views_label: ''
+                                  items_per_page: none
+                - source_id: component
+                  source:
+                    component:
+                      component_id: webtheme:section
+                      variant_id:
+                        source_id: select
+                        source:
+                          value: muted
+                      props:
+                        container:
+                          source_id: select
+                          source:
+                            value: default
+                        size:
+                          source_id: select
+                          source:
+                            value: small
+                      slots:
+                        content:
+                          sources:
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:heading
+                                  variant_id:
+                                    source_id: select
+                                    source:
+                                      value: line
+                                  props:
+                                    heading_level:
+                                      source_id: select
+                                      source:
+                                        value: 2
+                                  slots:
+                                    title:
+                                      sources:
+                                        - source_id: textfield
+                                          source:
+                                            value: Services
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:grid_2_columns
+                                  variant_id:
+                                    source_id: select
+                                    source:
+                                      value: col_33_66
+                                  props:
+                                    gap:
+                                      source_id: select
+                                      source:
+                                        value: large
+                                    vertical_align:
+                                      source_id: select
+                                      source:
+                                        value: middle
+                                  slots:
+                                    column_1:
+                                      sources:
+                                        - source_id: textarea
+                                          source:
+                                            value: <img src="/sites/default/files/webship-portal/service-automated-functional-testing-setup.jpg" width="399" height="500" alt="Automated functional acceptance testing with Webship-js." class="uk-border-rounded" loading="lazy">
+                                    column_2:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:heading
+                                              variant_id: null
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 3
+                                              slots:
+                                                title:
+                                                  sources:
+                                                    - source_id: textfield
+                                                      source:
+                                                        value: Automated Functional Testing Setup
+                                        - source_id: textarea
+                                          source:
+                                            value: <p>Automating functional testing has never been easier with our Automated Functional Acceptance Testing tool. By configuring your project to work seamlessly Webship-js, utilizing Playwright, and Cucumber-js, we help you streamline accelerate the end-to-end process for web apps or projects. Our tool is designed make less cumbersome more efficient, ensuring that products are of highest quality reliability. So why wait?</p><p>Let us help you take your testing to the next level.</p>
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:button_group
+                                              variant_id: null
+                                              props: {}
+                                              slots:
+                                                buttons:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:button
+                                                          variant_id:
+                                                            source_id: select
+                                                            source:
+                                                              value: primary
+                                                          props:
+                                                            url:
+                                                              source_id: url
+                                                              source:
+                                                                value: /contact
+                                                          slots:
+                                                            label:
+                                                              sources:
+                                                                - source_id: textfield
+                                                                  source:
+                                                                    value: Contact us
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:button
+                                                          variant_id:
+                                                            source_id: select
+                                                            source:
+                                                              value: default
+                                                          props:
+                                                            url:
+                                                              source_id: url
+                                                              source:
+                                                                value: /services
+                                                          slots:
+                                                            label:
+                                                              sources:
+                                                                - source_id: textfield
+                                                                  source:
+                                                                    value: See all services
+                - source_id: component
+                  source:
+                    component:
+                      component_id: webtheme:section
+                      variant_id: null
+                      props:
+                        container:
+                          source_id: select
+                          source:
+                            value: small
+                        size:
+                          source_id: select
+                          source:
+                            value: small
+                      slots:
+                        content:
+                          sources:
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:heading
+                                  variant_id:
+                                    source_id: select
+                                    source:
+                                      value: line
+                                  props:
+                                    heading_level:
+                                      source_id: select
+                                      source:
+                                        value: 2
+                                  slots:
+                                    title:
+                                      sources:
+                                        - source_id: textfield
+                                          source:
+                                            value: Newsletter
+                            - source_id: block
+                              source:
+                                plugin_id: webform_block
+                                webform_block:
+                                  label_display: '0'
+                                  webform_id: newsletter_subscribe
+                                  default_data: ''
+                                  redirect: false
+                                  lazy: false
+                            - source_id: textarea
+                              source:
+                                value: <p class="uk-text-small">By subscribing to our newsletter, you agree to our <a href="/privacy-policy">Privacy Policy</a>.</p>

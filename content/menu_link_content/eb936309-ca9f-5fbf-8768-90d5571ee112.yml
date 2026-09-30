@@ -1,0 +1,25 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: eb936309-ca9f-5fbf-8768-90d5571ee112
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    - value: true
+  title:
+    - value: Privacy
+  menu_name:
+    - value: footer
+  link:
+    - uri: internal:/privacy-policy
+      title: ''
+      options: {}
+  external:
+    - value: false
+  rediscover:
+    - value: false
+  weight:
+    - value: 0
+  expanded:
+    - value: false

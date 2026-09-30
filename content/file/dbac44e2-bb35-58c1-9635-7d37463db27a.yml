@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: dbac44e2-bb35-58c1-9635-7d37463db27a
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-patterns-vs-anti-pattern-05-jit-data.jpg
+  uri:
+    - value: public://webship-portal/blog-patterns-vs-anti-pattern-05-jit-data.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 27636
+  status:
+    - value: true

@@ -1,0 +1,50 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 24ea0142-a467-5827-a55a-fb02642d4c00
+  bundle: release
+  default_langcode: en
+  depends:
+    dd27c5e5-53d0-50e4-828a-4905a51ea4e9: node
+    89d943ba-d0f2-53f0-b15a-8b92e29fc0d5: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: 2.0.0
+  created:
+    - value: 1774464529
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /products/webship-js/releases/2.0.0
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>We’ve unified all recent improvements into a stable version, bringing a smoother and more powerful testing experience. The biggest highlight is the full transition to Playwright, giving better performance, flexibility, and modern browser control.</p>
+        <p>Along the way, we enhanced configuration handling and introduced new capabilities like starting the browser in maximized mode, making your automated tests closer to real user behavior.</p>
+        <p><strong>Changes since Webship-js 1.0.47:</strong></p>
+        <ul class="uk-list uk-list-bullet"><li>Start a 2.0.x branch and switch all step definitions to Playwright <a href="https://github.com/webship/webship-js/issues/241">#241</a></li></ul>
+        <p><strong>Updates since Webship-js </strong><strong>2.0.0-alpha1</strong><strong>:</strong></p>
+        <ul class="uk-list uk-list-bullet"><li>Activated playwrightConfig in step definitions <a href="https://github.com/webship/webship-js/issues/244">#244</a></li></ul>
+        <p><strong>Added since Webship-js </strong><strong>2.0.0-beta1</strong><strong>:</strong></p>
+        <ul class="uk-list uk-list-bullet"><li>Added start-maximized config for the browser <a href="https://github.com/webship/webship-js/issues/246">#246</a></li></ul>
+      format: full_html
+      summary: We’ve unified all recent improvements into a stable version, bringing a smoother and more powerful testing experience. The biggest highlight is the full transition to Playwright, giving better performance, flexibility, and modern browser control.
+  field_product:
+    - entity: dd27c5e5-53d0-50e4-828a-4905a51ea4e9
+  field_release_image:
+    - entity: 89d943ba-d0f2-53f0-b15a-8b92e29fc0d5
+  field_release_link:
+    - uri: https://github.com/webship/webship-js/releases/tag/2.0.0
+      title: GitHub release
+      options: {}

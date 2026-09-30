@@ -92,6 +92,17 @@ recipe:
     # The default content of the template is imported: the pages, the
     # documentation, the products with their releases, the blog posts and
     # the media images.
+    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "webpage")->count()->execute();')" -gt 6
+    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "webdoc")->count()->execute();')" -gt 2
+    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "product")->count()->execute();')" -gt 5
+    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "release")->count()->execute();')" -gt 14
+    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("node")->accessCheck(FALSE)->condition("type", "webblog")->count()->execute();')" -gt 14
+    - test "$($DRUSH php:eval 'print \Drupal::entityQuery("media")->accessCheck(FALSE)->condition("bundle", "image")->count()->execute();')" -gt 20
     # The front page and the pages of the main menu resolve.
     - test "$($DRUSH config:get system.site page.front --format=string)" = "/home"
+    - test "$($DRUSH php:eval 'print \Drupal::service("path_alias.manager")->getPathByAlias("/home");')" != "/home"
+    - test "$($DRUSH php:eval 'print \Drupal::service("path_alias.manager")->getPathByAlias("/products");')" != "/products"
+    - test "$($DRUSH php:eval 'print \Drupal::service("path_alias.manager")->getPathByAlias("/about-us");')" != "/about-us"
+    - test "$($DRUSH php:eval 'print \Drupal::service("path_alias.manager")->getPathByAlias("/contact");')" != "/contact"
     # The main menu has one Products link.
+    - test "$($DRUSH php:eval 'print count(\Drupal::entityTypeManager()->getStorage("menu_link_content")->loadByProperties(["menu_name" => "main", "title" => "Products"]));')" = "1"

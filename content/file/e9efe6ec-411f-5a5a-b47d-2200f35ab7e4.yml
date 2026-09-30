@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: e9efe6ec-411f-5a5a-b47d-2200f35ab7e4
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-what-playwright-why-companies-are-rapidl.jpg
+  uri:
+    - value: public://webship-portal/blog-what-playwright-why-companies-are-rapidl.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 171835
+  status:
+    - value: true

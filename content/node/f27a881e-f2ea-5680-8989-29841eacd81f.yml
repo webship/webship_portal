@@ -1,0 +1,83 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: f27a881e-f2ea-5680-8989-29841eacd81f
+  bundle: webblog
+  default_langcode: en
+  depends:
+    60e4837c-47e5-5e2a-a17b-a11e20b027f9: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Running Your Tests in GitHub Actions and GitLab CI
+  created:
+    - value: 1780902000
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /blog/running-your-tests-in-github-actions-and-gitlab-ci
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>Tests that only run on a laptop are run when somebody remembers. A pipeline runs them on every push, against a known environment, and keeps the report. The setup is short on both GitHub and GitLab.</p>
+        <h2>What the job has to do</h2>
+        <ul class="uk-list uk-list-bullet"><li>Install Node.js 20 or later and the dependencies of the project.</li><li>Install the browser that Playwright drives.</li><li>Point the suite at the site under test with <code>LAUNCH_URL</code>.</li><li>Run <code>npm test</code> and keep the report, also when the run fails.</li></ul>
+        <h2>GitHub Actions</h2>
+        <pre><code class="language-yaml">name: Functional tests
+        on: [push, pull_request]
+        jobs:
+          test:
+            runs-on: ubuntu-latest
+            steps:
+              - uses: actions/checkout@v4
+              - uses: actions/setup-node@v4
+                with:
+                  node-version: 22
+              - run: npm ci
+              - run: npx playwright install --with-deps chromium
+              - run: npm test
+                env:
+                  LAUNCH_URL: https://staging.example.com
+              - uses: actions/upload-artifact@v4
+                if: always()
+                with:
+                  name: test-report
+                  path: tests/reports/</code></pre>
+        <h2>GitLab CI</h2>
+        <pre><code class="language-yaml">functional-tests:
+          image: node:22
+          script:
+            - npm ci
+            - npx playwright install --with-deps chromium
+            - npm test
+          variables:
+            LAUNCH_URL: https://staging.example.com
+          artifacts:
+            when: always
+            paths:
+              - tests/reports/</code></pre>
+        <h2>A smoke scenario to start with</h2>
+        <p>Begin with one scenario that proves the pipeline reaches the site, then add the real features:</p>
+        <pre><code class="language-gherkin">Feature: Smoke test
+
+          Scenario: The home page opens
+            Given I am an anonymous user
+            When I go to the homepage
+            Then the page should have exactly one h1
+            And there should be no JavaScript errors</code></pre>
+        <h2>Practical notes</h2>
+        <ul class="uk-list uk-list-bullet"><li>Test a deployed environment, such as staging or a preview of the merge request, not production data.</li><li>Keep secrets in the secret store of the pipeline and read them from environment variables.</li><li>Always upload the report: a failed run without a report gets re-run instead of fixed.</li><li>Run the fast scenarios on every push and the long ones on a schedule, with tags.</li></ul>
+      format: full_html
+      summary: Tests that only run on a laptop are run when somebody remembers. A pipeline runs them on every push, against a known environment.
+  field_media:
+    - entity: 60e4837c-47e5-5e2a-a17b-a11e20b027f9

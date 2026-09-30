@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 8965383a-09b8-5ecc-afe7-a1682bf0773c
+  bundle: image
+  default_langcode: en
+  depends:
+    775a9bc6-4054-530f-8689-1535cdf9691e: file
+default:
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  name:
+    - value: Webship-js 2.0.4
+  field_media_image:
+    - alt: Release 2.0.4 of Webship-js
+      title: ''
+      width: 1200
+      height: 627
+      entity: 775a9bc6-4054-530f-8689-1535cdf9691e

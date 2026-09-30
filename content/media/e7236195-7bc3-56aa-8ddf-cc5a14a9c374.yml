@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: e7236195-7bc3-56aa-8ddf-cc5a14a9c374
+  bundle: image
+  default_langcode: en
+  depends:
+    1ecb42f4-3f78-5274-9a5c-9bee15b9a839: file
+default:
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  name:
+    - value: 'Test-First Development in the Age of AI: Why It Matters'
+  field_media_image:
+    - alt: 'Cover of the blog post: Test-First Development in the Age of AI: Why It Matters'
+      title: ''
+      width: 1280
+      height: 853
+      entity: 1ecb42f4-3f78-5274-9a5c-9bee15b9a839

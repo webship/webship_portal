@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 80bdd70a-f09a-5cab-a8cb-129b05d7cdaf
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-patterns-vs-anti-patterns.jpg
+  uri:
+    - value: public://webship-portal/blog-patterns-vs-anti-patterns.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 185743
+  status:
+    - value: true

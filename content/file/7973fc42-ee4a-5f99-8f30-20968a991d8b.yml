@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 7973fc42-ee4a-5f99-8f30-20968a991d8b
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-advanced-selectors-webship-js-named-regi.jpg
+  uri:
+    - value: public://webship-portal/blog-advanced-selectors-webship-js-named-regi.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 76170
+  status:
+    - value: true

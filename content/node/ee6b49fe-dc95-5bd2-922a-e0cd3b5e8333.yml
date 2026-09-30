@@ -1,0 +1,297 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: ee6b49fe-dc95-5bd2-922a-e0cd3b5e8333
+  bundle: webpage
+  default_langcode: en
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Documentation
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /docs
+      langcode: en
+      pathauto: 0
+  body:
+    - value: ''
+      format: full_html
+      summary: ''
+  field_page_display:
+    - source_id: component
+      source:
+        component:
+          component_id: webtheme:container
+          variant_id: null
+          props: {}
+          slots:
+            content:
+              sources:
+                - source_id: component
+                  source:
+                    component:
+                      component_id: webtheme:section
+                      variant_id: null
+                      props:
+                        container:
+                          source_id: select
+                          source:
+                            value: default
+                        size:
+                          source_id: select
+                          source:
+                            value: xsmall
+                      slots:
+                        content:
+                          sources:
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:search
+                                  variant_id:
+                                    source_id: select
+                                    source:
+                                      value: default
+                                  props:
+                                    action:
+                                      source_id: url
+                                      source:
+                                        value: /search/node
+                                    name:
+                                      source_id: textfield
+                                      source:
+                                        value: keys
+                                    placeholder:
+                                      source_id: textfield
+                                      source:
+                                        value: Search the documentation
+                                  slots: {}
+                - source_id: component
+                  source:
+                    component:
+                      component_id: webtheme:section
+                      variant_id: null
+                      props:
+                        container:
+                          source_id: select
+                          source:
+                            value: default
+                        size:
+                          source_id: select
+                          source:
+                            value: small
+                      slots:
+                        content:
+                          sources:
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:grid_3_columns
+                                  variant_id: null
+                                  props:
+                                    gap:
+                                      source_id: select
+                                      source:
+                                        value: medium
+                                    match:
+                                      source_id: checkbox
+                                      source:
+                                        value: true
+                                  slots:
+                                    column_1:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:card
+                                              variant_id:
+                                                source_id: select
+                                                source:
+                                                  value: default
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 2
+                                                hover:
+                                                  source_id: checkbox
+                                                  source:
+                                                    value: true
+                                              slots:
+                                                header:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <img src="/sites/default/files/webship-portal/docs-webship-js.png" width="100" height="100" alt="The Webship-js logo." loading="lazy">
+                                                title:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:link
+                                                          variant_id:
+                                                            source_id: select
+                                                            source:
+                                                              value: heading
+                                                          props:
+                                                            url:
+                                                              source_id: url
+                                                              source:
+                                                                value: /docs/webship-js/2.0.x
+                                                          slots:
+                                                            label:
+                                                              sources:
+                                                                - source_id: textfield
+                                                                  source:
+                                                                    value: Webship-JS 2.0.x
+                                                content:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <p>Webship JS is an Automated Functional Acceptance Testing tool.</p>
+                                    column_2:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:card
+                                              variant_id:
+                                                source_id: select
+                                                source:
+                                                  value: default
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 2
+                                                hover:
+                                                  source_id: checkbox
+                                                  source:
+                                                    value: true
+                                              slots:
+                                                header:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:icon
+                                                          variant_id: null
+                                                          props:
+                                                            icon:
+                                                              source_id: icon
+                                                              source:
+                                                                value:
+                                                                  target_id: webtheme:download
+                                                                  settings:
+                                                                    webtheme:
+                                                                      ratio: 5
+                                                                      alt: ''
+                                                            attributes:
+                                                              source_id: attributes
+                                                              source:
+                                                                value: class="uk-text-primary uk-display-block uk-text-center"
+                                                          slots: {}
+                                                title:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:link
+                                                          variant_id:
+                                                            source_id: select
+                                                            source:
+                                                              value: heading
+                                                          props:
+                                                            url:
+                                                              source_id: url
+                                                              source:
+                                                                value: /docs/webship-js/2.0.x/install-webship-js
+                                                          slots:
+                                                            label:
+                                                              sources:
+                                                                - source_id: textfield
+                                                                  source:
+                                                                    value: Install Webship-JS
+                                                content:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <p>Prior to installing Webship-js to any project, it is necessary to fulfill certain general requirements.</p>
+                                    column_3:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:card
+                                              variant_id:
+                                                source_id: select
+                                                source:
+                                                  value: default
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 2
+                                                hover:
+                                                  source_id: checkbox
+                                                  source:
+                                                    value: true
+                                              slots:
+                                                header:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:icon
+                                                          variant_id: null
+                                                          props:
+                                                            icon:
+                                                              source_id: icon
+                                                              source:
+                                                                value:
+                                                                  target_id: webtheme:list
+                                                                  settings:
+                                                                    webtheme:
+                                                                      ratio: 5
+                                                                      alt: ''
+                                                            attributes:
+                                                              source_id: attributes
+                                                              source:
+                                                                value: class="uk-text-primary uk-display-block uk-text-center"
+                                                          slots: {}
+                                                title:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:link
+                                                          variant_id:
+                                                            source_id: select
+                                                            source:
+                                                              value: heading
+                                                          props:
+                                                            url:
+                                                              source_id: url
+                                                              source:
+                                                                value: /docs/webship-js/2.0.x/step-definitions
+                                                          slots:
+                                                            label:
+                                                              sources:
+                                                                - source_id: textfield
+                                                                  source:
+                                                                    value: Step Definitions
+                                                content:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <p>Step definitions are vital in automated testing frameworks, particularly for behavior-driven or test-driven development.</p>

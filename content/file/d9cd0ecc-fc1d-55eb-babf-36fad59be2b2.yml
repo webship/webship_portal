@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: d9cd0ecc-fc1d-55eb-babf-36fad59be2b2
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: release-webship-portal-11-0-0-alpha1.jpg
+  uri:
+    - value: public://webship-portal/release-webship-portal-11-0-0-alpha1.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 67381
+  status:
+    - value: true

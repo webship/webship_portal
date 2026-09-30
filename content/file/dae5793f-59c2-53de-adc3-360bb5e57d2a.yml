@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: dae5793f-59c2-53de-adc3-360bb5e57d2a
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-webship-js-ai-agent-automated-testing.jpg
+  uri:
+    - value: public://webship-portal/blog-webship-js-ai-agent-automated-testing.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 161006
+  status:
+    - value: true

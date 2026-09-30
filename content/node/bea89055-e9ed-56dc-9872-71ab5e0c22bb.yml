@@ -1,0 +1,226 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: bea89055-e9ed-56dc-9872-71ab5e0c22bb
+  bundle: webpage
+  default_langcode: en
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Contact
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /contact
+      langcode: en
+      pathauto: 0
+  body:
+    - value: ''
+      format: full_html
+      summary: ''
+  field_page_display:
+    - source_id: component
+      source:
+        component:
+          component_id: webtheme:container
+          variant_id: null
+          props: {}
+          slots:
+            content:
+              sources:
+                - source_id: component
+                  source:
+                    component:
+                      component_id: webtheme:section
+                      variant_id: null
+                      props:
+                        container:
+                          source_id: select
+                          source:
+                            value: default
+                        size:
+                          source_id: select
+                          source:
+                            value: small
+                      slots:
+                        content:
+                          sources:
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:grid_2_columns
+                                  variant_id:
+                                    source_id: select
+                                    source:
+                                      value: col_66_33
+                                  props:
+                                    gap:
+                                      source_id: select
+                                      source:
+                                        value: large
+                                  slots:
+                                    column_1:
+                                      sources:
+                                        - source_id: block
+                                          source:
+                                            plugin_id: webform_block
+                                            webform_block:
+                                              label_display: '0'
+                                              webform_id: contact
+                                              default_data: ''
+                                              redirect: false
+                                              lazy: false
+                                    column_2:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:heading
+                                              variant_id: null
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 2
+                                              slots:
+                                                title:
+                                                  sources:
+                                                    - source_id: textfield
+                                                      source:
+                                                        value: Contact details
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:grid
+                                              variant_id: null
+                                              props:
+                                                gap:
+                                                  source_id: select
+                                                  source:
+                                                    value: small
+                                              slots:
+                                                items:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:icon
+                                                          variant_id: null
+                                                          props:
+                                                            icon:
+                                                              source_id: icon
+                                                              source:
+                                                                value:
+                                                                  target_id: webtheme:receiver
+                                                                  settings:
+                                                                    webtheme:
+                                                                      ratio: 2
+                                                                      alt: ''
+                                                            attributes:
+                                                              source_id: attributes
+                                                              source:
+                                                                value: class="uk-text-primary uk-display-block uk-text-center"
+                                                          slots: {}
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <p><a href="tel:+962790002280">+962 7 9000 2280</a></p>
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:grid
+                                              variant_id: null
+                                              props:
+                                                gap:
+                                                  source_id: select
+                                                  source:
+                                                    value: small
+                                              slots:
+                                                items:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:icon
+                                                          variant_id: null
+                                                          props:
+                                                            icon:
+                                                              source_id: icon
+                                                              source:
+                                                                value:
+                                                                  target_id: webtheme:mail
+                                                                  settings:
+                                                                    webtheme:
+                                                                      ratio: 2
+                                                                      alt: ''
+                                                            attributes:
+                                                              source_id: attributes
+                                                              source:
+                                                                value: class="uk-text-primary uk-display-block uk-text-center"
+                                                          slots: {}
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <p><a href="mailto:info@webship.co">info@webship.co</a></p>
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:grid
+                                              variant_id: null
+                                              props:
+                                                gap:
+                                                  source_id: select
+                                                  source:
+                                                    value: small
+                                              slots:
+                                                items:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:icon
+                                                          variant_id: null
+                                                          props:
+                                                            icon:
+                                                              source_id: icon
+                                                              source:
+                                                                value:
+                                                                  target_id: webtheme:location
+                                                                  settings:
+                                                                    webtheme:
+                                                                      ratio: 2
+                                                                      alt: ''
+                                                            attributes:
+                                                              source_id: attributes
+                                                              source:
+                                                                value: class="uk-text-primary uk-display-block uk-text-center"
+                                                          slots: {}
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <p>Amman, Jordan<br>7 Paris St., 3rd Floor</p>
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:heading
+                                              variant_id: null
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 2
+                                              slots:
+                                                title:
+                                                  sources:
+                                                    - source_id: textfield
+                                                      source:
+                                                        value: Location map
+                                        - source_id: textarea
+                                          source:
+                                            value: <p>The Webship.co office is at 7 Paris St., 3rd Floor, Amman, Jordan.</p><p><a class="uk-button uk-button-default" href="https://goo.gl/maps/5jGnXfrGpwAkMqXz7">Open the location in Google Maps</a></p>

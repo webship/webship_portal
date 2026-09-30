@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 32a72de0-08b9-58db-b448-cef834a48703
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: docs-webship-js.png
+  uri:
+    - value: public://webship-portal/docs-webship-js.png
+  filemime:
+    - value: image/png
+  filesize:
+    - value: 5447
+  status:
+    - value: true

@@ -1,0 +1,45 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 6f1108b9-47a7-5843-9e98-18da84fa878a
+  bundle: release
+  default_langcode: en
+  depends:
+    dd27c5e5-53d0-50e4-828a-4905a51ea4e9: node
+    1799acff-66f4-5ff3-9b4b-67bfe7a66dba: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: 2.0.0-alpha1
+  created:
+    - value: 1772974158
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /products/webship-js/releases/2.0.0-alpha1
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>Migrated all step definitions in <strong>webship-js</strong> to <strong>Playwright</strong>. This change removes the need for a separate WebDriver server, simplifying setup and improving test speed and reliability. All step definitions in tests/step-definitions/webship.js were rewritten using the Playwright API while keeping the <strong>Cucumber.js</strong> layer unchanged, so existing .feature files require no modifications. Browser lifecycle is now managed per scenario via Cucumber hooks, and the browser (chromium, firefox, webkit) can be selected using the BROWSER environment variable.</p>
+        <p><strong>Changes since Webship-js 1.0.47:</strong></p>
+        <ul class="uk-list uk-list-bullet"><li>Start a 2.0.x branch and switch all step definitions to Playwright <a href="https://github.com/webship/webship-js/issues/241">#241</a></li></ul>
+      format: full_html
+      summary: Migrated all step definitions in webship-js to Playwright . This change removes the need for a separate WebDriver server, simplifying setup and improving test speed and reliability. All step definitions in tests/step-definitions/webship.js were rewritten using the Playwright API while keeping the Cucumber.js layer unchanged, so…
+  field_product:
+    - entity: dd27c5e5-53d0-50e4-828a-4905a51ea4e9
+  field_release_image:
+    - entity: 1799acff-66f4-5ff3-9b4b-67bfe7a66dba
+  field_release_link:
+    - uri: https://github.com/webship/webship-js/releases/tag/2.0.0-alpha1
+      title: GitHub release
+      options: {}

@@ -1,0 +1,53 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 06a37093-9a21-5933-a1ab-332a5cea6f7f
+  bundle: webdoc
+  default_langcode: en
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Webship-JS 2.0.x
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /docs/webship-js/2.0.x
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>Webship-js is a BDD-first browser automation harness built on <a href="https://playwright.dev/">Playwright</a> and <a href="https://github.com/cucumber/cucumber-js">Cucumber-js</a>. Plain Gherkin feature files, a named-selector registry that survives redesigns, and BBR smart waits that never <code>sleep</code>.</p>
+        <p><strong>411 built-in steps</strong> across <strong>36 step files</strong>. <strong>288 example scenarios / 1,406 step executions</strong> in the bundled suite, all green on chromium, firefox, and webkit.</p>
+        <h2>At a glance</h2>
+        <pre><code>Feature: Login page
+          Scenario: Successful login
+            Given I am on homepage
+             When I go to "login.html"
+              And I fill in "Username" with "Smith"
+              And I fill in "Password" with "1$34"
+              And I press "Login"
+             Then I should see "Welcome Smith"</code></pre>
+        <h2>Highlights in 2.0.x</h2>
+        <ul class="uk-list uk-list-bullet"><li><strong>BBR smart waits</strong>. Every wait composites DOM-ready, <code>networkidle</code>, custom AJAX and timer counters, and a 250 ms DOM-quiet window. No <code>sleep N seconds</code> in step bodies.</li><li><strong>Named selector registry</strong>. Register CSS or XPath under stable names and survive markup churn. 22 CMS / framework presets ship out of the box.</li><li><strong>Web-first assertions</strong>. Auto-retrying matchers with a <code>within N seconds</code> budget.</li><li><strong>Tester-friendly error handling</strong>. Structured <code>friendly()</code> + <code>humanize()</code> with stdout filter so failures explain themselves.</li><li><strong>Video recording</strong>. Playwright <code>recordVideo</code> with start, stop, save steps. Modes: <code>off</code>, <code>on</code>, <code>on-failure</code>, <code>tag</code>.</li><li><strong>REST / API / XML / YAML</strong>. Direct HTTP, JSON Pointer, XPath, multi-doc YAML and JSON Schema, all from Gherkin.</li><li><strong>Accessibility</strong>. POUR smoke checks and axe-core audits.</li><li><strong>Cross-browser</strong>. chromium, firefox, webkit. <code>BROWSER=firefox npm test</code>.</li></ul>
+        <h2>Run modes</h2>
+        <table class="uk-table uk-table-divider uk-table-small"><thead><tr><th scope="col">Script</th><th scope="col">Effect</th></tr></thead><tbody><tr><td><code>npm test</code></td><td>Default. Pretty output, slow-mo 300 ms.</td></tr><tr><td><code>npm run test:headed</code></td><td>Headed browser, <code>SLOW_MO=800</code>.</td></tr><tr><td><code>npm run test:fast</code></td><td><code>SLOW_MO=0</code>, single-process.</td></tr><tr><td><code>BROWSER=&lt;engine&gt; npm test</code></td><td>Pick browser engine (<code>chromium</code>, <code>firefox</code>, <code>webkit</code>).</td></tr></tbody></table>
+        <p>For parallel and retry pass CLI flags directly:</p>
+        <pre><code>npx cucumber-js --parallel 4 --retry 1 --retry-tag-filter @flaky</code></pre>
+        <h2>Documentation map</h2>
+        <ol><li><a href="/docs/webship-js/2.0.x/install-webship-js">Install Webship JS</a>. Install and project layout.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/global-settings">Global Settings</a>. <code>cucumber.js</code> <code>worldParameters</code> reference.</li><li><a href="/docs/webship-js/2.0.x/step-definitions">Step Definitions</a>. The 36 step groups organised by audience.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/install-webship-js/ddev-webship-js">DDEV Webship-JS</a>. DDEV add-on variant.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/diffy-step-definitions">Diffy Step Definitions</a>. Visual-diff workflow.</li></ol>
+        <h2>Browse step groups directly</h2>
+        <p>Every step group is now a direct child of this page. Quick links:</p>
+        <p><a href="https://webship.co/docs/webship-js/2.0.x/a11y-steps">Accessibility</a> <a href="https://webship.co/docs/webship-js/2.0.x/action-steps">Actions</a> <a href="https://webship.co/docs/webship-js/2.0.x/api-steps">API (long)</a> <a href="https://webship.co/docs/webship-js/2.0.x/assertion-steps">Assertions</a> <a href="https://webship.co/docs/webship-js/2.0.x/auth-steps">Auth state</a> <a href="https://webship.co/docs/webship-js/2.0.x/clock-steps">Clock</a> <a href="https://webship.co/docs/webship-js/2.0.x/cookie-steps">Cookies</a> <a href="https://webship.co/docs/webship-js/2.0.x/debug-steps">Debug</a> <a href="https://webship.co/docs/webship-js/2.0.x/dialog-steps">Browser dialogs</a> <a href="https://webship.co/docs/webship-js/2.0.x/element-steps">Element interactions</a> <a href="https://webship.co/docs/webship-js/2.0.x/field-steps">Field state</a> <a href="https://webship.co/docs/webship-js/2.0.x/file-download-steps">File downloads</a> <a href="https://webship.co/docs/webship-js/2.0.x/form-steps">Forms</a> <a href="https://webship.co/docs/webship-js/2.0.x/iframe-steps">Iframes</a> <a href="https://webship.co/docs/webship-js/2.0.x/input-steps">Pointer input</a> <a href="https://webship.co/docs/webship-js/2.0.x/javascript-steps">JavaScript errors</a> <a href="https://webship.co/docs/webship-js/2.0.x/keyboard-steps">Keyboard</a> <a href="https://webship.co/docs/webship-js/2.0.x/link-steps">Links</a> <a href="https://webship.co/docs/webship-js/2.0.x/metatag-steps">Meta tags</a> <a href="https://webship.co/docs/webship-js/2.0.x/modal-steps">Modals</a> <a href="https://webship.co/docs/webship-js/2.0.x/navigation-steps">Navigation</a> <a href="https://webship.co/docs/webship-js/2.0.x/network-steps">Network</a> <a href="https://webship.co/docs/webship-js/2.0.x/path-steps">URL paths</a> <a href="https://webship.co/docs/webship-js/2.0.x/response-steps">Response headers</a> <a href="https://webship.co/docs/webship-js/2.0.x/responsive-steps">Responsive viewports</a> <a href="https://webship.co/docs/webship-js/2.0.x/rest-steps">REST (short)</a> <a href="https://webship.co/docs/webship-js/2.0.x/screenshot-steps">Screenshots</a> <a href="https://webship.co/docs/webship-js/2.0.x/scroll-steps">Scrolling</a> <a href="https://webship.co/docs/webship-js/2.0.x/selectors-steps">Selector registry</a> <a href="https://webship.co/docs/webship-js/2.0.x/storage-steps">Storage</a> <a href="https://webship.co/docs/webship-js/2.0.x/table-steps">Tables</a> <a href="https://webship.co/docs/webship-js/2.0.x/video-steps">Video recording</a> <a href="https://webship.co/docs/webship-js/2.0.x/wait-steps">Waits</a> <a href="https://webship.co/docs/webship-js/2.0.x/web-first-steps">Web-first matchers</a> <a href="https://webship.co/docs/webship-js/2.0.x/xml-steps">XML</a> <a href="https://webship.co/docs/webship-js/2.0.x/yaml-steps">YAML</a></p>
+        <h2>Benefits</h2>
+        <p>Increased testing efficiency, reduced human error, improved test coverage, faster time-to-market. By automating the repetitive, the suite frees testers to focus on the exploratory and the critical.</p>
+      format: full_html
+      summary: Webship-js is a BDD-first browser automation harness built on Playwright and Cucumber-js . Plain Gherkin feature files, a named-selector registry that survives redesigns, and BBR smart waits that never sleep .

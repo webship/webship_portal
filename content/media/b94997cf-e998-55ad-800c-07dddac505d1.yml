@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: b94997cf-e998-55ad-800c-07dddac505d1
+  bundle: image
+  default_langcode: en
+  depends:
+    2b5cf6eb-9095-5662-9105-f92a2d61a128: file
+default:
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  name:
+    - value: Webship-portal 11.0.0-beta1
+  field_media_image:
+    - alt: Release 11.0.0-beta1 of Webship-portal
+      title: ''
+      width: 1200
+      height: 627
+      entity: 2b5cf6eb-9095-5662-9105-f92a2d61a128

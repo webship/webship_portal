@@ -1,0 +1,55 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 90be3632-a868-56c9-8044-7d67208155d0
+  bundle: webdoc
+  default_langcode: en
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Step Definitions
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /docs/webship-js/2.0.x/step-definitions
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>A step definition is a piece of JavaScript that maps a plain English Gherkin phrase (for example <code>When I press "Submit"</code>) to a Playwright action or assertion. Webship-js ships <strong>411 built-in steps across 36 step files</strong>, so Product Owners, PMs, QA, CQ, DevOps, and automation engineers can author end-to-end tests without writing custom code.</p>
+        <h2>How steps are organized</h2>
+        <p>Each step group lives in its own file at <code>tests/step-definitions/&lt;group&gt;.steps.js</code> inside the webship-js package, and each group has its own documentation page below. Groups follow the test lifecycle: <em>Given</em> steps set the scene (navigate, restore auth, load fixtures), <em>When</em> steps act (click, fill, press, request), and <em>Then</em> steps verify outcomes (text, elements, headers, payloads). Every action step is backed by BBR smart waits - it waits for the page to settle before and after acting - and every phrasing accepts the pronoun prefix <code>(I |we )*</code> so scenarios read naturally in either voice. A typical scenario mixes steps from several groups:</p>
+        <pre><code>Feature: Contact form
+
+          Scenario: Visitor sends a message
+            Given I am on "/contact-us.html"          # navigation
+            When I fill in "Name" with "Alice"        # forms
+             And I press "Send"                       # actions
+            Then I should see "Thank you"             # assertions
+             And there should be no JavaScript errors # javascript errors</code></pre>
+        <p>The four sections below organize every step group by how teams use them. Follow any link to see the full step list with role-targeted explanations and examples.</p>
+        <h2>User journeys</h2>
+        <p>How the visitor moves through your site and interacts with the page.</p>
+        <ul class="uk-list uk-list-bullet"><li><a href="https://webship.co/docs/webship-js/2.0.x/navigation"><strong>Navigation</strong></a> - Anonymous user, homepage, arbitrary paths, back/forward history, reload, and URL assertions.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/action"><strong>Actions</strong></a> - Press buttons, click links and elements, follow links, attach files. The fundamentals of every scenario.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/form"><strong>Forms</strong></a> - Fill fields, select options, check/uncheck boxes, pick radios - targeted by label, placeholder, name, or id.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/field"><strong>Field state</strong></a> - Assert what is currently in inputs, selects, checkboxes, and radios, including enabled/disabled state.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/input"><strong>Pointer input</strong></a> - Hover, drag and drop, double-click, right-click, tap, and viewport sizing.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/keyboard"><strong>Keyboard</strong></a> - Single keys and combos (e.g. Control+A) with alias normalization for common key names.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/scroll"><strong>Scrolling</strong></a> - Page and element scrolling: to top, to bottom, left/right, and into view.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/link"><strong>Links</strong></a> - Assert link href, title, target, and rel attributes before your visitors click them.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/modal"><strong>Modals</strong></a> - HTML modal visibility and content assertions, clicks scoped inside the modal, and closing.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/dialog"><strong>Browser dialogs</strong></a> - Native alert, confirm, and prompt handling: accept, dismiss, answer, and assert message text.</li></ul>
+        <h2>Outcome verification</h2>
+        <p>What the page shows, how it is structured, what the server returned.</p>
+        <ul class="uk-list uk-list-bullet"><li><a href="https://webship.co/docs/webship-js/2.0.x/assertion"><strong>Assertions</strong></a> - Page-level text and element assertions, including text in a specific element, table row, or region scope.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/web-first"><strong>Web-first matchers</strong></a> - Auto-retrying matchers with a within-N-seconds budget; they pass the moment the condition becomes true.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/element"><strong>Element interactions</strong></a> - Focus, scroll-to, click-on-element, dispatch events, and position/CSS property checks.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/table"><strong>Tables</strong></a> - Data table assertions by row and column, plus clicking text within a matching row.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/metatag"><strong>Meta tags</strong></a> - Description, keywords, Open Graph, and Twitter card assertions for SEO and social sharing.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/response"><strong>Response headers</strong></a> - Inspect status codes plus cache, security, and CDN headers on every release.</li></ul>
+        <h2>APIs and data formats</h2>
+        <p>Drive REST endpoints, inspect JSON, XML, and YAML payloads directly from Gherkin - no browser required.</p>
+        <ul class="uk-list uk-list-bullet"><li><a href="https://webship.co/docs/webship-js/2.0.x/api"><strong>API steps (long form)</strong></a> - REST requests with headers and bodies, status and JSON Pointer assertions on the response.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/rest"><strong>REST steps (short form)</strong></a> - Same backend coverage as the API group with terser phrasings for quick smoke checks.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/xml"><strong>XML responses</strong></a> - XPath-style element, attribute, count, and namespace assertions on XML payloads (feeds, sitemaps, SOAP).</li><li><a href="https://webship.co/docs/webship-js/2.0.x/yaml"><strong>YAML responses</strong></a> - Path-based assertions, multi-document streams, type checks, JSON Schema validation, and golden-file diffs.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/path"><strong>URL paths</strong></a> - Path, query parameter, and fragment assertions on the current URL.</li></ul>
+        <h2>Test resilience and instrumentation</h2>
+        <p>Smart waits, mocked dependencies, accessibility audits, visual evidence, debug hooks.</p>
+        <ul class="uk-list uk-list-bullet"><li><a href="https://webship.co/docs/webship-js/2.0.x/wait"><strong>Waits</strong></a> - Smart waits and edge waits: wait for text, elements, URLs, and network idle. Never sleep.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/clock"><strong>Clock</strong></a> - <code>page.clock</code> install, advance, pause, and set for deterministic time in date-dependent UIs.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/network"><strong>Network</strong></a> - Route stubs and mocks, response delays, request blocking, and offline mode.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/storage"><strong>Storage</strong></a> - Set and assert localStorage and sessionStorage keys and values.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/cookie"><strong>Cookies</strong></a> - Cookie existence, value, and attribute assertions; set and delete cookies.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/auth"><strong>Auth state</strong></a> - Save and restore Playwright storageState so logged-in sessions are reused across scenarios.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/javascript"><strong>JavaScript errors</strong></a> - Track console and page errors during the scenario and assert a clean console.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/a11y"><strong>Accessibility</strong></a> - POUR smoke checks: alt text, form labels, landmarks, heading order, focus, and page language.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/iframe"><strong>Iframes</strong></a> - Switch into and out of frames and run frame-scoped interactions and assertions.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/file-download"><strong>File downloads</strong></a> - Capture triggered downloads and assert filename, size, and content.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/selectors"><strong>Selector registry</strong></a> - Named CSS and XPath selectors plus 22 CMS / framework presets (Drupal, WordPress, and more).</li><li><a href="https://webship.co/docs/webship-js/2.0.x/responsive"><strong>Responsive viewports</strong></a> - Named breakpoints (xs through xxxl) plus explicit width/height sizing.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/screenshot"><strong>Screenshots</strong></a> - Manual capture on demand, auto-on-failure, and per-step hooks with configurable filenames.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/video"><strong>Video recording</strong></a> - Playwright recordVideo with start, stop, and save steps for shareable evidence.</li><li><a href="https://webship.co/docs/webship-js/2.0.x/debug"><strong>Debug</strong></a> - Print the current URL or last response and pause the run for inspection.</li></ul>
+        <h2>Where the steps live</h2>
+        <p>Source code: <code>tests/step-definitions/&lt;group&gt;.steps.js</code>. Every file carries a JSDoc block with at least five Gherkin examples per step, and every step phrasing supports the pronoun prefix <code>(I |we )*</code> so your scenarios read naturally in either voice. Visual-regression steps are documented separately under <a href="https://webship.co/docs/webship-js/2.0.x/diffy-step-definitions">Diffy Step Definitions</a>, and every configuration knob the steps honor is listed in <a href="https://webship.co/docs/webship-js/2.0.x/global-settings">Global Settings</a>.</p>
+      format: full_html
+      summary: A step definition is a piece of JavaScript that maps a plain English Gherkin phrase (for example When I press "Submit" ) to a Playwright action or assertion. Webship-js ships 411 built-in steps across 36 step files , so Product Owners, PMs, QA, CQ, DevOps…

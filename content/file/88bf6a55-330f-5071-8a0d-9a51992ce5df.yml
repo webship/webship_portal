@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 88bf6a55-330f-5071-8a0d-9a51992ce5df
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-webship-js-advanced-scre-auto-capture-0.png
+  uri:
+    - value: public://webship-portal/blog-webship-js-advanced-scre-auto-capture-0.png
+  filemime:
+    - value: image/png
+  filesize:
+    - value: 56568
+  status:
+    - value: true

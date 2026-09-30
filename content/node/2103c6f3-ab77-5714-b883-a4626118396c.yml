@@ -1,0 +1,125 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 2103c6f3-ab77-5714-b883-a4626118396c
+  bundle: webblog
+  default_langcode: en
+  depends:
+    0a22dd08-9868-5556-8325-6f35761a6211: media
+    635190a6-ee00-50c6-bbdb-2ed08ab2ff0c: file
+    88bf6a55-330f-5071-8a0d-9a51992ce5df: file
+    af06573d-b2fd-5549-a9ba-462ea8b2e86d: file
+    448dbb29-6ba1-574d-9755-a984d341ebe9: file
+    0adc443a-c7d0-5bbe-ab24-c2e6ef59b29b: file
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Webship-js Advanced Screenshots
+  created:
+    - value: 1787558400
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /blog/webship-js-advanced-screenshots
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>When an automated test fails in CI at three in the morning, the first question is always the same: what did the page actually look like? Screenshots answer that question instantly. They give stakeholders visual evidence they can scan in seconds, and they give QA engineers the forensic detail they need to diagnose a failure without rerunning anything.</p>
+        <p>Webship-js, the BDD-first browser automation harness built on Playwright and Cucumber-js, treats screenshots as a first-class feature. Version 2.0.x ships with a complete set of screenshot steps that cover viewport captures, full-page captures, on-the-fly viewport resizing, custom filenames with dynamic tokens, automatic failure captures, and flexible per-project configuration. This article walks through all of it.</p>
+        <p><strong>Two files per capture, not one</strong></p>
+        <p>The first thing that sets Webship-js apart is that every capture writes two files to disk. The first is a PNG image taken with Playwright's screenshot API. The second is an HTML snapshot containing the full page markup at that exact moment.</p>
+        <img src="/sites/default/files/webship-portal/blog-webship-js-advanced-scre-dual-capture.png" data-entity-type="file" data-entity-uuid="635190a6-ee00-50c6-bbdb-2ed08ab2ff0c" width="860" height="420" alt="Every capture writes two files: a PNG image and an HTML snapshot of the page." loading="lazy"><p>That HTML sidecar turns out to be a quiet superpower. Some rendering problems are far easier to diagnose in the DOM than in pixels. A missing class, an unexpected inline style, or a component that rendered empty will jump out of the markup long before it jumps out of an image. And because the HTML capture does not depend on the browser's screenshot capability, it keeps working even on drivers that cannot take screenshots at all.</p>
+        <p>You can also enrich the HTML snapshot with context. By setting the infoTypes option, each HTML file can be prefixed with lines recording the current URL, the feature, the step, and the datetime of the capture, so you always know exactly where a snapshot came from.</p>
+        <p><strong>Screenshots that take themselves</strong></p>
+        <p>Before we get to the manual steps, it is worth knowing that Webship-js captures some screenshots on its own.</p>
+        <p>Whenever a step fails, a built-in hook automatically saves a screenshot. This behavior is on by default, and failed captures get their own filename pattern with a <code>failed_</code> prefix, so a red run is easy to triage. You simply scan the artifacts directory for anything starting with <code>failed_</code>.</p>
+        <p>There is also a lightweight way to record an entire scenario visually. Tag it with <code>@screenshots</code> and Webship-js will save a capture after every passing step of that scenario, and only that scenario. It is a targeted alternative to enabling the global <code>onEveryStep</code> setting, and it turns any scenario into a step-by-step visual walkthrough without changing a single line of its steps.</p>
+        <img src="/sites/default/files/webship-portal/blog-webship-js-advanced-scre-auto-capture-0.png" data-entity-type="file" data-entity-uuid="88bf6a55-330f-5071-8a0d-9a51992ce5df" width="860" height="430" alt="Two ways screenshots take themselves: on failure, and after every passing step in scenarios tagged @screenshots." loading="lazy"><p><strong>The manual steps</strong></p>
+        <p>All screenshot steps work equally as <code>When</code> or <code>Then</code>, and the pronoun is flexible. You can write <code>I</code>, <code>we</code>, or drop the pronoun entirely and write <code>Then save screenshot</code>.</p>
+        <p><strong>A basic viewport capture</strong></p>
+        <p>The simplest form captures whatever is visible in the viewport:</p>
+        <pre><code>Given I am on "/about-us.html"
+         Then I save screenshot</code></pre>
+        <p>The PNG and its HTML twin land in the configured screenshot directory, which is created on demand. Files are named using a configurable pattern, with <code>{datetime}</code>.<code>{feature_file}.feature_{step_line}.{ext}</code> as the default, so captures sort predictably in CI artifacts. One nice detail: if you have enabled the <code>alwaysFullscreen</code> option in configuration, this step quietly upgrades itself to a full-page capture.</p>
+        <p><strong>Capturing the whole page</strong></p>
+        <p>For long articles, landing pages, or anywhere below-the-fold content matters, the fullscreen variant passes <code>fullPage: true</code> to Playwright and captures the entire scrollable height of the document rather than just the visible viewport:</p>
+        <pre><code>Given I am on "/about-us.html"
+         When I wait 2 seconds
+         Then I save fullscreen screenshot</code></pre>
+        <p><strong>Capturing at specific viewport sizes</strong></p>
+        <p>Responsive layouts need to be seen at more than one size, and Webship-js lets you do that in a single scenario. The sized variants resize the viewport to the given width and height first, then capture:</p>
+        <pre><code>Given I am on homepage
+         Then I save 375 x 667 screenshot
+          And I save 768 x 1024 screenshot
+          And I save fullscreen 1920 x 1080 screenshot</code></pre>
+        <p>Common pairs are 375 x 667 for a phone, 768 x 1024 for a tablet, and 1920 x 1080 for a desktop. The fullscreen variant additionally captures the full scrollable page at that width.</p>
+        <img src="/sites/default/files/webship-portal/blog-webship-js-advanced-scre-viewport-sizes.png" data-entity-type="file" data-entity-uuid="af06573d-b2fd-5549-a9ba-462ea8b2e86d" width="860" height="440" alt="One scenario in three device sizes: phone 375 by 667, tablet 768 by 1024, desktop 1920 by 1080." loading="lazy"><p>One important caveat: the resize persists for the rest of the scenario. Later steps run at the new size, so if subsequent assertions are size-sensitive, resize back explicitly or use the dedicated responsive steps.</p>
+        <p><strong>Naming your captures</strong></p>
+        <p>When you want deterministic filenames, perhaps for a visual-diff pipeline or a documentation build, use the named variants:</p>
+        <pre><code>Given I am on "/news"
+         Then I save screenshot with name "news-latest.png"
+          And I save fullscreen screenshot with name "news-{datetime}.png"</code></pre>
+        <p>Names can embed any of the filename tokens described later in this article, for example <code>"un-landing-{datetime}.png"</code>, <code>"{feature_file}_{step_line}"</code>, or <code>"{url_path}.png"</code>. If the name does not end with an extension or the {ext} token, the extension is appended automatically, so you still get both the PNG and the HTML variant.</p>
+        <p><strong>Quick recap</strong></p>
+        <p>That gives you six step variants in total, and they compose naturally. The plain Then I save screenshot captures the viewport, while <code>Then I save fullscreen screenshot</code> captures the whole page. Adding a size, as in <code>Then I save 1440 x 900 screenshot</code> or <code>Then I save fullscreen 1440 x 900 screenshot</code>, resizes the viewport first. And appending <code>with name "homepage.png"</code> to either the plain or fullscreen form gives you full control over the filename, tokens included.</p>
+        <p><strong>A complete feature file</strong></p>
+        <p>Here is everything working together in one feature:</p>
+        <pre><code>Feature: Save screenshots to disk.
+          As a tester,
+          I want to capture screenshots at arbitrary points in my scenarios
+          so that I can review rendered pages and debug failures.
+
+          Background:
+            Given I am on homepage
+
+          Scenario: Save a screenshot at the current viewport size.
+            Then I save screenshot
+
+          Scenario: Save a full-page screenshot at a fixed viewport.
+            Then I save fullscreen 1200 x 800 screenshot
+
+          Scenario: Save a screenshot with filename tokens.
+            Then I save screenshot with name "{feature_file}_{step_line}_{datetime}.png"
+
+          @screenshots
+          Scenario: Auto-capture a screenshot after every step in a tagged scenario.
+            Given I am on "/about-us.html"
+             Then I should see "About Us"</code></pre>
+        <p><strong>Configuring the behavior</strong></p>
+        <p>Screenshot settings resolve per scenario through three layers, from highest priority to lowest. Environment variables prefixed with <code>WEBSHIP_SCREENSHOT_</code> win, which makes them ideal for CI and shell overrides. Next come the <code>worldParameters.screenshot</code> settings in your project's <code>cucumber.js</code>, which act as per-project defaults. Finally, the built-in defaults cover anything you have not set.</p>
+        <img src="/sites/default/files/webship-portal/blog-webship-js-advanced-scre-config-priority.png" data-entity-type="file" data-entity-uuid="448dbb29-6ba1-574d-9755-a984d341ebe9" width="860" height="430" alt="How screenshot settings are resolved: environment variables, then the project configuration, then the built-in defaults." loading="lazy"><p>Every setting is available under both names: an environment variable prefixed with <code>WEBSHIP_SCREENSHOT_ </code>and a matching key under <code>worldParameters.screenshot</code>. Here is what you can control.</p>
+        <p>The output location is set by <code>WEBSHIP_SCREENSHOT_DIR</code> (the <code>dir</code> key), defaulting to <code>./screenshots</code>, and the directory is created if it does not exist. If you want each run to start clean, <code>WEBSHIP_SCREENSHOT_PURGE</code> (<code>purge</code>) empties the directory once at the start of the run; it is off by default.</p>
+        <p>Two settings govern the automatic captures. <code>WEBSHIP_SCREENSHOT_ON_FAILED</code> (<code>onFailed</code>) controls the failure hook and is on by default, while <code>WEBSHIP_SCREENSHOT_ON_EVERY_STEP</code> (<code>onEveryStep</code>) captures after every passing step in every scenario and is off by default. A third, <code>WEBSHIP_SCREENSHOT_FULLSCREEN</code> (<code>alwaysFullscreen</code>), upgrades every capture to a full-page one when enabled.</p>
+        <p>Filenames are shaped by three more options. <code>WEBSHIP_SCREENSHOT_PATTERN</code> (<code>filenamePattern</code>) sets the pattern for normal captures, defaulting to <code>{datetime}.{feature_file}.feature_{step_line}.{ext}</code>. Failed captures use their own pattern via <code>WEBSHIP_SCREENSHOT_PATTERN_FAIL</code> (<code>filenamePatternFailed</code>), which is the same pattern with {<code>failed_prefix</code>} in front, and the prefix itself is configurable through <code>WEBSHIP_SCREENSHOT_FAILED_PREFIX</code> (<code>failedPrefix</code>), defaulting to <code>failed_</code>.</p>
+        <p>Finally, <code>WEBSHIP_SCREENSHOT_INFO_TYPES</code> (<code>infoTypes</code>) takes a comma-separated list drawn from <code>url</code>, <code>feature</code>, <code>step</code>, and <code>datetime</code>, and prepends the corresponding context lines to every HTML capture. It is empty by default.</p>
+        <p><strong>The filename token system</strong></p>
+        <p>Tokens are what make the screenshot steps genuinely useful in CI. Instead of a folder full of anonymous images, you get filenames that describe exactly what each capture is.</p>
+        <img src="/sites/default/files/webship-portal/blog-webship-js-advanced-scre-filename-tokens-1.png" data-entity-type="file" data-entity-uuid="0adc443a-c7d0-5bbe-ab24-c2e6ef59b29b" width="860" height="400" alt="The default filename pattern: timestamp, feature file, step line and extension." loading="lazy"><p>The workhorse is {<code>datetime</code>}, which expands to the capture timestamp in <code>Ymd_His</code> format by default, producing values like <code>20260721_142530</code>. You can supply a custom format too, such as <code>{datetime:YYYY-MM-DD_HH-mm-ss}</code>.</p>
+        <p>Two tokens tie the capture back to its origin in your test suite. <code>{feature_file}</code> expands to the feature's filename without the <code>.feature</code> extension, and <code>{step_line}</code> expands to the line number of the current step, with optional zero-padding like <code>{step_line:%03d}</code>. If you prefer human-readable names, <code>{step_name}</code> inserts the text of the current step itself, sanitized for the filesystem with spaces converted to underscores and quotes stripped.</p>
+        <p>A whole family of URL tokens ties the capture to the page instead. <code>{url}</code> gives you the full current URL, and its siblings extract a single component: <code>{url_origin}, {url_domain}, {url_path}, {url_query}, {url_fragment}</code>, and <code>{url_relative}</code>. All of them are sanitized so the result is always a valid filename.</p>
+        <p>Rounding out the set, <code>{failed_prefix}</code> expands to the configured failure prefix (<code>failed_</code> unless you changed it), and <code>{ext}</code> expands to the file extension, filled in as <code>png</code> or <code>html</code> for each of the two files a capture produces.</p>
+        <p><strong>Practical tips</strong></p>
+        <p>A few habits will keep your screenshot workflow clean:</p>
+        <p>Use the <code>@screenshots</code> tag when you only need step-by-step captures for one scenario, rather than enabling <code>onEveryStep</code> for the entire suite.</p>
+        <p>If your test reporter already attaches screenshots on failure, disable the built-in failure capture with <code>WEBSHIP_SCREENSHOT_ON_FAILED=false</code> to avoid duplicates.</p>
+        <p>In CI, set <code>WEBSHIP_SCREENSHOT_PURGE=true</code> so each run starts with an empty artifacts directory. The purge happens only once per run, so parallel scenarios will not delete each other's captures.</p>
+        <p>Remember that the viewport-resizing steps do not restore the previous size. Resize back, or use the responsive steps, if later assertions are size-sensitive.</p>
+        <p><strong>Wrapping up</strong></p>
+        <p>Screenshot support in Webship-js 2.0.x is more than a debugging convenience. It is a complete visual-evidence pipeline: manual captures where you want them, automatic captures where you need them, dual PNG and HTML output for both human and DOM-level review, and a token-based naming system that keeps thousands of CI artifacts organized and searchable.</p>
+        <p>The screenshot group is one of 411 built-in steps across 36 step files in Webship-js, and it pairs naturally with the responsive steps, video recording, and the Diffy visual-diff workflow. If you are already writing Gherkin, adding rich visual evidence to your suite takes exactly one line:</p>
+        <pre><code>Then I save screenshot</code></pre>
+        <p>To dig deeper, see the <a href="/docs/webship-js/2.0.x">Webship-js 2.0.x documentation</a> and the<a href="https://webship.co/docs/webship-js/2.0.x/screenshot-steps"> Screenshot Steps reference</a>.</p>
+      format: full_html
+      summary: 'When an automated test fails in CI at three in the morning, the first question is always the same: what did the page actually look like? Screenshots answer that question instantly. They give stakeholders visual evidence they can scan in seconds, and they give…'
+  field_media:
+    - entity: 0a22dd08-9868-5556-8325-6f35761a6211

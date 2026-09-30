@@ -1,0 +1,58 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: f83389a6-fa5a-521e-b8b4-a30ce8d2ed9d
+  bundle: webblog
+  default_langcode: en
+  depends:
+    9c259abc-4ff8-5a6b-8df5-5161856eb2e8: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Given, When, Then Done Well
+  created:
+    - value: 1770015600
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /blog/given-when-then-done-well
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>Given, When, Then is easy to write and easy to write badly. A scenario that lists twenty clicks tells nobody what the feature is for. A few rules keep scenarios short, readable and useful as documentation.</p>
+        <h2>Describe behaviour, not clicks</h2>
+        <p>Compare two ways of testing the same search. The first one is a script. It breaks whenever the page changes, and the reader has to work out what it proves:</p>
+        <pre><code class="language-gherkin">Scenario: Search
+          Given I am on the homepage
+          When I click "Blog"
+          And I wait for 3 seconds
+          And I fill in "Search the blog" with "Playwright"
+          And I press "Apply"
+          And I wait for 3 seconds
+          Then I should see "What Is Playwright?"</code></pre>
+        <p>The second one starts where the behaviour starts, names the outcome in its title, and checks both what must appear and what must not:</p>
+        <pre><code class="language-gherkin">Scenario: Searching the blog shows only the matching posts
+          Given I am on "/blog"
+          When I fill in "Search the blog" with "Playwright"
+          And I press "Apply"
+          Then I should see "What Is Playwright?"
+          And I should not see "Patterns vs. Anti-Patterns"</code></pre>
+        <h2>Rules that help</h2>
+        <ul class="uk-list uk-list-bullet"><li><strong>One When per scenario.</strong> A second action usually means a second scenario.</li><li><strong>Given is state, not a journey.</strong> Go straight to the page under test instead of clicking through the site to reach it.</li><li><strong>Then is something a person can see.</strong> A message, a heading, a link, a value in a field.</li><li><strong>No fixed waits.</strong> Webship-js waits for the page to settle before and after each action, so a sleep only makes the suite slower.</li><li><strong>The title is the requirement.</strong> Someone who reads only the titles should understand what the feature does.</li></ul>
+        <h2>Use a Background for what repeats</h2>
+        <p>When every scenario of a feature starts the same way, move those lines to a <code>Background</code>. Keep it to one or two lines: a long Background hides the context that makes a scenario readable.</p>
+        <p>Scenarios written like this double as living documentation. When one fails, its title already says which promise to your visitors was broken.</p>
+      format: full_html
+      summary: Given, When, Then is easy to write and easy to write badly. A few rules keep scenarios short, readable and useful as documentation.
+  field_media:
+    - entity: 9c259abc-4ff8-5a6b-8df5-5161856eb2e8

@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: a05a975c-dbb8-54b4-8025-78a76b2300de
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: webship-automated-testing-badge.svg
+  uri:
+    - value: public://webship-portal/webship-automated-testing-badge.svg
+  filemime:
+    - value: image/svg+xml
+  filesize:
+    - value: 644
+  status:
+    - value: true

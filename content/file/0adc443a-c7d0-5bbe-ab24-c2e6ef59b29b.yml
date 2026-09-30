@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 0adc443a-c7d0-5bbe-ab24-c2e6ef59b29b
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-webship-js-advanced-scre-filename-tokens-1.png
+  uri:
+    - value: public://webship-portal/blog-webship-js-advanced-scre-filename-tokens-1.png
+  filemime:
+    - value: image/png
+  filesize:
+    - value: 46230
+  status:
+    - value: true

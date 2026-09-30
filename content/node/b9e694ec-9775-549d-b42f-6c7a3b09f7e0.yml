@@ -1,0 +1,65 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: b9e694ec-9775-549d-b42f-6c7a3b09f7e0
+  bundle: webblog
+  default_langcode: en
+  depends:
+    f333e510-ea1f-565d-a894-ced0b4b97b56: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Accessibility Checks in the Pipeline
+  created:
+    - value: 1777273200
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /blog/accessibility-checks-in-the-pipeline
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>Most accessibility regressions are small: an image without alternative text, a second main heading, a field that lost its label in a redesign. Nobody notices until someone who depends on them does. These are easy to catch automatically, on every change.</p>
+        <h2>Quick structural checks</h2>
+        <p>Webship-js has steps for the basics of a page. They run fast, and their failure messages name the elements at fault:</p>
+        <pre><code class="language-gherkin">Feature: Accessibility of the main pages
+
+          Scenario Outline: &lt;path&gt; has a sound structure
+            Given I am an anonymous user
+            When I go to "&lt;path&gt;"
+            Then the page should have exactly one h1
+            And the heading hierarchy should be valid
+            And every image should have an alt attribute
+            And every link should have an accessible name
+            And every form field should have an accessible label
+            And the page should have a main landmark
+
+            Examples:
+              | path     |
+              | /        |
+              | /blog    |
+              | /contact |</code></pre>
+        <h2>A full audit with axe-core</h2>
+        <p>For the rules that need computing, such as color contrast, run an audit. The level is yours to choose:</p>
+        <pre><code class="language-gherkin">  Scenario: The home page passes the audit
+            Given I am on the homepage
+            Then the page should pass an accessibility audit at level "AA"</code></pre>
+        <p>Start at level A if the site has never been audited, fix what it reports, then raise the level. A check that is red from the first day gets ignored.</p>
+        <h2>What automation does not see</h2>
+        <p>An automated audit finds a part of the problems, not all of them. It cannot tell whether an alternative text describes the image, whether the focus order makes sense, or whether an error message helps. Keep a short manual pass for every new template: keyboard only, zoom at 200 percent, and a screen reader on the main journey.</p>
+        <h2>Where to run it</h2>
+        <p>Put these scenarios in the same suite as the functional ones, tagged <code>@a11y</code>, so they run in the pipeline on every merge request. The cheapest accessibility fix is the one made before the change is merged.</p>
+      format: full_html
+      summary: 'Most accessibility regressions are small: an image without alternative text, a second main heading, a field without a label. They are easy to catch on every change.'
+  field_media:
+    - entity: f333e510-ea1f-565d-a894-ced0b4b97b56

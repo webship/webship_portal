@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: f3a1663e-84a1-5bf8-8133-cf28a236e06c
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-webship-js-adds-diffy-api-support-visual.jpg
+  uri:
+    - value: public://webship-portal/blog-webship-js-adds-diffy-api-support-visual.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 67873
+  status:
+    - value: true

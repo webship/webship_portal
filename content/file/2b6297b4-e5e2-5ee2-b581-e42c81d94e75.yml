@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 2b6297b4-e5e2-5ee2-b581-e42c81d94e75
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: release-webship-js-2-0-0-beta1.jpg
+  uri:
+    - value: public://webship-portal/release-webship-js-2-0-0-beta1.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 64091
+  status:
+    - value: true

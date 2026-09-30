@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: c98b596d-f2ec-5938-9e2f-446a09d388cf
+  bundle: product
+  default_langcode: en
+  depends:
+    0e46252b-18a2-5b1d-acfb-800228762447: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Diffy steps
+  created:
+    - value: 1785596657
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /products/diffy-steps
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>Diffy-specific Cucumber step definitions for Webship-js. The plugin captures full-page Playwright screenshots at multiple breakpoints and drives Diffy visual-regression comparisons through the Diffy REST API, so you can express visual checks as readable Gherkin instead of hand-rolling API calls.</p>
+        <p>It is a plugin for Webship-js: it does not run standalone. It ships one file of step definitions that you add to a Webship-js test project.</p><pre><code class="language-shell">npm install --save-dev webship-js @webship-js/diffy-steps</code></pre>
+        <p><a class="uk-button uk-button-primary uk-margin-small-right uk-margin-small-bottom" href="https://github.com/webship/diffy-steps">Diffy steps on GitHub</a> <a class="uk-button uk-button-default uk-margin-small-right uk-margin-small-bottom" href="https://www.npmjs.com/package/@webship-js/diffy-steps">Diffy steps on npm</a></p>
+      format: full_html
+      summary: Diffy-specific Cucumber step definitions for Webship-js. The plugin captures full-page Playwright screenshots at multiple breakpoints and drives Diffy visual-regression comparisons through the Diffy REST API, so you can express visual checks as readable Gherkin instead of hand-rolling API calls.
+  field_image:
+    - entity: 0e46252b-18a2-5b1d-acfb-800228762447

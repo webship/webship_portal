@@ -1,0 +1,42 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 493b2b75-d470-56ff-8a31-ef19adee294c
+  bundle: release
+  default_langcode: en
+  depends:
+    c98b596d-f2ec-5938-9e2f-446a09d388cf: node
+    0e46252b-18a2-5b1d-acfb-800228762447: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: 2.0.0
+  created:
+    - value: 1785596657
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /products/diffy-steps/releases/2.0.0
+      langcode: en
+      pathauto: 0
+  body:
+    - value: '<p>First release of <code>@webship-js/diffy-steps</code>: Diffy visual-regression step definitions for Webship-js.</p><p>Extracted from Webship-js, where these steps shipped as an opt-in layer, and removed there in <a href="/products/webship-js/releases/2.0.5">Webship-js 2.0.5</a>.</p>'
+      format: full_html
+      summary: 'First release of @webship-js/diffy-steps : Diffy visual-regression step definitions for Webship-js. Extracted from Webship-js, where these steps shipped as an opt-in layer, and removed there in Webship-js 2.0.5 .'
+  field_product:
+    - entity: c98b596d-f2ec-5938-9e2f-446a09d388cf
+  field_release_image:
+    - entity: 0e46252b-18a2-5b1d-acfb-800228762447
+  field_release_link:
+    - uri: https://github.com/webship/diffy-steps/releases/tag/2.0.0
+      title: GitHub release
+      options: {}

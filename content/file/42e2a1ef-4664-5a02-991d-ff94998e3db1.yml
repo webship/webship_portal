@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 42e2a1ef-4664-5a02-991d-ff94998e3db1
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-why-playwright-and-cucumber-js-webship-j.jpg
+  uri:
+    - value: public://webship-portal/blog-why-playwright-and-cucumber-js-webship-j.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 150314
+  status:
+    - value: true

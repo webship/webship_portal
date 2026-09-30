@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 86d8aa06-764f-51aa-bb12-874335ba73a4
+  bundle: image
+  default_langcode: en
+  depends:
+    7973fc42-ee4a-5f99-8f30-20968a991d8b: file
+default:
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  name:
+    - value: 'Advanced Selectors in Webship-js: A Named Registry for Stable, Readable Layout Tests'
+  field_media_image:
+    - alt: 'Cover of the blog post: Advanced Selectors in Webship-js: A Named Registry for Stable, Readable Layout Tests'
+      title: ''
+      width: 1280
+      height: 720
+      entity: 7973fc42-ee4a-5f99-8f30-20968a991d8b

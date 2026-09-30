@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 71ea0e4e-355d-5fc6-b263-3030c9749373
+  bundle: product
+  default_langcode: en
+  depends:
+    0e46252b-18a2-5b1d-acfb-800228762447: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Webship-js skills
+  created:
+    - value: 1773653000
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /products/webship-js-skills
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>AI-assistant skills for automated website testing with Webship-js, a BDD testing framework built on Playwright and Cucumber-js. Works with Claude Code, GitHub Copilot, Gemini CLI and Codex CLI.</p>
+        <ul class="uk-list uk-list-bullet"><li><code>/webship-js-init</code>: scaffold a new Webship-js project (Node.js or DDEV).</li><li><code>/webship-js-create</code>: author feature files for a page (desktop and mobile).</li><li><code>/webship-js-run</code>: run the suite, generate the HTML report, analyze failures.</li><li><code>/webship-js-steps</code>: look up any Given, When, Then step definition.</li><li><code>/webship-js-audit</code>: review feature and custom step files for patterns and anti-patterns.</li></ul><pre><code class="language-shell">git clone https://github.com/webship/webship-js-skills.git</code></pre>
+        <p><a class="uk-button uk-button-primary uk-margin-small-right uk-margin-small-bottom" href="https://github.com/webship/webship-js-skills">Webship-js skills on GitHub</a></p>
+      format: full_html
+      summary: AI-assistant skills for automated website testing with Webship-js, a BDD testing framework built on Playwright and Cucumber-js. Works with Claude Code, GitHub Copilot, Gemini CLI and Codex CLI.
+  field_image:
+    - entity: 0e46252b-18a2-5b1d-acfb-800228762447

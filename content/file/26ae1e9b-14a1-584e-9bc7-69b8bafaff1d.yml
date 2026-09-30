@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 26ae1e9b-14a1-584e-9bc7-69b8bafaff1d
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-advanced-selectors-websh-selector-merge-order.jpg
+  uri:
+    - value: public://webship-portal/blog-advanced-selectors-websh-selector-merge-order.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 54699
+  status:
+    - value: true

@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: af23c7b6-5445-5d10-806e-ec261c7d07de
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-test-first-development-a-ridetogether-10.jpg
+  uri:
+    - value: public://webship-portal/blog-test-first-development-a-ridetogether-10.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 177311
+  status:
+    - value: true

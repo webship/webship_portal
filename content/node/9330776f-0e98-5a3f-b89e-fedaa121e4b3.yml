@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 9330776f-0e98-5a3f-b89e-fedaa121e4b3
+  bundle: product
+  default_langcode: en
+  depends:
+    a8ec1654-017a-5d0a-8c10-2c2b00312ba2: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Webship-portal
+  created:
+    - value: 1711929601
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /products/webship-portal
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>The Webship.co portal site was built on top of Drupal, as it has many options, tools, frameworks, and configuration management, which are needed in building solutions.</p>
+
+        <p><a class="uk-button uk-button-primary uk-margin-small-right uk-margin-small-bottom" href="https://www.drupal.org/project/webship">Webship-portal on Drupal.org</a></p>
+      format: full_html
+      summary: The Webship.co portal site was built on top of Drupal, as it has many options, tools, frameworks, and configuration management, which are needed in building solutions.
+  field_image:
+    - entity: a8ec1654-017a-5d0a-8c10-2c2b00312ba2

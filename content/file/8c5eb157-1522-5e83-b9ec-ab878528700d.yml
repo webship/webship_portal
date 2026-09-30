@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 8c5eb157-1522-5e83-b9ec-ab878528700d
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-patterns-vs-anti-pattern-03-parallel-tests.png
+  uri:
+    - value: public://webship-portal/blog-patterns-vs-anti-pattern-03-parallel-tests.png
+  filemime:
+    - value: image/png
+  filesize:
+    - value: 30365
+  status:
+    - value: true

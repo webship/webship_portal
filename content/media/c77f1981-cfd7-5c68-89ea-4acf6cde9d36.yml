@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: c77f1981-cfd7-5c68-89ea-4acf6cde9d36
+  bundle: image
+  default_langcode: en
+  depends:
+    42e2a1ef-4664-5a02-991d-ff94998e3db1: file
+default:
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  name:
+    - value: Why Playwright and Cucumber‑js in Webship‑js 2.0
+  field_media_image:
+    - alt: 'Cover of the blog post: Why Playwright and Cucumber‑js in Webship‑js 2.0'
+      title: ''
+      width: 1280
+      height: 853
+      entity: 42e2a1ef-4664-5a02-991d-ff94998e3db1

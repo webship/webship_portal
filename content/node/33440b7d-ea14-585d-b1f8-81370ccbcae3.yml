@@ -1,0 +1,49 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 33440b7d-ea14-585d-b1f8-81370ccbcae3
+  bundle: webblog
+  default_langcode: en
+  depends:
+    c77f1981-cfd7-5c68-89ea-4acf6cde9d36: media
+    7880e7f8-5e41-5910-8ef2-8a691132e0a0: file
+    b297631a-278d-540d-8b65-6f4c6a5daca1: file
+    780f3c88-356c-54b6-a39e-d18bcb5171f9: file
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Why Playwright and Cucumber‑js in Webship‑js 2.0
+  created:
+    - value: 1775470731
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /blog/why-playwright-and-cucumber-js-webship-js-2.0
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>In modern web development, automated testing frameworks must address two primary goals: reliable execution and clear communication across teams. Webship‑js 2.0 is built on Playwright and Cucumber‑js precisely because each tool excels at one of these goals, and together they cover both.<br>Playwright brings fast, stable, cross‑browser automation to the framework, while Cucumber‑js adds a human‑readable layer that keeps tests aligned with business expectations. The sections below explain why this specific pairing was chosen for Webship‑js 2.0.</p>
+        <img src="/sites/default/files/webship-portal/blog-why-playwright-and-cucum-the-case-for-playwright.jpg" data-entity-type="file" data-entity-uuid="7880e7f8-5e41-5910-8ef2-8a691132e0a0" width="1280" height="853" alt="The case for Playwright: one tool that drives Chrome, Firefox and Edge, fast and reliable." loading="lazy"><p><strong>The Case for Playwright</strong></p>
+        <p>Playwright is a cross‑browser automation framework developed by Microsoft that enables reliable end‑to‑end testing for web applications. It supports all major browser engines, Chromium, Firefox, and WebKit, enabling teams to write once and test consistently across different environments. Playwright also provides auto‑waiting for elements, parallel execution, and built‑in debugging tools, making tests faster and less flaky compared to older solutions.<br>These capabilities make Playwright the right choice for Webship‑js 2.0, where tests must execute reliably on dynamic web interfaces, where timing and stability are critical.</p>
+        <img src="/sites/default/files/webship-portal/blog-why-playwright-and-cucum-the-case-for-cucumber-js.jpg" data-entity-type="file" data-entity-uuid="b297631a-278d-540d-8b65-6f4c6a5daca1" width="1280" height="853" alt="The case for Cucumber-js: a feature written as Given, When, Then, checked in several browsers." loading="lazy"><p><strong>The Case for Cucumber‑js</strong><br>Cucumber‑js implements Behavior‑Driven Development (BDD) using the human‑readable Gherkin syntax. This means tests are written in plain language, for example:</p>
+        <pre><code>Given the user opens the homepage
+        When the user fills out the login form
+        Then the dashboard should appear</code></pre>
+        <p>This format makes test cases accessible to developers, QA engineers, product managers, and other stakeholders alike, because feature files describe behavior rather than implementation details.<br>Cucumber‑js is therefore included in Webship‑js 2.0 to provide a shared language for test scenarios, one that improves team communication and ensures tests remain aligned with actual business requirements.</p>
+        <img src="/sites/default/files/webship-portal/blog-why-playwright-and-cucum-works-in-webship-js-2-0.jpg" data-entity-type="file" data-entity-uuid="780f3c88-356c-54b6-a39e-d18bcb5171f9" width="1280" height="853" alt="How it works in Webship-js 2.0: Gherkin features run by Cucumber-js and Playwright, ready for CI/CD." loading="lazy"><p><strong>Why This Combination Works in Webship‑js 2.0</strong><br>Choosing Playwright and Cucumber‑js together, rather than either tool alone, gives Webship‑js 2.0 a testing layer that is both powerful and transparent:</p>
+        <ul class="uk-list uk-list-bullet"><li>Readable Scenarios, Powerful Execution: Cucumber‑js provides stakeholder‑friendly test scenarios, while Playwright executes them reliably across browsers.</li><li>Improved Collaboration: Teams from different disciplines—development, QA, and product- can align on the same test scenarios before automation is implemented.</li><li>Scalable and Maintainable: With modular step definitions and Playwright’s robust APIs, tests can grow with the project without becoming fragile or difficult to maintain.</li><li>CI/CD‑Ready: This setup fits naturally into CI/CD pipelines, enabling automated validation on every code change.</li></ul>
+        <p><strong>Built for Modern Webship‑js Workflows</strong><br>Webship‑js 2.0 leverages this synergy to deliver an automated testing experience that is both effective and transparent. Playwright ensures that test execution is fast and stable, while Cucumber‑js ensures that tests are understandable and aligned with real user behavior.<br>This combination goes beyond test automation; it bridges the gap between business expectations and technical implementation, making collaboration easier and results more predictable.</p>
+      format: full_html
+      summary: 'In modern web development, automated testing frameworks must address two primary goals: reliable execution and clear communication across teams. Webship‑js 2.0 is built on Playwright and Cucumber‑js precisely because each tool excels at one of these goals…'
+  field_media:
+    - entity: c77f1981-cfd7-5c68-89ea-4acf6cde9d36

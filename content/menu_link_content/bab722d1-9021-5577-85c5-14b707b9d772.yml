@@ -1,0 +1,25 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: bab722d1-9021-5577-85c5-14b707b9d772
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    - value: true
+  title:
+    - value: Bitbucket
+  menu_name:
+    - value: social-media-menu
+  link:
+    - uri: https://bitbucket.org/webshipco/webship-js
+      title: ''
+      options: {}
+  external:
+    - value: true
+  rediscover:
+    - value: false
+  weight:
+    - value: 2
+  expanded:
+    - value: false

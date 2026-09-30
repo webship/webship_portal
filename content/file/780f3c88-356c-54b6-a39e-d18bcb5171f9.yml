@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 780f3c88-356c-54b6-a39e-d18bcb5171f9
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-why-playwright-and-cucum-works-in-webship-js-2-0.jpg
+  uri:
+    - value: public://webship-portal/blog-why-playwright-and-cucum-works-in-webship-js-2-0.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 251409
+  status:
+    - value: true

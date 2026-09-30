@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 60e4837c-47e5-5e2a-a17b-a11e20b027f9
+  bundle: image
+  default_langcode: en
+  depends:
+    780f3c88-356c-54b6-a39e-d18bcb5171f9: file
+default:
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  name:
+    - value: Running Your Tests in GitHub Actions and GitLab CI
+  field_media_image:
+    - alt: 'How it works in Webship-js 2.0: Gherkin features run by Cucumber-js and Playwright, ready for CI/CD.'
+      title: ''
+      width: 1280
+      height: 853
+      entity: 780f3c88-356c-54b6-a39e-d18bcb5171f9

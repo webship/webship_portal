@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: a8ec1654-017a-5d0a-8c10-2c2b00312ba2
+  bundle: image
+  default_langcode: en
+  depends:
+    2c4f6b46-ed58-54c6-a5ee-c4cc053ddf67: file
+default:
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  name:
+    - value: Webship.co logo
+  field_media_image:
+    - alt: The Webship.co logo
+      title: ''
+      width: 512
+      height: 512
+      entity: 2c4f6b46-ed58-54c6-a5ee-c4cc053ddf67

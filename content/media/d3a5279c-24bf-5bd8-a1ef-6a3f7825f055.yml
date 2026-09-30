@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: d3a5279c-24bf-5bd8-a1ef-6a3f7825f055
+  bundle: image
+  default_langcode: en
+  depends:
+    b297631a-278d-540d-8b65-6f4c6a5daca1: file
+default:
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  name:
+    - value: Testing a Contact Form End to End
+  field_media_image:
+    - alt: 'The case for Cucumber-js: a feature written as Given, When, Then, checked in several browsers.'
+      title: ''
+      width: 1280
+      height: 853
+      entity: b297631a-278d-540d-8b65-6f4c6a5daca1

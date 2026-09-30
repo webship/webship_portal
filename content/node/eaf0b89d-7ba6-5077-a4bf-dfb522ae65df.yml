@@ -1,0 +1,109 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: eaf0b89d-7ba6-5077-a4bf-dfb522ae65df
+  bundle: webblog
+  default_langcode: en
+  depends:
+    3e109470-9ee8-53cd-bd10-1497dfe38cac: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Webship-js AI Agent for Automated Testing
+  created:
+    - value: 1773654875
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /blog/webship-js-ai-agent-automated-testing
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>Now, with three new packages, webship-js brings AI directly into the testing workflow. Gives teams a rich library of ready-to-use Gherkin step definitions, no glue code, no boilerplate.</p>
+        <h2>1- Webship-js AI Agent for Claude Code</h2>
+        <p>A Claude Code custom agent specialized in automated website testing using <a href="/docs/webship-js/2.0.x">webship-js</a> (Playwright + Cucumber-js).</p>
+        <h2>What It Does</h2>
+        <p>The <code>agent-webship-js</code> agent can:</p>
+        <ul class="uk-list uk-list-bullet"><li><strong>Set up</strong> webship-js test projects from scratch</li><li><strong>Create</strong> BDD feature files (Gherkin) for any website</li><li><strong>Write</strong> custom Cucumber step definitions</li><li><strong>Run</strong> test suites and interpret results</li><li><strong>Debug</strong> failing tests (AJAX timing, selectors, rate limiting)</li><li><strong>Generate</strong> HTML test reports</li></ul>
+        <h2>Installation</h2>
+        <h3>Quick Install</h3>
+        <pre># Clone the repo
+        git clone https://github.com/webship/webship-js-ai-agent.git
+
+        # Copy agent to your Claude Code agents directory
+        cp webship-js-ai-agent/.claude/agents/agent-webship-js.md ~/.claude/agents/</pre>
+        <h3>Project-Level Install</h3>
+        <pre>cp webship-js-ai-agent/.claude/agents/agent-webship-js.md /path/to/project/.claude/agents/</pre>
+        <h3>Manual Install</h3>
+        <p>Copy <code>.claude/agents/agent-webship-js.md</code> to either:</p>
+        <ul class="uk-list uk-list-bullet"><li><code>~/.claude/agents/</code> (available globally)</li><li><code>&lt;project&gt;/.claude/agents/</code> (available in specific project)</li></ul>
+        <h2>Usage</h2>
+        <p>In Claude Code, use the agent via the Agent tool:</p>
+        <pre><code>Use the agent-webship-js agent to test https://example.com/contact</code></pre>
+        <p>Or reference it in conversations:</p>
+        <pre><code>@agent-webship-js Set up a test project for https://example.com and create
+        test cases for the login page.
+        </code></pre>
+        <h2>Example Workflow</h2>
+        <ol><li><strong>Setup</strong>: Agent creates project, installs webship-js, configures cucumber.js</li><li><strong>Exploration</strong>: Agent visits the target page, identifies testable elements</li><li><strong>Test Creation</strong>: Agent writes <code>.feature</code> files for desktop + mobile</li><li><strong>Execution</strong>: Agent runs tests, handles failures</li><li><strong>Reporting</strong>: Agent generates HTML report</li></ol>
+        <h2>Requirements</h2>
+        <ul class="uk-list uk-list-bullet"><li><a href="https://claude.com/claude-code">Claude Code</a> CLI</li><li>Node.js &gt;= 20.0</li><li>npm</li></ul>
+        <p><a href="https://github.com/webship/webship-js-ai-agent">https://github.com/webship/webship-js-ai-agent</a></p>
+        <hr>
+        <h2>2- Webship-js Skills for Claude Code</h2>
+        <p>Claude Code skills for automated website testing with <a href="/docs/webship-js/2.0.x">webship-js</a> (Playwright + Cucumber-js).</p>
+        <h2>Available Skills</h2>
+        <table class="uk-table uk-table-divider uk-table-small"><thead><tr><th scope="col"><strong>Skill</strong></th><th scope="col"><strong>Command</strong></th><th scope="col"><strong>Description</strong></th></tr></thead><tbody><tr><td>Setup</td><td><code>/webship-js-setup</code></td><td>Initialize a new webship-js test project</td></tr><tr><td>Test</td><td><code>/webship-js-test</code></td><td>Create &amp; run BDD tests for a page</td></tr><tr><td>Report</td><td><code>/webship-js-report</code></td><td>Generate &amp; analyze HTML test reports</td></tr><tr><td>Steps</td><td><code>/webship-js-steps</code></td><td>Quick reference for all step definitions</td></tr></tbody></table>
+        <h2>Installation</h2>
+        <h3>Quick Install</h3>
+        <pre>git clone https://github.com/webship/webship-js-skills.git
+        cp -r webship-js-skills/.claude/skills/* ~/.claude/skills/</pre>
+        <h3>Project-Level Install</h3>
+        <pre>cp -r webship-js-skills/.claude/skills/* /path/to/project/.claude/skills/</pre>
+        <h3>Install Script</h3>
+        <pre>git clone https://github.com/webship/webship-js-skills.git
+        cd webship-js-skills
+        bash install.sh            # Install globally
+        bash install.sh --project /path/to/project  # Install to project</pre>
+        <h2>Usage</h2>
+        <p>In Claude Code, invoke skills with slash commands:</p>
+        <pre><code>/webship-js-setup https://example.com
+        </code></pre>
+        <pre><code>/webship-js-test /contact
+        </code></pre>
+        <pre><code>/webship-js-report @desktop
+        </code></pre>
+        <pre><code>/webship-js-steps form
+        </code></pre>
+        <h2>Workflow Example</h2>
+        <pre># 1. Set up project
+        /webship-js-setup https://example.com
+
+        # 2. Create tests for the contact page
+        /webship-js-test /contact
+
+        # 3. Run tests and get report
+        /webship-js-report
+
+        # 4. Look up step syntax
+        /webship-js-steps api</pre>
+        <h2>Requirements</h2>
+        <ul class="uk-list uk-list-bullet"><li><a href="https://claude.com/claude-code">Claude Code</a> CLI</li><li>Node.js &gt;= 20.0</li></ul>
+        <p><br><a href="https://github.com/webship/webship-js-skills">https://github.com/webship/webship-js-skills</a></p>
+        <hr>
+        <p>This agent is built for <strong>webship-js 2.0</strong>. See the <a href="/docs/webship-js/2.0.x">webship-js documentation</a> for details.</p>
+        <p><strong>webship-js </strong>is an open-source automated functional acceptance testing framework built on Playwright and Cucumber-js.</p>
+      format: full_html
+      summary: Now, with three new packages, webship-js brings AI directly into the testing workflow. Gives teams a rich library of ready-to-use Gherkin step definitions, no glue code, no boilerplate.
+  field_media:
+    - entity: 3e109470-9ee8-53cd-bd10-1497dfe38cac

@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 5668151d-ca19-5acc-a77d-1674dba8f494
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-advanced-selectors-websh-layout-assertions.jpg
+  uri:
+    - value: public://webship-portal/blog-advanced-selectors-websh-layout-assertions.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 60660
+  status:
+    - value: true

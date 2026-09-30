@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: b5c68aa0-605e-5b10-b18a-fdee35284cba
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-webship-js-advanced-screenshots.jpg
+  uri:
+    - value: public://webship-portal/blog-webship-js-advanced-screenshots.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 85945
+  status:
+    - value: true

@@ -1,0 +1,25 @@
+_meta:
+  version: '1.0'
+  entity_type: menu_link_content
+  uuid: 0a85d9a3-998d-5306-87b1-7b7d7911ba79
+  bundle: menu_link_content
+  default_langcode: en
+default:
+  enabled:
+    - value: true
+  title:
+    - value: GitLab
+  menu_name:
+    - value: social-media-menu
+  link:
+    - uri: https://gitlab.com/webship
+      title: ''
+      options: {}
+  external:
+    - value: true
+  rediscover:
+    - value: false
+  weight:
+    - value: 1
+  expanded:
+    - value: false

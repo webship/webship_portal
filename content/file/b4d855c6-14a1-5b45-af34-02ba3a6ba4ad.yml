@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: b4d855c6-14a1-5b45-af34-02ba3a6ba4ad
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: service-cucumber-gherkin-descriptions.png
+  uri:
+    - value: public://webship-portal/service-cucumber-gherkin-descriptions.png
+  filemime:
+    - value: image/png
+  filesize:
+    - value: 18173
+  status:
+    - value: true

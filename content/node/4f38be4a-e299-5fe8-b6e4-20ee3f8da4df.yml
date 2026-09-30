@@ -1,0 +1,85 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 4f38be4a-e299-5fe8-b6e4-20ee3f8da4df
+  bundle: webblog
+  default_langcode: en
+  depends:
+    b34dfa7a-6293-5b14-898e-55d2d137ef75: media
+    f468c934-2b5f-572f-b30f-a41b57b2e64b: file
+    84790404-ab2b-5867-bfea-643e032f4ceb: file
+    42c4e647-1128-5e29-9573-f8854af234c9: file
+    d61f5e15-e596-576b-b88b-52a6fe86faae: file
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: 'Webship-js Adds Diffy API Support: Visual Regression Testing from Plain Gherkin'
+  created:
+    - value: 1790414749
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /blog/webship-js-adds-diffy-api-support-visual-regression-testing-plain-gherkin
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>If your test suite already speaks Gherkin, catching visual regressions no longer means reaching for a separate tool with its own syntax and setup. The new <code>@webship-js/diffy-steps</code> package plugs directly into Webship JS 2.0.x and lets you drive Diffy's visual-testing platform from the same feature files you're already writing.</p>
+        <p><strong>What it actually does</strong></p>
+        <p>Under the hood, the plugin uses Playwright to grab full-page screenshots at whatever screen widths you care about, then pushes them straight into the Diffy REST API. From there, it can bundle screenshots into named snapshots, ask Diffy to capture pages remotely from a live environment, kick off comparisons between two snapshots (or two environments), and sit and wait until a comparison finishes running. The output is the same pixel-level diff report you'd get from using Diffy directly; the difference is that every step of getting there is a line of plain English in your <code>.feature</code> file.</p>
+        <p><strong>Setting it up</strong></p>
+        <p>Two packages, one install:</p>
+        <pre><code>npm install --save-dev webship-js @webship-js/diffy-steps</code></pre>
+        <p>From there, point your <code>cucumber.js</code> at both sets of step definitions, the core Webship-js steps and the new Diffy ones, alongside any custom steps of your own. Your Diffy credentials and defaults (API key, project ID, which breakpoints to test) live under <code>worldParameters.diffy</code>, though, as covered below, environment variables can override any of them at runtime.</p>
+        <p><strong>How a test is structured</strong></p>
+        <p>Every Diffy scenario tends to follow the same shape, whether it's simple or elaborate: capture something, upload that batch to Diffy under a name, then compare two uploaded batches and wait for Diffy to finish crunching the diff.</p>
+        <p><img src="/sites/default/files/webship-portal/blog-webship-js-adds-diffy-ap-webship-diffy-01-workflow.jpg" data-entity-type="file" data-entity-uuid="f468c934-2b5f-572f-b30f-a41b57b2e64b" width="1280" height="272" alt="The Diffy workflow: capture a screenshot per breakpoint, upload the batch as a snapshot, compare two snapshots." loading="lazy"></p>
+        <p>That's it. A baseline set, a "changed" set, and a comparison step in between is the whole pattern.</p>
+        <p><strong>The step vocabulary</strong></p>
+        <p>Rather than memorizing an API, you're working with steps that read like instructions:</p>
+        <p><img src="/sites/default/files/webship-portal/blog-webship-js-adds-diffy-ap-webship-diffy-02-step-vocabulary.jpg" data-entity-type="file" data-entity-uuid="84790404-ab2b-5867-bfea-643e032f4ceb" width="1280" height="448" alt="The Diffy steps grouped as capture, upload and compare." loading="lazy"></p>
+        <p>A few details worth knowing if you're troubleshooting: resizing pads the width slightly to account for Diffy's own window chrome, so the breakpoint numbers still line up correctly on Diffy's side. And several of the step definitions are written loosely enough to accept "I," "we," or no pronoun at all, a small thing, but it means less friction when different people on a team phrase scenarios differently.</p>
+        <p><strong>A full scenario, start to finish</strong></p>
+        <pre><code>Feature: Diffy - visual regression
+
+          @diffy @smoke
+          Scenario: Resize, take screenshot, breakpoints loop, send
+            Given I am on "/diffy/baseline.html"
+            When I resize window to "640"
+            Then I take screenshot
+            Given I am on "/diffy/changed.html"
+            Then I take screenshots for all breakpoints
+            Then send screenshots to diffy with name "smoke-set-1"
+
+            Given I am on "/diffy/baseline.html"
+            Then I take screenshots for all breakpoints
+            Then send screenshots to diffy with name "smoke-set-2"
+
+            Then create diffy comparison
+            Then wait for diffy comparison to complete</code></pre>
+        <p>Two pages, two snapshot batches, one comparison, no image-diffing library to configure by hand.</p>
+        <p><strong>Beyond local screenshots</strong></p>
+        <p>The plugin isn't limited to screenshots taken in your own test run. Diffy can capture pages itself, straight from an environment already configured on your project — no local browser involved:</p>
+        <img src="/sites/default/files/webship-portal/blog-webship-js-adds-diffy-ap-webship-diffy-04-capture-paths.jpg" data-entity-type="file" data-entity-uuid="42c4e647-1128-5e29-9573-f8854af234c9" width="1280" height="560" alt="Two capture paths, the local browser and the remote capture by Diffy, join the same comparison." loading="lazy"><p>A few steps worth calling out:</p>
+        <ul class="uk-list uk-list-bullet"><li><code>Then create diffy screenshot from "production" environment</code> , asks Diffy to capture a snapshot remotely from an environment configured on your project.</li><li><code>Then compare diffy "prod" with "stage"</code> , kicks off a fully server-side comparison between two environments in a single step.</li><li><code>Then upload folder "./screenshots/baseline" to diffy as "baseline"</code> , batch-uploads existing screenshots from disk, handy for importing shots produced by another tool or a previous run.</li></ul>
+        <p>That last one is particularly useful if you're migrating from another visual-testing setup and already have a library of baseline images sitting around.</p>
+        <p><strong>Configuration that fits into CI without extra work</strong></p>
+        <p>Nothing about this setup forces you to hardcode secrets into <code>cucumber.js</code>. Every option, API key, project ID, breakpoints, timeout, and so on, can be set as an environment variable, which always wins over whatever's in <code>worldParameters.diffy</code>, which in turn falls back to a sensible built-in default.</p>
+        <p><img src="/sites/default/files/webship-portal/blog-webship-js-adds-diffy-ap-webship-diffy-03-config-priority.jpg" data-entity-type="file" data-entity-uuid="d61f5e15-e596-576b-b88b-52a6fe86faae" width="1280" height="496" alt="Diffy settings priority: environment variables, then worldParameters.diffy in cucumber.js, then the built-in defaults." loading="lazy"></p>
+        <p>In practice, that means your local config file can hold reasonable defaults while CI overrides just the sensitive bits (<code>DIFFY_API_KEY, DIFFY_PROJECT_ID</code>) through secrets.</p>
+        <p>You'll need a Diffy API key to get started, which you can generate from your Diffy account's keys page. It's also worth tagging visual scenarios distinctly (<code>@diffy</code> is the convention used in the docs) so they can be run as their own suite, separate from functional tests; visual comparisons tend to take longer and don't always need to block every commit.</p>
+        <p><strong>Why it's worth adopting</strong></p>
+        <p>The real value here isn't the individual steps; it's that visual regression testing stops being a separate discipline with its own tooling and becomes just another part of the Cucumber suite your team already maintains. One install, a couple of lines in <code>cucumber.js</code>, and visual coverage is written the same way as everything else: in Gherkin, readable by anyone on the team, and running in the same CI pipeline.</p>
+      format: full_html
+      summary: If your test suite already speaks Gherkin, catching visual regressions no longer means reaching for a separate tool with its own syntax and setup. The new @webship-js/diffy-steps package plugs directly into Webship JS 2.0.x and lets you drive Diffy's…
+  field_media:
+    - entity: b34dfa7a-6293-5b14-898e-55d2d137ef75

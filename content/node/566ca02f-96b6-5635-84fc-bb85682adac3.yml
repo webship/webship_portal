@@ -1,0 +1,38 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 566ca02f-96b6-5635-84fc-bb85682adac3
+  bundle: product
+  default_langcode: en
+  depends:
+    0e46252b-18a2-5b1d-acfb-800228762447: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Webship-js AI agent
+  created:
+    - value: 1773654000
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /products/webship-js-ai-agent
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>An AI coding-assistant agent specialized in automated website testing with Webship-js (Playwright and Cucumber-js). Works with Claude Code, GitHub Copilot, Gemini CLI and Codex CLI.</p>
+        <ul class="uk-list uk-list-bullet"><li>Scaffolds Webship-js projects from scratch, or into a DDEV project.</li><li>Writes BDD feature files (Gherkin) for any page, with desktop and mobile scenarios.</li><li>Authors custom Cucumber step definitions when the built-in steps are not enough.</li><li>Runs the suite and interprets the failures.</li><li>Generates the HTML test report and summarizes it.</li></ul><pre><code class="language-shell">git clone https://github.com/webship/webship-js-ai-agent.git</code></pre>
+        <p><a class="uk-button uk-button-primary uk-margin-small-right uk-margin-small-bottom" href="https://github.com/webship/webship-js-ai-agent">Webship-js AI agent on GitHub</a></p>
+      format: full_html
+      summary: An AI coding-assistant agent specialized in automated website testing with Webship-js (Playwright and Cucumber-js). Works with Claude Code, GitHub Copilot, Gemini CLI and Codex CLI.
+  field_image:
+    - entity: 0e46252b-18a2-5b1d-acfb-800228762447

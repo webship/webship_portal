@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: f45338cf-62ba-5f53-90b9-0b4f2601fcc9
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-video-recording-playwright-recordvideo-i.jpg
+  uri:
+    - value: public://webship-portal/blog-video-recording-playwright-recordvideo-i.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 53930
+  status:
+    - value: true

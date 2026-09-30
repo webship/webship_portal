@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: d61f5e15-e596-576b-b88b-52a6fe86faae
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-webship-js-adds-diffy-ap-webship-diffy-03-config-priority.jpg
+  uri:
+    - value: public://webship-portal/blog-webship-js-adds-diffy-ap-webship-diffy-03-config-priority.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 34844
+  status:
+    - value: true

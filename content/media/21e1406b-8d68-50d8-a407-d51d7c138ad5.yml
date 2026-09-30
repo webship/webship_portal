@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 21e1406b-8d68-50d8-a407-d51d7c138ad5
+  bundle: image
+  default_langcode: en
+  depends:
+    e9efe6ec-411f-5a5a-b47d-2200f35ab7e4: file
+default:
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  name:
+    - value: What Is Playwright? Why Companies Are Rapidly Moving to It
+  field_media_image:
+    - alt: 'Cover of the blog post: What Is Playwright? Why Companies Are Rapidly Moving to It'
+      title: ''
+      width: 1280
+      height: 853
+      entity: e9efe6ec-411f-5a5a-b47d-2200f35ab7e4

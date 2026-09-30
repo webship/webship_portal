@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: af06573d-b2fd-5549-a9ba-462ea8b2e86d
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-webship-js-advanced-scre-viewport-sizes.png
+  uri:
+    - value: public://webship-portal/blog-webship-js-advanced-scre-viewport-sizes.png
+  filemime:
+    - value: image/png
+  filesize:
+    - value: 25734
+  status:
+    - value: true

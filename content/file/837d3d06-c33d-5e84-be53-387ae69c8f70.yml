@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 837d3d06-c33d-5e84-be53-387ae69c8f70
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-what-playwright-why-comp-playwright-js.jpg
+  uri:
+    - value: public://webship-portal/blog-what-playwright-why-comp-playwright-js.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 100005
+  status:
+    - value: true

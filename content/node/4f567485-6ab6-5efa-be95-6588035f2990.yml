@@ -1,0 +1,67 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 4f567485-6ab6-5efa-be95-6588035f2990
+  bundle: webblog
+  default_langcode: en
+  depends:
+    d3a5279c-24bf-5bd8-a1ef-6a3f7825f055: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Testing a Contact Form End to End
+  created:
+    - value: 1774854000
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /blog/testing-a-contact-form-end-to-end
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>A contact form is often the only way a visitor can reach you, and it breaks silently: the page still loads, but messages stop arriving. That makes it one of the first things worth covering with an automated functional test.</p>
+        <h2>The happy path</h2>
+        <p>Fill the form the way a visitor would, by the labels they read, and check the confirmation they get:</p>
+        <pre><code class="language-gherkin">Feature: Contact form
+          As a visitor
+          I want to send a message
+          So that the team can answer me
+
+          Scenario: A visitor sends a message
+            Given I am an anonymous user
+            When I go to "/contact"
+            And I fill in "Your Name" with "Alice Example"
+            And I fill in "Business email" with "alice@example.com"
+            And I fill in "Your message" with "Please call me about automated testing."
+            And I press "Submit"
+            Then I should see "Thank you"
+            And there should be no JavaScript errors</code></pre>
+        <h2>The required fields</h2>
+        <p>A form that accepts an empty message creates work for the people who read the inbox. Check that the form refuses it:</p>
+        <pre><code class="language-gherkin">  Scenario: The message is required
+            Given I am on "/contact"
+            When I fill in "Your Name" with "Alice Example"
+            And I press "Submit"
+            Then I should not see "Thank you"</code></pre>
+        <h2>The labels</h2>
+        <p>A field without a label cannot be filled in by label, by a test or by a person who uses a screen reader. One line checks every field of the page:</p>
+        <pre><code class="language-gherkin">  Scenario: Every field has a label
+            Given I am on "/contact"
+            Then every form field should have an accessible label</code></pre>
+        <h2>What about the email?</h2>
+        <p>The browser test ends at the confirmation message. To prove that the email leaves the site, point your test environment at a mail catcher and assert on its inbox, or check the stored submission in the back office with a logged in user. Keep that in a separate scenario, so a mail problem and a form problem fail separately.</p>
+        <p>Anti-spam protection needs a thought too. Time-based protections reject a form that is submitted within a second or two, which is exactly what a test does. Relax the limit on the test environment instead of adding waits to the scenario.</p>
+      format: full_html
+      summary: A contact form is often the only way a visitor can reach you, and it breaks silently. Three scenarios cover it end to end.
+  field_media:
+    - entity: d3a5279c-24bf-5bd8-a1ef-6a3f7825f055

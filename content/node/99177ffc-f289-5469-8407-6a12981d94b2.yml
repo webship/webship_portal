@@ -1,0 +1,48 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 99177ffc-f289-5469-8407-6a12981d94b2
+  bundle: release
+  default_langcode: en
+  depends:
+    dd27c5e5-53d0-50e4-828a-4905a51ea4e9: node
+    265d9495-3360-53f3-931d-ddbbaef7b6f8: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: 2.0.5
+  created:
+    - value: 1785595752
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /products/webship-js/releases/2.0.5
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>This batch covers architecture and command documentation, the refactoring of the Diffy step-pack into a standalone plugin, and keeping all guidelines synchronized with the latest correct paths.</p>
+        <p><strong>Added since Webship-js 2.0.4:</strong></p>
+        <ul class="uk-list uk-list-bullet"><li>Docs: rewrite CLAUDE.md with commands, architecture, and the local AI agent/skill map (<a href="https://github.com/webship/webship-js/issues/298">#298</a>)</li><li>Docs: sync AGENTS.md with the rewritten CLAUDE.md (<a href="https://github.com/webship/webship-js/issues/300">#300</a>)</li><li>Docs: CLAUDE.md points at the unscoped diffy-steps require path (<a href="https://github.com/webship/webship-js/issues/304">#304</a>)</li><li>Docs: CLAUDE.md names the old <a href="https://github.com/webship">@webship</a> scope for diffy-steps (<a href="https://github.com/webship/webship-js/issues/306">#306</a>)</li></ul>
+        <p><strong>Changes since Webship-js 2.0.4:</strong></p>
+        <ul class="uk-list uk-list-bullet"><li><p>Refactor: extract the Diffy step-pack into its own diffy-steps plugin (<a href="https://github.com/webship/webship-js/issues/302">#302</a>)</p>
+        </li></ul>
+      format: full_html
+      summary: This batch covers architecture and command documentation, the refactoring of the Diffy step-pack into a standalone plugin, and keeping all guidelines synchronized with the latest correct paths.
+  field_product:
+    - entity: dd27c5e5-53d0-50e4-828a-4905a51ea4e9
+  field_release_image:
+    - entity: 265d9495-3360-53f3-931d-ddbbaef7b6f8
+  field_release_link:
+    - uri: https://github.com/webship/webship-js/releases/tag/2.0.5
+      title: GitHub release
+      options: {}

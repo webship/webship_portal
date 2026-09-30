@@ -1,0 +1,89 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 8e38226f-6673-5cf4-a8a5-e0e2181dbf4d
+  bundle: webdoc
+  default_langcode: en
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Install Webship-JS
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /docs/webship-js/2.0.x/install-webship-js
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>Webship-js is an automated functional acceptance testing tool built on <a href="https://playwright.dev">Playwright</a> and <a href="https://github.com/cucumber/cucumber-js">Cucumber-js</a>. You write feature files in plain Gherkin; webship-js provides the browser automation, smart waits, screenshots, HTML reports, and a large library of ready-made step definitions. Installing it into a project takes one command, and the bundled scaffolder gives you a complete, runnable test skeleton.</p>
+        <h2>Requirements</h2>
+        <ul class="uk-list uk-list-bullet"><li><strong>Node.js 20 or later</strong> (the package declares <code>"engines": { "node": "&gt;= 20.0" }</code>).</li><li><strong>npm</strong> (or a compatible package manager) in an existing project with a <code>package.json</code>.</li><li>A browser binary for Playwright - the scaffolder runs <code>playwright install chromium</code> for you unless you pass <code>--skip-browsers</code>.</li></ul>
+        <h2>Install</h2>
+        <p>Install Webship-js on your project. Simply execute the following command:</p>
+        <pre><code>npm install webship-js --save-dev</code></pre>
+        <p>The post-install script copies a starter <code>cucumber.js</code>, <code>playwright.config.ts</code>, and <code>tests/</code> skeleton into your project on first install. You can also (re)scaffold explicitly at any time - it is idempotent and never overwrites your files unless you ask it to:</p>
+        <pre><code>npx init-webship-js
+
+        Usage: init-webship-js [options]
+          -f, --force          Overwrite existing files
+              --skip-browsers  Skip `playwright install chromium`
+              --cwd &lt;dir&gt;      Target directory (default: $INIT_CWD or cwd)
+          -h, --help           Show this help</code></pre>
+        <h2>Project layout</h2>
+        <p>After install, your project contains:</p>
+        <pre><code>your-project/
+        ├── cucumber.js                      # Profiles + worldParameters (launchUrl, selectors, screenshots, …)
+        ├── playwright.config.ts             # Browser launch + context options
+        ├── tsconfig.json                    # Lets TypeScript step definitions run with no build step
+        └── tests/
+            ├── features/                    # *.feature files (Gherkin)
+            │   └── check-homepage.feature   # Sample feature added by the scaffolder
+            ├── reports/                     # cucumber_report.json / .html output
+            ├── selectors/                   # CMS / framework selector JSON (optional)
+            └── step-definitions/
+                └── custom.js                # Your custom step definitions</code></pre>
+        <p>The generated <code>cucumber.js</code> loads the webship-js core step definitions from <code>node_modules/webship-js/tests/step-definitions/</code> plus anything you add under <code>tests/step-definitions/</code>. A commented-out line enables the optional <a href="https://webship.co/docs/webship-js/2.0.x/diffy-step-definitions">Diffy visual-regression steps</a>, and a commented <code>diffy:</code> block in <code>worldParameters</code> holds their configuration. All tunables - <code>launchUrl</code>, wait times, selector files, responsive breakpoints, screenshot behavior - live in <code>worldParameters</code> and are documented on the <a href="https://webship.co/docs/webship-js/2.0.x/global-settings">Global Settings</a> page. Step definitions can be plain JavaScript or TypeScript, mixed freely in the same project.</p>
+        <h2>Automated Functional Acceptance Testing</h2>
+        <p>Write your first scenario in <code>tests/features/smoke.feature</code> - plain English, no JavaScript required:</p>
+        <pre><code>Feature: Sign in
+
+          Scenario: Successful login
+            Given I am on "/login"
+            When I fill in "Email" with "alice@example.com"
+             And I fill in "Password" with "s3cret"
+             And I press "Sign in"
+            Then I should see "Welcome, Alice"</code></pre>
+        <p>Make sure your site is running on <code>http://localhost:8080</code> (or set <code>LAUNCH_URL</code> to point elsewhere), then run:</p>
+        <pre><code>npm test</code></pre>
+        <p>Useful variants generated into your <code>package.json</code> scripts:</p>
+        <pre><code># Pick a browser
+        npm run test:chromium
+        npm run test:firefox
+        npm run test:webkit
+
+        # Watch the browser interactively
+        npm run test:headed
+
+        # Environment overrides
+        LAUNCH_URL=https://staging.example.com npm test
+        HEADLESS=false SLOW_MO=0 npm test</code></pre>
+        <p>Every run auto-generates an HTML report at <code>tests/reports/cucumber_report.html</code>, and failing steps save a screenshot to <code>screenshots/</code> for instant debugging. Actions use automatic smart waits - no <code>sleep</code> needed in the happy path.</p>
+        <h3>Boost your site's success with automated testing</h3>
+        <h4>For Commercial Professional Support</h4>
+        <p><a href="/contact">Contact Us</a></p>
+        <h2>Documentation Structure</h2>
+        <p>The page is part of the Webship JS 2.0.x documentation section, which includes:</p>
+        <ul class="uk-list uk-list-bullet"><li><a href="https://webship.co/docs/webship-js/2.0.x/global-settings">Global Settings</a></li><li><a href="/docs/webship-js/2.0.x/step-definitions">Step Definitions</a></li><li>API Step Definitions</li><li>Advanced Screenshots</li><li>Advanced Selectors</li><li><a href="https://webship.co/docs/webship-js/2.0.x/diffy-step-definitions">Diffy Step Definitions</a></li><li>Assertions</li><li>Commands</li></ul>
+        <p>There is also a subsection on "<a href="https://webship.co/docs/webship-js/2.0.x/install-webship-js/ddev-webship-js">DDEV Webship-JS</a>" available under the installation guide, for teams running sites in DDEV.</p>
+      format: full_html
+      summary: Webship-js is an automated functional acceptance testing tool built on Playwright and Cucumber-js . You write feature files in plain Gherkin; webship-js provides the browser automation, smart waits, screenshots, HTML reports, and a large library of ready-made…

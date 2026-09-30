@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="290" height="28" viewBox="0 0 290 28" role="img" aria-label="Webship.co: automated functional testing">
+  <title>Webship.co: automated functional testing</title>
+  <rect width="290" height="28" rx="4" fill="#1b1f23"/>
+  <path d="M90 0h196a4 4 0 0 1 4 4v20a4 4 0 0 1-4 4H90z" fill="#14577f"/>
+  <g fill="#ffffff" font-family="Verdana, Geneva, DejaVu Sans, sans-serif" font-size="12">
+    <text x="10" y="18" textLength="70" lengthAdjust="spacingAndGlyphs">Webship.co</text>
+    <text x="100" y="18" textLength="180" lengthAdjust="spacingAndGlyphs">automated functional testing</text>
+  </g>
+</svg>

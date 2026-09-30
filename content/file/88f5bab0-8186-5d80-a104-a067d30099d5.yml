@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 88f5bab0-8186-5d80-a104-a067d30099d5
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: product-webship-js.png
+  uri:
+    - value: public://webship-portal/product-webship-js.png
+  filemime:
+    - value: image/png
+  filesize:
+    - value: 6357
+  status:
+    - value: true

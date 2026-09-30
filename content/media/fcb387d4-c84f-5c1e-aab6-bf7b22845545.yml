@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: fcb387d4-c84f-5c1e-aab6-bf7b22845545
+  bundle: image
+  default_langcode: en
+  depends:
+    f45338cf-62ba-5f53-90b9-0b4f2601fcc9: file
+default:
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  name:
+    - value: 'Video Recording: Playwright recordVideo Integration with Start/Stop/Save'
+  field_media_image:
+    - alt: 'Cover of the blog post: Video Recording: Playwright recordVideo Integration with Start/Stop/Save'
+      title: ''
+      width: 1280
+      height: 720
+      entity: f45338cf-62ba-5f53-90b9-0b4f2601fcc9

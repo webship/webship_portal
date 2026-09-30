@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 9d76286f-6bb8-5241-b7f4-445e03df408d
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-advanced-selectors-websh-selector-resolution-flow.jpg
+  uri:
+    - value: public://webship-portal/blog-advanced-selectors-websh-selector-resolution-flow.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 43986
+  status:
+    - value: true

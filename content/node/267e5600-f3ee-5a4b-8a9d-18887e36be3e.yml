@@ -1,0 +1,55 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 267e5600-f3ee-5a4b-8a9d-18887e36be3e
+  bundle: webblog
+  default_langcode: en
+  depends:
+    21e1406b-8d68-50d8-a407-d51d7c138ad5: media
+    837d3d06-c33d-5e84-be53-387ae69c8f70: file
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: What Is Playwright? Why Companies Are Rapidly Moving to It
+  created:
+    - value: 1773060536
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /blog/what-playwright-why-companies-are-rapidly-moving-it
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>In the fast-evolving world of web development, testing tools must keep up with the demands of modern applications. <strong>Playwright</strong>, an open-source framework developed by Microsoft, has quickly become one of the most talked-about solutions for web automation and end-to-end testing.</p>
+        <p><strong>What Is Playwright?</strong></p>
+        <p>Playwright is a browser automation framework that allows developers and testers to simulate real user interactions on websites. It can handle tasks like clicking buttons, filling forms, navigating pages, and verifying content, ensuring that applications function correctly across different environments.</p>
+        <p><strong>Why Companies Are Switching to Playwright</strong></p>
+        <ol><li><strong>Cross-Browser Testing Made Easy</strong><br>One of Playwright’s key strengths is its ability to run the same test across multiple browser engines, including Chromium, Firefox, and WebKit. This ensures that websites behave consistently for all users, regardless of the browser they choose.</li><li><strong>Modern Architecture for Reliability</strong><br>Unlike older tools that require additional drivers or complex setups, Playwright comes with a streamlined environment. Features like automatic waiting, parallel test execution, and built-in debugging reduce flaky tests and save teams valuable time.</li><li><strong>Faster, More Stable Tests</strong><br>Playwright’s design allows tests to run faster and more reliably, which is crucial for companies delivering complex, dynamic web applications. Teams can deploy with confidence, knowing that their tests accurately reflect real user experiences.</li><li><strong>Flexible Language Support</strong><br>Teams can write Playwright tests in JavaScript, TypeScript, Python, Java, and .NET, making it easy to integrate into existing projects without learning a new programming language.</li></ol>
+        <p><strong>Playwright vs Selenium</strong></p>
+        <p>Both Playwright and Selenium are popular tools for browser automation and end-to-end testing. Selenium has been widely used for many years, while Playwright is a newer framework designed for modern web applications. A key difference is how each tool handles waiting for elements. Selenium requires developers to manually define wait conditions, while Playwright handles this automatically, reducing test flakiness and keeping code cleaner. While Selenium remains a flexible and widely supported solution, Playwright's built-in features make it a compelling choice for modern web applications.</p>
+        <img src="/sites/default/files/webship-portal/blog-what-playwright-why-comp-playwright-js.jpg" data-entity-type="file" data-entity-uuid="837d3d06-c33d-5e84-be53-387ae69c8f70" width="1280" height="792" alt="Playwright driving several browsers from one script." loading="lazy"><p><strong>Playwright in Action</strong></p>
+        <ol><li><p><strong>Playwright</strong> works seamlessly with <strong>JavaScript code</strong>, making it easy for developers to write automated tests in their preferred language: <a href="https://github.com/microsoft/playwright">read more</a></p>
+        <p><strong>Examples: </strong>Page screenshot</p>
+        <p>This code snippet navigates to the Playwright homepage and saves a screenshot.</p>
+        <pre><code>import { test } from '@playwright/test';
+
+        test('Page Screenshot', async ({ page }) =&gt; {
+          await page.goto('https://webship.co/');
+          await page.screenshot({ path: `example.png` });
+        });</code></pre>
+        </li><li><strong>Playwright CLI</strong> It also supports <strong>command-line usage</strong>, allowing fast setup and execution of tests: <a href="https://github.com/microsoft/playwright-cli">read more</a></li><li><strong>Playwright MCP</strong> integrates <strong>very well with artificial intelligence</strong>, enabling smarter automation and testing workflows: <a href="https://github.com/microsoft/playwright-mcp">read more</a></li></ol>
+        <p>In short, Playwright is more than just a testing tool; it is a <strong>modern solution for modern web challenges</strong>, simplifying browser testing, improving reliability, and saving time. <strong>Playwright plays it right</strong>, which is why more and more companies are rapidly adopting it.</p>
+      format: full_html
+      summary: In the fast-evolving world of web development, testing tools must keep up with the demands of modern applications. Playwright , an open-source framework developed by Microsoft, has quickly become one of the most talked-about solutions for web automation and…
+  field_media:
+    - entity: 21e1406b-8d68-50d8-a407-d51d7c138ad5

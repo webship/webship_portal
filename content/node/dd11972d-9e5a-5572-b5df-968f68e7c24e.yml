@@ -1,0 +1,56 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: dd11972d-9e5a-5572-b5df-968f68e7c24e
+  bundle: webblog
+  default_langcode: en
+  depends:
+    27adba1e-ab87-5c5e-94d6-e26d76171967: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Writing Your First Feature File
+  created:
+    - value: 1768201200
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /blog/writing-your-first-feature-file
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>A feature file is the smallest useful piece of automated functional testing: one page of plain text that says what a visitor can do on your site. It is written in Gherkin, a format that product owners, testers and developers can all read. This article walks through a first one.</p>
+        <h2>Start from one thing a visitor does</h2>
+        <p>Do not start with the whole site. Pick one thing that must always work, such as opening the home page and reaching the contact page from the menu. A feature has a title, a short description of who wants it and why, and one or more scenarios.</p>
+        <pre><code class="language-gherkin">Feature: Main navigation
+          As a visitor
+          I want to reach the contact page from the home page
+          So that I can ask a question
+
+          Scenario: Open the contact page from the menu
+            Given I am an anonymous user
+            And I am on the homepage
+            When I click "Contact"
+            Then I should see "Contact"
+            And I should see "Your message"</code></pre>
+        <h2>Read it line by line</h2>
+        <ul class="uk-list uk-list-bullet"><li><code>Given</code> sets the scene: who the visitor is and where they are.</li><li><code>When</code> is the one action the scenario is about.</li><li><code>Then</code> says what the visitor must see afterwards.</li><li><code>And</code> repeats the keyword of the line before it.</li></ul>
+        <p>Every line above is a step that Webship-js already knows, so there is no JavaScript to write. Save the file as <code>tests/features/main-navigation.feature</code> and run it:</p>
+        <pre><code class="language-shell">LAUNCH_URL=https://staging.example.com npm test</code></pre>
+        <h2>Three habits worth keeping from day one</h2>
+        <ul class="uk-list uk-list-bullet"><li>One behaviour per scenario. If the title needs the word "and", split it.</li><li>Use the words of the page: labels, button texts and headings, not CSS classes.</li><li>Keep scenarios independent, so each one can run alone and in any order.</li></ul>
+        <p>When this first scenario passes, add the next most important journey. A small suite that runs on every change is worth more than a large one nobody trusts.</p>
+      format: full_html
+      summary: 'A feature file is the smallest useful piece of automated functional testing: one page of plain text that says what a visitor can do on your site.'
+  field_media:
+    - entity: 27adba1e-ab87-5c5e-94d6-e26d76171967

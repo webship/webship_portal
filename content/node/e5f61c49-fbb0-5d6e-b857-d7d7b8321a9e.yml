@@ -1,0 +1,47 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: e5f61c49-fbb0-5d6e-b857-d7d7b8321a9e
+  bundle: release
+  default_langcode: en
+  depends:
+    dd27c5e5-53d0-50e4-828a-4905a51ea4e9: node
+    92b745aa-a530-50b7-98db-3e59e2e95e82: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: 2.0.3
+  created:
+    - value: 1778354231
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /products/webship-js/releases/2.0.3
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>This release rewrites webship-js around a per-domain step-file layout, adds<br>TypeScript / JavaScript interop, ships 22 CMS and framework selector presets,<br>introduces a flat colored PDF report, and brings the documentation set up to<br>date. All 288 scenarios / 1,406 steps pass on chromium, firefox, and webkit.</p>
+        <p><strong>Added since Webship-js 2.0.2:</strong></p>
+        <ul class="uk-list uk-list-bullet"><li>Project metadata: AI agent guides, gitignore policy, reports README <a href="https://github.com/webship/webship-js/issues/259">#259</a></li><li>TypeScript and JavaScript interop via tsx loader <a href="https://github.com/webship/webship-js/issues/260">#260</a></li><li>Playwright config: typed config, browser launch, context options <a href="https://github.com/webship/webship-js/issues/261">#261</a></li><li>Core engine: webship.js with BBR smart-settle, helpers, JSDoc types <a href="https://github.com/webship/webship-js/issues/262">#262</a></li><li>Report generator: HTML and flat colored PDF output <a href="https://github.com/webship/webship-js/issues/263">#263</a></li><li>Selector registry: named CSS / XPath presets and 22 CMS / framework files <a href="https://github.com/webship/webship-js/issues/264">#264</a></li><li>Navigation and action steps <a href="https://github.com/webship/webship-js/issues/265">#265</a></li><li>Form and field steps <a href="https://github.com/webship/webship-js/issues/266">#266</a></li><li>Assertion and web-first matchers <a href="https://github.com/webship/webship-js/issues/267">#267</a></li><li>Modal and dialog steps <a href="https://github.com/webship/webship-js/issues/268">#268</a></li><li>Wait and scroll steps <a href="https://github.com/webship/webship-js/issues/269">#269</a></li><li>Element, input, and screenshot steps <a href="https://github.com/webship/webship-js/issues/270">#270</a></li><li>API testing steps: REST long form, REST short form, XML and YAML <a href="https://github.com/webship/webship-js/issues/271">#271</a></li><li>Network mocking, auth state, clock, cookies, and storage steps <a href="https://github.com/webship/webship-js/issues/272">#272</a></li><li>Accessibility steps: axe-core integration plus custom WCAG hygiene probes <a href="https://github.com/webship/webship-js/issues/273">#273</a></li><li>Keyboard, link, path, response, and responsive steps <a href="https://github.com/webship/webship-js/issues/274">#274</a></li><li>Table, metatag, iframe, file-download, debug, and JS-error steps <a href="https://github.com/webship/webship-js/issues/275">#275</a></li><li>Relative-date tokens: and <a href="https://github.com/webship/webship-js/issues/276">#276</a></li><li>Documentation set: quick start, BBR, selectors, step reference, AI guide, recipes <a href="https://github.com/webship/webship-js/issues/277">#277</a></li></ul>
+        <p><strong>Fixed since Webship-js 2.0.2:</strong></p>
+        <ul class="uk-list uk-list-bullet"><li>Fix CI step loading: explicit globs per extension <a href="https://github.com/webship/webship-js/issues/278">#278</a></li></ul>
+      format: full_html
+      summary: This release rewrites webship-js around a per-domain step-file layout, adds TypeScript / JavaScript interop, ships 22 CMS and framework selector presets, introduces a flat colored PDF report, and brings the documentation set up to date. All 288 scenarios / 1,406 steps pass on chromium, firefox, and webkit.
+  field_product:
+    - entity: dd27c5e5-53d0-50e4-828a-4905a51ea4e9
+  field_release_image:
+    - entity: 92b745aa-a530-50b7-98db-3e59e2e95e82
+  field_release_link:
+    - uri: https://github.com/webship/webship-js/releases/tag/2.0.3
+      title: GitHub release
+      options: {}

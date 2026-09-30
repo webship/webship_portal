@@ -1,0 +1,219 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 1a421fe8-c3b9-500b-8889-83758fbf6f6b
+  bundle: webpage
+  default_langcode: en
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Services
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /services
+      langcode: en
+      pathauto: 0
+  body:
+    - value: ''
+      format: full_html
+      summary: ''
+  field_page_display:
+    - source_id: component
+      source:
+        component:
+          component_id: webtheme:container
+          variant_id: null
+          props: {}
+          slots:
+            content:
+              sources:
+                - source_id: component
+                  source:
+                    component:
+                      component_id: webtheme:section
+                      variant_id: null
+                      props:
+                        container:
+                          source_id: select
+                          source:
+                            value: default
+                        size:
+                          source_id: select
+                          source:
+                            value: small
+                      slots:
+                        content:
+                          sources:
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:grid_2_columns
+                                  variant_id:
+                                    source_id: select
+                                    source:
+                                      value: col_33_66
+                                  props:
+                                    gap:
+                                      source_id: select
+                                      source:
+                                        value: large
+                                    vertical_align:
+                                      source_id: select
+                                      source:
+                                        value: middle
+                                  slots:
+                                    column_1:
+                                      sources:
+                                        - source_id: textarea
+                                          source:
+                                            value: <img src="/sites/default/files/webship-portal/service-automated-functional-testing-setup.jpg" width="399" height="500" alt="Automated functional acceptance testing with Webship-js." class="uk-border-rounded" loading="lazy">
+                                    column_2:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:heading
+                                              variant_id: null
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 2
+                                              slots:
+                                                title:
+                                                  sources:
+                                                    - source_id: textfield
+                                                      source:
+                                                        value: Automated Functional Testing Setup
+                                        - source_id: textarea
+                                          source:
+                                            value: <p>Automating functional testing has never been easier with our Automated Functional Acceptance Testing tool. By configuring your project to work seamlessly Webship-js, utilizing Playwright, and Cucumber-js, we help you streamline accelerate the end-to-end process for web apps or projects. Our tool is designed make less cumbersome more efficient, ensuring that products are of highest quality reliability. So why wait?</p><p>Let us help you take your testing to the next level.</p>
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:divider
+                                  variant_id: null
+                                  props: {}
+                                  slots: {}
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:grid_2_columns
+                                  variant_id:
+                                    source_id: select
+                                    source:
+                                      value: col_33_66
+                                  props:
+                                    gap:
+                                      source_id: select
+                                      source:
+                                        value: large
+                                    vertical_align:
+                                      source_id: select
+                                      source:
+                                        value: middle
+                                  slots:
+                                    column_1:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:icon
+                                              variant_id: null
+                                              props:
+                                                icon:
+                                                  source_id: icon
+                                                  source:
+                                                    value:
+                                                      target_id: webtheme:git-branch
+                                                      settings:
+                                                        webtheme:
+                                                          ratio: 8
+                                                          alt: ''
+                                                attributes:
+                                                  source_id: attributes
+                                                  source:
+                                                    value: class="uk-text-primary uk-display-block uk-text-center"
+                                              slots: {}
+                                    column_2:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:heading
+                                              variant_id: null
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 2
+                                              slots:
+                                                title:
+                                                  sources:
+                                                    - source_id: textfield
+                                                      source:
+                                                        value: Configure Remote CI/CD
+                                        - source_id: textarea
+                                          source:
+                                            value: <p>Prepare projects to run with public or private CI/CD remote servers. like <a href="https://github.com/features/actions">GitHub Actions</a>, <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a>, <a href="https://bitbucket.org/product/features/pipelines">Bitbucket Pipelines</a>, BrowserStack.</p>
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:divider
+                                  variant_id: null
+                                  props: {}
+                                  slots: {}
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:grid_2_columns
+                                  variant_id:
+                                    source_id: select
+                                    source:
+                                      value: col_33_66
+                                  props:
+                                    gap:
+                                      source_id: select
+                                      source:
+                                        value: large
+                                    vertical_align:
+                                      source_id: select
+                                      source:
+                                        value: middle
+                                  slots:
+                                    column_1:
+                                      sources:
+                                        - source_id: textarea
+                                          source:
+                                            value: '<img src="/sites/default/files/webship-portal/service-cucumber-gherkin-descriptions.png" width="512" height="512" alt="A feature written in Gherkin: Given, When, Then." class="uk-border-rounded" loading="lazy">'
+                                    column_2:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:heading
+                                              variant_id: null
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 2
+                                              slots:
+                                                title:
+                                                  sources:
+                                                    - source_id: textfield
+                                                      source:
+                                                        value: Cucumber/Gherkin descriptions
+                                        - source_id: textarea
+                                          source:
+                                            value: <p>Writing Cucumber descriptions, Gherkin scripts for web apps. To work with End-to-end testing features in web apps or projects.</p><p>Having custom and advanced general step definitions.</p>

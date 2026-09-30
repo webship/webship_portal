@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: f333e510-ea1f-565d-a894-ced0b4b97b56
+  bundle: image
+  default_langcode: en
+  depends:
+    07ce6b4b-9809-5c00-bbf5-0d968a95084d: file
+default:
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  name:
+    - value: Accessibility Checks in the Pipeline
+  field_media_image:
+    - alt: 'End-to-end tests, the final layer of confidence: navigation flows intact, critical business paths work, regressions detected early.'
+      title: ''
+      width: 1280
+      height: 1280
+      entity: 07ce6b4b-9809-5c00-bbf5-0d968a95084d

@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 84790404-ab2b-5867-bfea-643e032f4ceb
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-webship-js-adds-diffy-ap-webship-diffy-02-step-vocabulary.jpg
+  uri:
+    - value: public://webship-portal/blog-webship-js-adds-diffy-ap-webship-diffy-02-step-vocabulary.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 61296
+  status:
+    - value: true

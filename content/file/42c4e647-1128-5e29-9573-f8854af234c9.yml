@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 42c4e647-1128-5e29-9573-f8854af234c9
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-webship-js-adds-diffy-ap-webship-diffy-04-capture-paths.jpg
+  uri:
+    - value: public://webship-portal/blog-webship-js-adds-diffy-ap-webship-diffy-04-capture-paths.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 48943
+  status:
+    - value: true

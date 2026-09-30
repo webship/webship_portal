@@ -1,0 +1,122 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 0f945c67-13c6-5bb0-a857-a655b4fbcfc3
+  bundle: webpage
+  default_langcode: en
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: About us
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /about-us
+      langcode: en
+      pathauto: 0
+  body:
+    - value: ''
+      format: full_html
+      summary: ''
+  field_page_display:
+    - source_id: component
+      source:
+        component:
+          component_id: webtheme:container
+          variant_id: null
+          props: {}
+          slots:
+            content:
+              sources:
+                - source_id: component
+                  source:
+                    component:
+                      component_id: webtheme:section
+                      variant_id: null
+                      props:
+                        container:
+                          source_id: select
+                          source:
+                            value: small
+                        size:
+                          source_id: select
+                          source:
+                            value: small
+                      slots:
+                        content:
+                          sources:
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:heading
+                                  variant_id: null
+                                  props:
+                                    heading_level:
+                                      source_id: select
+                                      source:
+                                        value: 2
+                                  slots:
+                                    title:
+                                      sources:
+                                        - source_id: textfield
+                                          source:
+                                            value: Love to help in speeding up the work of having Automated Functional Acceptance Testing for products to ship websites in a swift way.
+                            - source_id: textarea
+                              source:
+                                value: <h3>We LOVE to help with:</h3><ul class="uk-list uk-list-bullet"><li>Automated Functional Testing setup and configurations for projects.</li><li>Setup CI/CD robot servers, and Web-drivers to work on a local development and private CI/CD servers.</li><li>Setup of Selenium robot config to run with public or private CI/CD remote servers. like <a href="https://github.com/features/actions">GitHub Actions</a>, <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a>, <a href="https://bitbucket.org/product/features/pipelines">Bitbucket Pipelines</a>.</li><li>Writing Cucumber descriptions, Gherkin scripts for web apps.</li></ul>
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:button_group
+                                  variant_id: null
+                                  props: {}
+                                  slots:
+                                    buttons:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:button
+                                              variant_id:
+                                                source_id: select
+                                                source:
+                                                  value: primary
+                                              props:
+                                                url:
+                                                  source_id: url
+                                                  source:
+                                                    value: /services
+                                              slots:
+                                                label:
+                                                  sources:
+                                                    - source_id: textfield
+                                                      source:
+                                                        value: See all services
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:button
+                                              variant_id:
+                                                source_id: select
+                                                source:
+                                                  value: default
+                                              props:
+                                                url:
+                                                  source_id: url
+                                                  source:
+                                                    value: /contact
+                                              slots:
+                                                label:
+                                                  sources:
+                                                    - source_id: textfield
+                                                      source:
+                                                        value: Contact us

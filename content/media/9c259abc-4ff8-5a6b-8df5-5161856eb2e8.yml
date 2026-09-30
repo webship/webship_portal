@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 9c259abc-4ff8-5a6b-8df5-5161856eb2e8
+  bundle: image
+  default_langcode: en
+  depends:
+    b492ad3c-cf8c-5d4d-bc63-6fc8d28e9cbd: file
+default:
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  name:
+    - value: Given, When, Then Done Well
+  field_media_image:
+    - alt: 'Behavior-driven development: Given, When, Then, a specification and not an interpretation.'
+      title: ''
+      width: 1280
+      height: 1280
+      entity: b492ad3c-cf8c-5d4d-bc63-6fc8d28e9cbd

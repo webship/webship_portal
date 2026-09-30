@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 448dbb29-6ba1-574d-9755-a984d341ebe9
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-webship-js-advanced-scre-config-priority.png
+  uri:
+    - value: public://webship-portal/blog-webship-js-advanced-scre-config-priority.png
+  filemime:
+    - value: image/png
+  filesize:
+    - value: 32610
+  status:
+    - value: true

@@ -1,0 +1,64 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: c5b250e1-ba48-5ab9-a80f-dd83580ca03a
+  bundle: webblog
+  default_langcode: en
+  depends:
+    fcb387d4-c84f-5c1e-aab6-bf7b22845545: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: 'Video Recording: Playwright recordVideo Integration with Start/Stop/Save'
+  created:
+    - value: 1782725633
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /blog/video-recording-playwright-recordvideo-integration-startstopsave
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>Anyone who has triaged a flaky <strong>end-to-end</strong> test from a <strong>CI</strong> log alone knows the drill: a red checkmark, a stack trace that explains what failed but not why, and a Slack thread full of "can you repro locally?" With <strong>Webship-JS 2.0.x</strong>, video recording stops being an afterthought bolted onto your test runner and becomes a first-class <strong>Gherkin</strong> citizen, controllable from the same feature files that describe your test scenarios.</p>
+        <p><strong>Why bake the video into the BDD layer?</strong></p>
+        <p><strong>Webship-JS</strong> is a BDD-first browser automation harness built on <strong>Playwright</strong> and <strong>Cucumber-js</strong>. The pitch is simple: write plain <strong>Gherkin</strong>, get smart waits, a named-selector registry, and web-first assertions, all without sleep() calls scattered through your step definitions.</p>
+        <p>Video recording fits that same philosophy. Playwright already supports recording a browser context to WebM via its recordVideo option, that part isn't new. What <strong>Webship-JS</strong> adds is a small set of step phrasings that let you start, stop, and save that recording directly inside a scenario, rather than wiring it up in config and hoping the right context gets it. That matters most for distributed teams: someone on a different continent doesn't need to reproduce a failure locally if the video is already sitting next to the test report.</p>
+        <p><strong>The four steps</strong></p>
+        <p><strong>Webship-JS</strong> ships a dedicated video step group with four phrasings:</p>
+        <pre><code>When I start video recording
+        When I stop video recording
+        When I save the current video as "checkout-flow.webm"
+        Then print video path</code></pre>
+        <p>Here's what each one actually does:</p>
+        <p><br><strong>When I start video recording</strong>, Begins recording the browser as a WebM video. Under the hood this means the current page is closed so a fresh context can be opened with recordVideo enabled. Playwright only captures video for contexts created with that option set, so a clean handoff is required.<br><strong>When I stop video recording</strong>, Ends the recording. This closes the page and the context, which is what flushes the WebM file to disk. Playwright doesn't finalize a video until its context shuts down, so this step is doing real cleanup work, not just a label.<br><strong>When I save the current video as "checkout-flow.webm"</strong>, Reserves a custom filename for the current scenario's recording instead of leaving it with an auto-generated name. Handy when you want checkout-flow.webm sitting in CI artifacts rather than a hash you have to cross-reference against a test report.<br><strong>Then print video path</strong>, A diagnostic step that prints out the path the current video will be written to. Useful when you're debugging the recording setup itself, or just confirming a CI job is writing where you expect.</p>
+        <p><strong>What this looks like in a feature file</strong></p>
+        <p>Because the steps are just Gherkin, they read like any other part of your scenario:</p>
+        <pre><code>Feature: Login page
+          Scenario: Successful login
+            When I start video recording
+            Given I am on homepage
+             When I go to "login.html"
+              And I fill in "Username" with "Smith"
+              And I fill in "Password" with "1$34"
+              And I press "Login"
+             Then I should see "Welcome Smith"
+             When I save the current video as "login-flow.webm"
+              And I stop video recording</code></pre>
+        <p>That's the same login scenario from the <strong>Webship-JS</strong> "at a glance" example; the video steps just wrap around it. If Then I should see "Welcome Smith" fails, you don't need to ask the original author what "Smith" was supposed to look like, you open login-flow.webm and watch it happen.</p>
+        <p><strong>The bigger picture: async triage</strong></p>
+        <p>The real win isn't the recording itself; Playwright has supported recordVideo for years. It's that Webship-JS treats the recording lifecycle as something a test author controls from the same file where the scenario lives, instead of something a test infrastructure engineer configures globally and hopes covers the right cases. Combined with on-failure mode, that turns video from "nice to have if someone remembers to wire it up" into a default safety net for exactly the runs where it matters: the ones that broke, on a machine nobody in the room has access to, at 2 a.m. their time.</p>
+        <p>If you're already running Webship-JS, the video step group sits alongside the other 35 step groups, accessibility, network, REST, screenshots, and the rest, in the <a href="/docs/webship-js/2.0.x">2.0.x documentation</a>.</p>
+      format: full_html
+      summary: 'Anyone who has triaged a flaky end-to-end test from a CI log alone knows the drill: a red checkmark, a stack trace that explains what failed but not why, and a Slack thread full of "can you repro locally?" With Webship-JS 2.0.x , video recording stops being…'
+  field_media:
+    - entity: fcb387d4-c84f-5c1e-aab6-bf7b22845545

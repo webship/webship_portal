@@ -1,0 +1,53 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 0c25f106-324c-5e51-a2b5-1d9991369ed4
+  bundle: release
+  default_langcode: en
+  depends:
+    9330776f-0e98-5a3f-b89e-fedaa121e4b3: node
+    d2b2955e-3c3c-5124-865c-e9fbb9fe0e07: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: 11.0.0-alpha1
+  created:
+    - value: 1746293425
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /products/webship-portal/releases/11.0.0-alpha1
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <h2>The initial release, <strong>Webship 11.0.0-alpha1</strong>, has been launched. It marks the first step toward full compatibility with <strong>Drupal 11</strong> and includes major changes, new features, and enhancements in performance and compatibility.</h2>
+        <h3><br>Highlighted important changes</h3>
+        <ul class="uk-list uk-list-bullet"><li>Issue <a href="https://www.drupal.org/i/3449844">#3449844</a>: Started an <code>11.0.x</code> branch for the <strong>Webship</strong> profile to ensure compatibility with <strong>Drupal 11</strong></li></ul>
+        <h3>Added:</h3>
+        <ul class="uk-list uk-list-bullet"><li>Issue <a href="https://www.drupal.org/i/3439036">#3439036</a>: Added <strong>Web Releases </strong>module and enable it</li><li>Issue <a href="https://www.drupal.org/i/3494051">#3494051</a>: Added the Webshare module and enable it</li><li>Issue <a href="https://www.drupal.org/i/3504280">#3504280</a>: Added <code>social-image.png</code> in the <strong>Webtheme</strong> theme</li></ul>
+        <h3>Changed:</h3>
+        <ul class="uk-list uk-list-bullet"><li>Issue <a href="https://www.drupal.org/i/3382850">#3382850</a>: Changed team size in contact page from text to select form</li><li>Issue <a href="https://www.drupal.org/i/3518460">#3518460</a>: Removed <strong>Admin Toolbar</strong> module from <strong>Webadmin</strong> module in Drupal 10 and 11</li><li>Issue <a href="https://www.drupal.org/i/3518445">#3518445</a>: Removed enabling <strong>Admin Toolbar Search</strong> module</li><li>Issue <a href="https://www.drupal.org/i/3517535">#3517535</a>: Removed enabling <strong>Dashboards statistic</strong> module</li><li>Issue <a href="https://www.drupal.org/i/3512753">#3512753</a>: Changed Folder Structure and File Names for Automated Testing Feature Files for Webship</li><li>Issue <a href="https://www.drupal.org/i/3511403">#3511403</a>: Changed admin login webship testing feature</li><li>Issue <a href="https://www.drupal.org/i/3517528">#3517528</a>: Removed leftover field product name</li><li>Issue <a href="https://www.drupal.org/i/3449837">#3449837</a>: Started an <code>11.0.x</code> branch for the <strong>Webtheme Admin</strong> theme to ensure compatibility with <strong>Drupal 11</strong></li><li>Issue <a href="https://www.drupal.org/i/3449834">#3449834</a>: Started an <code>11.0.x</code> branch for the <strong>Webtheme</strong> theme to ensure compatibility with <strong>Drupal 11</strong></li><li>Issue <a href="https://www.drupal.org/i/3449842">#3449842</a>: Started an <code>11.0.x</code> branch for the <strong>Webship Default Content</strong> module to ensure compatibility with <strong>Drupal 11</strong></li><li>Issue <a href="https://www.drupal.org/i/3449828">#3449828</a>: Started an <code>11.0.x</code> branch for the <strong>Webtheme Default Content</strong> module to ensure compatibility with <strong>Drupal 11</strong></li><li>Issue <a href="https://www.drupal.org/i/3449820">#3449820</a>: Started an <code>11.0.x</code> branch for the <strong>Webpage</strong> module to ensure compatibility with <strong>Drupal 11</strong></li><li>Issue <a href="https://www.drupal.org/i/3449810">#3449810</a>: Started an <code>11.0.x</code> branch for the <strong>Web SEO</strong> module to ensure compatibility with <strong>Drupal 11</strong></li><li>Issue <a href="https://www.drupal.org/i/3449805">#3449805</a>: Started an <code>11.0.x</code> branch for the <strong>Web Security</strong> module to ensure compatibility with <strong>Drupal 11</strong></li><li>Issue <a href="https://www.drupal.org/i/3449797">#3449797</a>: Started an <code>11.0.x</code> branch for the <strong>Web Releases</strong> module to ensure compatibility with <strong>Drupal 11</strong></li><li>Issue <a href="https://www.drupal.org/i/3447997">#3447997</a>: Started an <code>11.0.x</code> branch for the <strong>Web Patches</strong> module to ensure compatibility with <strong>Drupal 11</strong></li><li>Issue <a href="https://www.drupal.org/i/3449779">#3449779</a> : Started an <code>11.0.x</code> branch for the <strong>Web Newsletter</strong> module to ensure compatibility with <strong>Drupal 11</strong></li><li>Issue <a href="https://www.drupal.org/i/3449766">#3449766</a>: Started an <code>11.0.x</code> branch for the <strong>Web Editor</strong> module to ensure compatibility with <strong>Drupal 11</strong></li><li>Issue <a href="https://www.drupal.org/i/3449754">#3449754</a>: Started an <code>11.0.x</code> branch for the <strong>Web Doc</strong> module to ensure compatibility with <strong>Drupal 11</strong></li><li>Issue <a href="https://www.drupal.org/i/3448039">#3448039</a>: Started an <code>11.0.x</code> branch for the <strong>Web Development</strong> module to ensure compatibility with <strong>Drupal 11</strong></li><li>Issue <a href="https://www.drupal.org/i/3448024">#3448024</a>: Started an <code>11.0.x</code> branch for the <strong>Web Blog</strong> module to ensure compatibility with <strong>Drupal 11</strong></li><li>Issue <a href="https://www.drupal.org/i/3448009">#3448009</a>: Started an <code>11.0.x</code> branch for the <strong>Web Assets</strong> module to ensure compatibility with <strong>Drupal 11</strong></li><li>Issue <a href="https://www.drupal.org/i/3448004">#3448004</a>: Started an <code>11.0.x</code> branch for the <strong>Web Admin</strong> module to ensure compatibility with <strong>Drupal 11</strong></li></ul>
+        <h3>Updates:</h3>
+        <ul class="uk-list uk-list-bullet"><li>Issue <a href="https://www.drupal.org/i/3492384">#3492384</a>: Updated <strong>Drush</strong> from <code>~12</code> to <code>~13</code></li><li>Issue <a href="https://www.drupal.org/i/3385781">#3385781</a>: Updated google chrome browser , chrome driver and Selenium</li><li>Issue <a href="https://www.drupal.org/i/3492385">#3492385</a>: Updated <strong>Webform</strong> module from <code>~6.2.0</code> to <code>~6.3.0</code></li><li>Issue <a href="https://www.drupal.org/i/3520953">#3520953</a>: Updated <strong>Field Group</strong> module from <code>~3.0</code> to <code>~4.0</code></li><li>Issue <a href="https://www.drupal.org/i/3487160">#3487160</a>: Updated <strong>Metatag</strong> module from <code>~2.0.0</code> to <code>~2.1.0</code></li><li>Issue <a href="https://www.drupal.org/i/3492398">#3492398</a>: Updated <strong>Better Exposed Filters</strong> from <code>~6.0</code> to <code>~7.0</code></li></ul>
+        <h3>Fixes:</h3>
+        <ul class="uk-list uk-list-bullet"><li>Issue <a href="https://www.drupal.org/i/3510470">#3510470</a>: Fixed CircleCI report file to work with the latest versions</li></ul>
+      format: full_html
+      summary: 'The initial release, Webship 11.0.0-alpha1 , has been launched. It marks the first step toward full compatibility with Drupal 11 and includes major changes, new features, and enhancements in performance and compatibility. Highlighted important changes Issue #3449844 : Started an 11.0.x branch for the Webship profile to ensure…'
+  field_product:
+    - entity: 9330776f-0e98-5a3f-b89e-fedaa121e4b3
+  field_release_image:
+    - entity: d2b2955e-3c3c-5124-865c-e9fbb9fe0e07
+  field_release_link:
+    - uri: https://www.drupal.org/project/webship/releases/11.0.0-alpha1
+      title: Drupal.org release
+      options: {}

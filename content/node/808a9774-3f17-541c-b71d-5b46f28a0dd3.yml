@@ -1,0 +1,55 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 808a9774-3f17-541c-b71d-5b46f28a0dd3
+  bundle: webblog
+  default_langcode: en
+  depends:
+    e05d0113-2cf9-5117-a934-0d5e441a4b11: media
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: 'Keeping Tests Stable: Waits and Selectors'
+  created:
+    - value: 1786345200
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /blog/keeping-tests-stable-waits-and-selectors
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>A test that fails one run in ten is worse than no test: people stop reading the results. Two causes explain most flaky tests, and both have a simple cure.</p>
+        <h2>Waiting for time instead of waiting for the page</h2>
+        <p>A fixed wait is a guess. Too short, and the test fails on a slow day. Too long, and every run pays for it. Wait for the thing you need instead:</p>
+        <pre><code class="language-gherkin">Scenario: The search results appear
+          Given I am on "/blog"
+          When I fill in "Search the blog" with "Playwright"
+          And I press "Apply"
+          And I wait for the text "What Is Playwright?" to appear
+          Then "main article" should have a count of 1 within 5 seconds</code></pre>
+        <p>Webship-js already waits for the page to settle before and after each action. The explicit waits are for content that arrives later, such as results loaded in the background. The <code>within</code> steps retry until the condition is true, and pass the moment it is.</p>
+        <h2>Selectors tied to the markup</h2>
+        <p>A selector such as <code>div.col-md-8 &gt; ul &gt; li:nth-child(2) a</code> describes how the page was built last month. Prefer what a visitor sees: a label, a button text, a link text. When a CSS selector is needed, give it a name once and use the name in the scenarios:</p>
+        <pre><code class="language-gherkin">Scenario: The main menu is visible on a phone
+          Given I add "main menu" selector for "header nav" css selector
+          When I set the viewport to the "xs" breakpoint
+          And I go to the homepage
+          Then I see visible main menu</code></pre>
+        <p>When the markup changes, one line changes and every scenario that uses the name keeps working.</p>
+        <h2>A short checklist</h2>
+        <ul class="uk-list uk-list-bullet"><li>No sleeps. Wait for a text, an element or the network.</li><li>Find elements by label and text first, by a named selector second.</li><li>Each scenario creates what it needs and does not depend on another one.</li><li>Run the suite twice in a row before you merge it. A test that passes once has not proven much.</li><li>When a test is flaky, fix it or remove it the same week.</li></ul>
+      format: full_html
+      summary: 'A test that fails one run in ten is worse than no test: people stop reading the results. Two causes explain most flaky tests.'
+  field_media:
+    - entity: e05d0113-2cf9-5117-a934-0d5e441a4b11

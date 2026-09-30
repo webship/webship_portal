@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 1ecb42f4-3f78-5274-9a5c-9bee15b9a839
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-test-first-development-age-ai-why-it-mat.jpg
+  uri:
+    - value: public://webship-portal/blog-test-first-development-age-ai-why-it-mat.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 153665
+  status:
+    - value: true

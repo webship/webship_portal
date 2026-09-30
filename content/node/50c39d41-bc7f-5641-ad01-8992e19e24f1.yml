@@ -1,0 +1,123 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: 50c39d41-bc7f-5641-ad01-8992e19e24f1
+  bundle: webblog
+  default_langcode: en
+  depends:
+    86d8aa06-764f-51aa-bb12-874335ba73a4: media
+    9d76286f-6bb8-5241-b7f4-445e03df408d: file
+    26ae1e9b-14a1-584e-9bc7-69b8bafaff1d: file
+    5668151d-ca19-5acc-a77d-1674dba8f494: file
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: 'Advanced Selectors in Webship-js: A Named Registry for Stable, Readable Layout Tests'
+  created:
+    - value: 1785143532
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /blog/advanced-selectors-webship-js-named-registry-stable-readable-layout-tests
+      langcode: en
+      pathauto: 0
+  body:
+    - value: |-
+        <p>If you've written more than a handful of end-to-end tests, you already know the real maintenance burden isn't writing assertions; it's the selectors underneath them. A redesign ships, a <code>div.cta-primary</code> becomes <code>button[data-cta="primary"]</code>, and suddenly a dozen feature files across the suite are broken in a dozen different places.</p>
+        <p>Webship-js's <strong>selector steps</strong> exist to fix exactly that problem. Instead of scattering raw <strong>CSS</strong> or <strong>XPath</strong> through every scenario, you register a human-readable name once: <code>header</code>, <code>main</code> <code>nav</code>, <code>cta</code> <code>button</code>, and use that name everywhere: to click, to check visibility and focus, and to assert how components sit relative to each other on the page. When the markup changes, you update one registry entry, and every scenario that depends on it keeps passing.</p>
+        <p><strong>The core idea: name it once, use it everywhere</strong></p>
+        <p>At the center of this feature is a simple registry pattern. You define a name and a selector:</p>
+        <pre><code>When I add "breadcrumb" selector for ".breadcrumb" css selector
+         And I add "cta button" selector for ".cta .btn-primary" css selector
+        Then I see visible breadcrumb, cta button</code></pre>
+        <p>...or register several at once with a data table, which is the idiomatic way to declare a scenario's page vocabulary in a <code>Background</code>:</p>
+        <pre><code>Given I define css selectors:
+          | header  | #header     |
+          | nav     | nav.primary |
+          | footer  | footer      |</code></pre>
+        <p>XPath works the same way, registered into a separate but equally-resolvable namespace:</p>
+        <pre><code>When I add "login link" selector for "//a[contains(normalize-space(.),'Login')]" xpath selector
+        Then I see visible login link
+        When I click login link</code></pre>
+        <p>Names are resolved against the CSS registry first, then XPath. If you reference a name that was never registered, Webship-js doesn't just fail; it fails helpfully, offering a "Did you mean ...?" suggestion along with the full list of registered names. Pair that with <code>Then I print css selectors, and Then I print xpath selectors</code>, and debugging an unknown-selector failure becomes a quick console check instead of a hunt through feature files.</p>
+        <img src="/sites/default/files/webship-portal/blog-advanced-selectors-websh-selector-resolution-flow.jpg" data-entity-type="file" data-entity-uuid="9d76286f-6bb8-5241-b7f4-445e03df408d" width="1280" height="427" alt="Resolving a name: the CSS registry is checked first, then the XPath registry, then the step fails with the list of registered names." loading="lazy"><p><strong>Selectors from four sources, merged in order</strong></p>
+        <p>You're not limited to inline registration. Webship-js merges selectors from four places, in this order, with the latest registration always winning:</p>
+        <ol><li>The <code>selectors.css</code> / <code>selectors.xpath</code> blocks in <code>cucumber.js</code> worldParameters</li><li>JSON selector files auto-loaded via <code>selectors.files</code></li><li>Files loaded mid-scenario with <code>When I add selectors from "file.json" file</code></li><li>Inline registrations made directly by steps in the scenario</li></ol>
+        <p>That layering matters in practice: load a broad preset file for your CMS or framework, then patch a single entry inline for a scenario-specific quirk, without touching the shared file.</p>
+        <img src="/sites/default/files/webship-portal/blog-advanced-selectors-websh-selector-merge-order.jpg" data-entity-type="file" data-entity-uuid="26ae1e9b-14a1-584e-9bc7-69b8bafaff1d" width="1280" height="597" alt="Four sources feed one selector registry, and the latest wins: cucumber.js, preset files, a mid-scenario load, and inline steps." loading="lazy"><p>And you don't have to build those presets from scratch. The project ships more than 20 ready-made selector sets under <code>tests/selectors/</code>, Drupal (Claro and Gin admin themes), WordPress, Joomla, TYPO3, Magento 2, Shopify, Strapi, and popular front-end frameworks like Bootstrap, Tailwind, and Material UI. Point your config at the right file and admin-UI element names work immediately.</p>
+        <pre><code>selectors: {
+          filesPath: './tests/selectors/',
+          files: ['front-end-selectors.json', 'back-end-selectors.json'],
+          css: {
+            'page header': 'header.page-header',
+            'main nav': 'nav[role="navigation"]',
+          },
+          offset: 60,
+        }</code></pre>
+        <p><strong>Layout assertions that don't rely on pixel comparisons</strong></p>
+        <p>Named selectors unlock a set of relative-position assertions that would be painful to write against raw CSS every time. All of them operate on absolute page coordinates via Playwright's <code>boundingBox()</code>, after scrolling the target into view, so they stay accurate no matter where the page happens to be scrolled.</p>
+        <p><strong>Directional position,</strong> above, below, left, right:</p>
+        <pre><code>Then I see heading above subline, list and footer
+         And I see logo to the left of nav</code></pre>
+        <p>Both sides of these comparisons accept <code>comma-and-and-separated</code> lists, and every subject is checked against every target, so a single line can run a full cartesian product of checks and report every failure at once.</p>
+        <p><strong>Containment</strong>, one element fully inside or fully around another:</p>
+        <pre><code>Then I see logo inside of header
+         And I see page outside of content</code></pre>
+        <p><strong>Overlap and stacking</strong>, combining bounding-box intersection with computed z-index, which is exactly what you need for modals, dropdowns, tooltips, and sticky headers:</p>
+        <pre><code>Then I see modal over content
+         And I see nav not over sidebar</code></pre>
+        <img src="/sites/default/files/webship-portal/blog-advanced-selectors-websh-layout-assertions.jpg" data-entity-type="file" data-entity-uuid="5668151d-ca19-5acc-a77d-1674dba8f494" width="1280" height="740" alt="Layout assertions on a named registry: header above nav, content and footer; logo left of nav; sidebar right of content; modal over content." loading="lazy"><p><strong>Visibility and focus</strong>, using Playwright's auto-retrying <code>waitFor</code> (5-second timeout by default):</p>
+        <pre><code>Then I see visible hero, content and sidebar
+         And I don't see modal, overlay and popup
+        Then I see search has focus</code></pre>
+        <p><strong>Responsive checks without hardcoding viewport sizes</strong></p>
+        <p>Layout bugs are frequently viewport-specific, so the selector steps include named breakpoints you can drop straight into a scenario:</p>
+        <pre><code>Given I am viewing the site on a xs screen
+         Then I see visible heading
+        Given we are viewing the site on a "xxl" device
+         Then I see heading above list</code></pre>
+        <p>Seven breakpoints ship out of the box, from <code>xs</code> (375×667, phone portrait) up to <code>xxxl</code> (1920×1080, full HD), and you can define your own under <code>worldParameters.selectors.breakpoints</code> if your design system uses different cutoffs. Combine a breakpoint resize with a position assertion and you've locked down a responsive layout in two lines.</p>
+        <p><strong>Form focus and text selection, resolved the accessible way</strong></p>
+        <p>Two more step groups round things out for form-heavy flows. Focus movement and text selection both resolve fields the same accessibility-first way, label, then placeholder, then <code>role=textbox</code> name, then <code>name/id</code> attribute, mirroring how a real user or assistive technology would find the field:</p>
+        <pre><code>When I move focus to "Email" field
+         Then I see email input has focus
+
+        And I fill in "Title" with "Release 2.0 notes"
+        When I select "notes" text in "Title" field</code></pre>
+        <p>That last group of steps- select all text, select a character range, or select a specific substring- is genuinely useful for testing rich-text editors, inline-rename fields, or any workflow where you need to exercise keyboard-driven replace/delete/copy behavior on existing content.</p>
+        <p><strong>Putting it together</strong></p>
+        <p>A realistic scenario combines several of these pieces: a <code>Background</code> that defines the page vocabulary, and scenarios that lean on it for both responsive and layout checks:</p>
+        <pre><code>Feature: Relative element positioning assertions and advanced selector system.
+
+          Background:
+            Given I am on homepage
+            And I define css selectors:
+              | heading  | h1 |
+              | subline  | h3 |
+              | list     | ul |
+
+          Scenario: Layout holds on a phone-sized viewport.
+            Given I am viewing the site on a xs screen
+             Then I see visible heading
+              And I see heading above subline, list
+
+          Scenario: Mix file-based, inline CSS, and inline XPath selectors.
+            When I add selectors from "homepage-selectors.json" file
+             And I add "first para" selector for "//p[1]" xpath selector
+            Then I see visible page heading, first para</code></pre>
+        <p><strong>Why this matters</strong></p>
+        <p>The pitch here isn't "another selector syntax"; it's a maintenance strategy. Raw selectors baked into feature files couple your tests directly to markup, which is exactly the part of a front end that changes most often during a redesign. A named registry moves that coupling to one place: update <code>tests/selectors/cms-drupal-core-claro.json</code> (or your own file) once, and every scenario that references <code>main nav</code> or <code>cta button</code> keeps working without a single line of Gherkin changing.</p>
+        <p>Combined with position, visibility, containment, and overlap assertions built directly on top of that registry, Webship-js's selector steps give you a genuinely readable way to catch layout regressions, without resorting to brittle pixel-diff screenshots.</p>
+      format: full_html
+      summary: If you've written more than a handful of end-to-end tests, you already know the real maintenance burden isn't writing assertions; it's the selectors underneath them. A redesign ships, a div.cta-primary becomes button[data-cta="primary"] , and suddenly a dozen…
+  field_media:
+    - entity: 86d8aa06-764f-51aa-bb12-874335ba73a4

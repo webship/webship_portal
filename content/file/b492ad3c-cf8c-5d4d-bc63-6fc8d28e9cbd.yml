@@ -1,0 +1,18 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: b492ad3c-cf8c-5d4d-bc63-6fc8d28e9cbd
+  default_langcode: en
+default:
+  uid:
+    - target_id: 1
+  filename:
+    - value: blog-test-first-development-a-4.jpg
+  uri:
+    - value: public://webship-portal/blog-test-first-development-a-4.jpg
+  filemime:
+    - value: image/jpeg
+  filesize:
+    - value: 162667
+  status:
+    - value: true

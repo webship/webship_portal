@@ -1,0 +1,493 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: f44408bc-0e91-5335-9240-4c41b28a9532
+  bundle: webpage
+  default_langcode: en
+default:
+  revision_uid:
+    - target_id: 1
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  title:
+    - value: Products
+  promote:
+    - value: false
+  sticky:
+    - value: false
+  moderation_state:
+    - value: published
+  path:
+    - alias: /products
+      langcode: en
+      pathauto: 0
+  body:
+    - value: ''
+      format: full_html
+      summary: ''
+  field_page_display:
+    - source_id: component
+      source:
+        component:
+          component_id: webtheme:container
+          variant_id: null
+          props: {}
+          slots:
+            content:
+              sources:
+                - source_id: component
+                  source:
+                    component:
+                      component_id: webtheme:section
+                      variant_id: null
+                      props:
+                        container:
+                          source_id: select
+                          source:
+                            value: default
+                        size:
+                          source_id: select
+                          source:
+                            value: small
+                      slots:
+                        content:
+                          sources:
+                            - source_id: textarea
+                              source:
+                                value: <p class="uk-text-lead">Webship-js and its plugins for automated functional acceptance testing.</p>
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:heading
+                                  variant_id: null
+                                  props:
+                                    heading_level:
+                                      source_id: select
+                                      source:
+                                        value: 2
+                                  slots:
+                                    title:
+                                      sources:
+                                        - source_id: textfield
+                                          source:
+                                            value: Webship-js and its step plugins
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:grid_2_columns
+                                  variant_id: null
+                                  props:
+                                    gap:
+                                      source_id: select
+                                      source:
+                                        value: medium
+                                    match:
+                                      source_id: checkbox
+                                      source:
+                                        value: true
+                                  slots:
+                                    column_1:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:card
+                                              variant_id:
+                                                source_id: select
+                                                source:
+                                                  value: default
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 3
+                                                hover:
+                                                  source_id: checkbox
+                                                  source:
+                                                    value: true
+                                              slots:
+                                                header:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <img src="/sites/default/files/webship-portal/product-webship-js.png" width="512" height="512" alt="The Webship-js logo." class="uk-width-small" loading="lazy">
+                                                title:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:link
+                                                          variant_id:
+                                                            source_id: select
+                                                            source:
+                                                              value: heading
+                                                          props:
+                                                            url:
+                                                              source_id: url
+                                                              source:
+                                                                value: /products/webship-js
+                                                          slots:
+                                                            label:
+                                                              sources:
+                                                                - source_id: textfield
+                                                                  source:
+                                                                    value: Webship-js
+                                                content:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <p>Webship-js is an Automated Functional Acceptance Testing tool. Helps to ease and speed the work with the End-to-end testing features in web apps or projects. Utilizing Playwright and Cucumber-js. Having custom and advanced general step definitions.</p><p><code>npm install webship-js --save-dev</code></p>
+                                    column_2:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:card
+                                              variant_id:
+                                                source_id: select
+                                                source:
+                                                  value: default
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 3
+                                                hover:
+                                                  source_id: checkbox
+                                                  source:
+                                                    value: true
+                                              slots:
+                                                header:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <img src="/sites/default/files/webship-portal/product-webship-js.png" width="512" height="512" alt="The Webship-js logo." class="uk-width-small" loading="lazy">
+                                                title:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:link
+                                                          variant_id:
+                                                            source_id: select
+                                                            source:
+                                                              value: heading
+                                                          props:
+                                                            url:
+                                                              source_id: url
+                                                              source:
+                                                                value: /products/diffy-steps
+                                                          slots:
+                                                            label:
+                                                              sources:
+                                                                - source_id: textfield
+                                                                  source:
+                                                                    value: Diffy steps
+                                                content:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <p>Diffy-specific Cucumber step definitions for Webship-js. The plugin captures full-page Playwright screenshots at multiple breakpoints and drives Diffy visual-regression comparisons through the Diffy REST API, so you can express visual checks as readable Gherkin instead of hand-rolling API calls.</p><p><code>npm install --save-dev webship-js @webship-js/diffy-steps</code></p>
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:heading
+                                  variant_id: null
+                                  props:
+                                    heading_level:
+                                      source_id: select
+                                      source:
+                                        value: 2
+                                  slots:
+                                    title:
+                                      sources:
+                                        - source_id: textfield
+                                          source:
+                                            value: AI agent and skills
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:grid_2_columns
+                                  variant_id: null
+                                  props:
+                                    gap:
+                                      source_id: select
+                                      source:
+                                        value: medium
+                                    match:
+                                      source_id: checkbox
+                                      source:
+                                        value: true
+                                  slots:
+                                    column_1:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:card
+                                              variant_id:
+                                                source_id: select
+                                                source:
+                                                  value: default
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 3
+                                                hover:
+                                                  source_id: checkbox
+                                                  source:
+                                                    value: true
+                                              slots:
+                                                header:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <img src="/sites/default/files/webship-portal/product-webship-js.png" width="512" height="512" alt="The Webship-js logo." class="uk-width-small" loading="lazy">
+                                                title:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:link
+                                                          variant_id:
+                                                            source_id: select
+                                                            source:
+                                                              value: heading
+                                                          props:
+                                                            url:
+                                                              source_id: url
+                                                              source:
+                                                                value: /products/webship-js-ai-agent
+                                                          slots:
+                                                            label:
+                                                              sources:
+                                                                - source_id: textfield
+                                                                  source:
+                                                                    value: Webship-js AI agent
+                                                content:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <p>An AI coding-assistant agent specialized in automated website testing with Webship-js (Playwright and Cucumber-js). Works with Claude Code, GitHub Copilot, Gemini CLI and Codex CLI.</p>
+                                    column_2:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:card
+                                              variant_id:
+                                                source_id: select
+                                                source:
+                                                  value: default
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 3
+                                                hover:
+                                                  source_id: checkbox
+                                                  source:
+                                                    value: true
+                                              slots:
+                                                header:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <img src="/sites/default/files/webship-portal/product-webship-js.png" width="512" height="512" alt="The Webship-js logo." class="uk-width-small" loading="lazy">
+                                                title:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:link
+                                                          variant_id:
+                                                            source_id: select
+                                                            source:
+                                                              value: heading
+                                                          props:
+                                                            url:
+                                                              source_id: url
+                                                              source:
+                                                                value: /products/webship-js-skills
+                                                          slots:
+                                                            label:
+                                                              sources:
+                                                                - source_id: textfield
+                                                                  source:
+                                                                    value: Webship-js skills
+                                                content:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <p>AI-assistant skills for automated website testing with Webship-js, a BDD testing framework built on Playwright and Cucumber-js. Works with Claude Code, GitHub Copilot, Gemini CLI and Codex CLI.</p>
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:heading
+                                  variant_id: null
+                                  props:
+                                    heading_level:
+                                      source_id: select
+                                      source:
+                                        value: 2
+                                  slots:
+                                    title:
+                                      sources:
+                                        - source_id: textfield
+                                          source:
+                                            value: DDEV add-on
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:grid_2_columns
+                                  variant_id: null
+                                  props:
+                                    gap:
+                                      source_id: select
+                                      source:
+                                        value: medium
+                                    match:
+                                      source_id: checkbox
+                                      source:
+                                        value: true
+                                  slots:
+                                    column_1:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:card
+                                              variant_id:
+                                                source_id: select
+                                                source:
+                                                  value: default
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 3
+                                                hover:
+                                                  source_id: checkbox
+                                                  source:
+                                                    value: true
+                                              slots:
+                                                header:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <img src="/sites/default/files/webship-portal/product-webship-js.png" width="512" height="512" alt="The Webship-js logo." class="uk-width-small" loading="lazy">
+                                                title:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:link
+                                                          variant_id:
+                                                            source_id: select
+                                                            source:
+                                                              value: heading
+                                                          props:
+                                                            url:
+                                                              source_id: url
+                                                              source:
+                                                                value: /products/ddev-webship-js
+                                                          slots:
+                                                            label:
+                                                              sources:
+                                                                - source_id: textfield
+                                                                  source:
+                                                                    value: DDEV Webship-JS add-on
+                                                content:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <p>This add-on integrates Webship-JS, a Playwright and Cucumber-JS Automated Functional Acceptance Testing framework, into your DDEV project. Write and run automated browser tests using Gherkin feature files directly inside your DDEV environment.</p><p><code>ddev add-on get webship/ddev-webship-js</code></p>
+                                    column_2:
+                                      sources: []
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:heading
+                                  variant_id: null
+                                  props:
+                                    heading_level:
+                                      source_id: select
+                                      source:
+                                        value: 2
+                                  slots:
+                                    title:
+                                      sources:
+                                        - source_id: textfield
+                                          source:
+                                            value: The portal
+                            - source_id: component
+                              source:
+                                component:
+                                  component_id: webtheme:grid_2_columns
+                                  variant_id: null
+                                  props:
+                                    gap:
+                                      source_id: select
+                                      source:
+                                        value: medium
+                                    match:
+                                      source_id: checkbox
+                                      source:
+                                        value: true
+                                  slots:
+                                    column_1:
+                                      sources:
+                                        - source_id: component
+                                          source:
+                                            component:
+                                              component_id: webtheme:card
+                                              variant_id:
+                                                source_id: select
+                                                source:
+                                                  value: default
+                                              props:
+                                                heading_level:
+                                                  source_id: select
+                                                  source:
+                                                    value: 3
+                                                hover:
+                                                  source_id: checkbox
+                                                  source:
+                                                    value: true
+                                              slots:
+                                                header:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <img src="/sites/default/files/webship-portal/product-webship-portal.png" width="512" height="512" alt="The Webship.co logo." class="uk-width-small" loading="lazy">
+                                                title:
+                                                  sources:
+                                                    - source_id: component
+                                                      source:
+                                                        component:
+                                                          component_id: webtheme:link
+                                                          variant_id:
+                                                            source_id: select
+                                                            source:
+                                                              value: heading
+                                                          props:
+                                                            url:
+                                                              source_id: url
+                                                              source:
+                                                                value: /products/webship-portal
+                                                          slots:
+                                                            label:
+                                                              sources:
+                                                                - source_id: textfield
+                                                                  source:
+                                                                    value: Webship-portal
+                                                content:
+                                                  sources:
+                                                    - source_id: textarea
+                                                      source:
+                                                        value: <p>The Webship.co portal site was built on top of Drupal, as it has many options, tools, frameworks, and configuration management, which are needed in building solutions.</p>
+                                    column_2:
+                                      sources: []

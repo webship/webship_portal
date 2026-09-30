@@ -1,0 +1,21 @@
+_meta:
+  version: '1.0'
+  entity_type: media
+  uuid: 3e109470-9ee8-53cd-bd10-1497dfe38cac
+  bundle: image
+  default_langcode: en
+  depends:
+    dae5793f-59c2-53de-adc3-360bb5e57d2a: file
+default:
+  status:
+    - value: true
+  uid:
+    - target_id: 1
+  name:
+    - value: Webship-js AI Agent for Automated Testing
+  field_media_image:
+    - alt: 'Cover of the blog post: Webship-js AI Agent for Automated Testing'
+      title: ''
+      width: 1280
+      height: 853
+      entity: dae5793f-59c2-53de-adc3-360bb5e57d2a
