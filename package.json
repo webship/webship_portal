@@ -1,0 +1,19 @@
+{
+  "name": "webship_portal",
+  "private": true,
+  "description": "Tests of the Webship Portal site template.",
+  "license": "GPL-2.0-or-later",
+  "engines": {
+    "node": ">= 22.0"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "~12.9.0",
+    "webship-js": "^2.0.6"
+  },
+  "resolutions": {
+    "@cucumber/cucumber": "~12.9.0"
+  },
+  "scripts": {
+    "test": "cucumber-js --config cucumber.js"
+  }
+}
