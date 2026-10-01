@@ -30,7 +30,7 @@ default:
     - alias: /blog/advanced-selectors-webship-js-named-registry-stable-readable-layout-tests
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>If you've written more than a handful of end-to-end tests, you already know the real maintenance burden isn't writing assertions; it's the selectors underneath them. A redesign ships, a <code>div.cta-primary</code> becomes <code>button[data-cta="primary"]</code>, and suddenly a dozen feature files across the suite are broken in a dozen different places.</p>
         <p>Webship-js's <strong>selector steps</strong> exist to fix exactly that problem. Instead of scattering raw <strong>CSS</strong> or <strong>XPath</strong> through every scenario, you register a human-readable name once: <code>header</code>, <code>main</code> <code>nav</code>, <code>cta</code> <code>button</code>, and use that name everywhere: to click, to check visibility and focus, and to assert how components sit relative to each other on the page. When the markup changes, you update one registry entry, and every scenario that depends on it keeps passing.</p>
@@ -118,6 +118,7 @@ default:
         <p>The pitch here isn't "another selector syntax"; it's a maintenance strategy. Raw selectors baked into feature files couple your tests directly to markup, which is exactly the part of a front end that changes most often during a redesign. A named registry moves that coupling to one place: update <code>tests/selectors/cms-drupal-core-claro.json</code> (or your own file) once, and every scenario that references <code>main nav</code> or <code>cta button</code> keeps working without a single line of Gherkin changing.</p>
         <p>Combined with position, visibility, containment, and overlap assertions built directly on top of that registry, Webship-js's selector steps give you a genuinely readable way to catch layout regressions, without resorting to brittle pixel-diff screenshots.</p>
       format: full_html
-      summary: If you've written more than a handful of end-to-end tests, you already know the real maintenance burden isn't writing assertions; it's the selectors underneath them. A redesign ships, a div.cta-primary becomes button[data-cta="primary"] , and suddenly a dozen…
+  field_summary:
+    - value: If you've written more than a handful of end-to-end tests, you already know the real maintenance burden isn't writing assertions; it's the selectors underneath them. A redesign ships, a div.cta-primary becomes button[data-cta="primary"] , and suddenly a dozen…
   field_media:
     - entity: 86d8aa06-764f-51aa-bb12-874335ba73a4

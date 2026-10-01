@@ -31,7 +31,7 @@ default:
     - alias: /blog/patterns-vs.-anti-patterns
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>Building a robust automated functional testing suite is like constructing a skyscraper. If your foundation is built on "anti-patterns" habits that seem helpful but cause long-term damage, the whole structure will eventually collapse under the weight of its own maintenance.</p>
         <p>This guide explores the most common anti-patterns in automated functional testing and the modern patterns that must replace them to build a resilient, scalable QA process.</p>
@@ -61,6 +61,7 @@ default:
         <table class="uk-table uk-table-divider uk-table-small"><tbody><tr><td><strong>Feature</strong></td><td><strong>Anti-Pattern (The Trap)</strong></td><td><strong>Modern Pattern (The Solution)</strong></td></tr><tr><td><strong>Strategy</strong></td><td>Anti-Pattern (UI/Manual Heavy)</td><td>Test Pyramid (Base-Heavy)</td></tr><tr><td><strong>Gherkin Language</strong></td><td>Technical implementation details</td><td>Business intent and user behavior</td></tr><tr><td><strong>Timing/Waits</strong></td><td>Hardcoded Sleep or fixed waits</td><td>Dynamic/Smart Auto-waiting</td></tr><tr><td><strong>Data Management</strong></td><td>Shared, static datasets (collisions)</td><td>Unique, API-injected data (JIT)</td></tr><tr><td><strong>Failure Handling</strong></td><td>Retrying flaky tests blindly</td><td>Root-cause analysis &amp; self-healing</td></tr></tbody></table>
         <p><strong>Final Thought</strong><br>The goal of automation is not to eliminate manual testing, but to eliminate repetitive testing. By moving from anti-patterns to patterns, you transform your test suite from a source of frustration and maintenance into a critical source of confidence and development velocity.</p>
       format: full_html
-      summary: Building a robust automated functional testing suite is like constructing a skyscraper. If your foundation is built on "anti-patterns" habits that seem helpful but cause long-term damage, the whole structure will eventually collapse under the weight of its…
+  field_summary:
+    - value: Building a robust automated functional testing suite is like constructing a skyscraper. If your foundation is built on "anti-patterns" habits that seem helpful but cause long-term damage, the whole structure will eventually collapse under the weight of its…
   field_media:
     - entity: 77dc5e5c-a0a0-5eec-b7ed-a5a5937aa0aa

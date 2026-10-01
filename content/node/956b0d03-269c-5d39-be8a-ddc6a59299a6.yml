@@ -28,7 +28,7 @@ default:
     - alias: /products/webship-js/releases/2.0.1
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>This release adds a step definition for anonymous user testing and removes the external template.sh dependency by integrating setup locally, simplifying both testing and installation.</p>
         <p><strong>Added since Webship-js 2.0.0:</strong></p>
@@ -36,7 +36,8 @@ default:
         <p><strong>Changes since Webship-js 2.0.0:</strong></p>
         <ul class="uk-list uk-list-bullet"><li>Removed the external template.sh dependency and integrate setup locally <a href="https://github.com/webship/webship-js/issues/250">#250</a></li></ul>
       format: full_html
-      summary: This release adds a step definition for anonymous user testing and removes the external template.sh dependency by integrating setup locally, simplifying both testing and installation.
+  field_summary:
+    - value: This release adds a step definition for anonymous user testing and removes the external template.sh dependency by integrating setup locally, simplifying both testing and installation.
   field_product:
     - entity: dd27c5e5-53d0-50e4-828a-4905a51ea4e9
   field_release_image:

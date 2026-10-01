@@ -28,13 +28,14 @@ default:
     - alias: /products/webship-js/releases/2.0.0-beta1
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>Previously, webship.js loaded its own internal playwright.config, ignoring any project-level settings. Now it loads the config from the project's root directory using process.cwd(), so projects can control Playwright settings like headless and slowMo from their own playwright.config.ts.</p>
         <p><strong>Updates since Webship-js </strong><strong>2.0.0-alpha1</strong><strong>:</strong></p>
         <ul class="uk-list uk-list-bullet"><li>Activated playwrightConfig in step definitions <a href="https://github.com/webship/webship-js/issues/244">#244</a></li></ul>
       format: full_html
-      summary: Previously, webship.js loaded its own internal playwright.config, ignoring any project-level settings. Now it loads the config from the project's root directory using process.cwd(), so projects can control Playwright settings like headless and slowMo from their own playwright.config.ts.
+  field_summary:
+    - value: Previously, webship.js loaded its own internal playwright.config, ignoring any project-level settings. Now it loads the config from the project's root directory using process.cwd(), so projects can control Playwright settings like headless and slowMo from their own playwright.config.ts.
   field_product:
     - entity: dd27c5e5-53d0-50e4-828a-4905a51ea4e9
   field_release_image:

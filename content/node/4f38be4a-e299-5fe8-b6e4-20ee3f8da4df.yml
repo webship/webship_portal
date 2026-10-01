@@ -31,7 +31,7 @@ default:
     - alias: /blog/webship-js-adds-diffy-api-support-visual-regression-testing-plain-gherkin
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>If your test suite already speaks Gherkin, catching visual regressions no longer means reaching for a separate tool with its own syntax and setup. The new <code>@webship-js/diffy-steps</code> package plugs directly into Webship JS 2.0.x and lets you drive Diffy's visual-testing platform from the same feature files you're already writing.</p>
         <p><strong>What it actually does</strong></p>
@@ -80,6 +80,7 @@ default:
         <p><strong>Why it's worth adopting</strong></p>
         <p>The real value here isn't the individual steps; it's that visual regression testing stops being a separate discipline with its own tooling and becomes just another part of the Cucumber suite your team already maintains. One install, a couple of lines in <code>cucumber.js</code>, and visual coverage is written the same way as everything else: in Gherkin, readable by anyone on the team, and running in the same CI pipeline.</p>
       format: full_html
-      summary: If your test suite already speaks Gherkin, catching visual regressions no longer means reaching for a separate tool with its own syntax and setup. The new @webship-js/diffy-steps package plugs directly into Webship JS 2.0.x and lets you drive Diffy's…
+  field_summary:
+    - value: If your test suite already speaks Gherkin, catching visual regressions no longer means reaching for a separate tool with its own syntax and setup. The new @webship-js/diffy-steps package plugs directly into Webship JS 2.0.x and lets you drive Diffy's…
   field_media:
     - entity: b34dfa7a-6293-5b14-898e-55d2d137ef75

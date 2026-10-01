@@ -28,7 +28,7 @@ default:
     - alias: /products/webship-portal/releases/11.0.0-beta1
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>This beta version focuses on aligning with Drupal 11.2.0, enhancing stability, and cleaning up deprecated modules and configurations.<br>It also updates several key modules and components, including Gin Theme, Default Content removal in favor of Recipes, and Node.js upgrade for better CI performance.<br><br>Highlighted important changes</p>
         <ul class="uk-list uk-list-bullet"><li>Issue <a href="https://www.drupal.org/i/3532000">#3532000</a>: Updated <strong>Drupal Core</strong> from<code> ~11.1.0</code> to <code>~11.2.0</code> for <strong>Webship</strong></li><li>Issue <a href="https://www.drupal.org/i/3531974">#3531974</a>: Updated <strong>Gin Admin Theme</strong> from <code>~4.0</code> to <code>~5.0</code></li></ul>
@@ -41,7 +41,8 @@ default:
         <h3>Fixes:</h3>
         <ul class="uk-list uk-list-bullet"><li>Issue <a href="https://www.drupal.org/i/3525086">#3525086</a>: Fixed User warning: The following theme is missing from the file system: classy</li></ul>
       format: full_html
-      summary: This beta version focuses on aligning with Drupal 11.2.0, enhancing stability, and cleaning up deprecated modules and configurations. It also updates several key modules and components, including Gin Theme, Default Content removal in favor of Recipes, and Node.js upgrade for better CI performance. Highlighted important changes
+  field_summary:
+    - value: This beta version focuses on aligning with Drupal 11.2.0, enhancing stability, and cleaning up deprecated modules and configurations. It also updates several key modules and components, including Gin Theme, Default Content removal in favor of Recipes, and Node.js upgrade for better CI performance. Highlighted important changes
   field_product:
     - entity: 9330776f-0e98-5a3f-b89e-fedaa121e4b3
   field_release_image:

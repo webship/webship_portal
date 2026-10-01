@@ -27,7 +27,7 @@ default:
     - alias: /blog/writing-your-first-feature-file
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>A feature file is the smallest useful piece of automated functional testing: one page of plain text that says what a visitor can do on your site. It is written in Gherkin, a format that product owners, testers and developers can all read. This article walks through a first one.</p>
         <h2>Start from one thing a visitor does</h2>
@@ -51,6 +51,7 @@ default:
         <ul class="uk-list uk-list-bullet"><li>One behaviour per scenario. If the title needs the word "and", split it.</li><li>Use the words of the page: labels, button texts and headings, not CSS classes.</li><li>Keep scenarios independent, so each one can run alone and in any order.</li></ul>
         <p>When this first scenario passes, add the next most important journey. A small suite that runs on every change is worth more than a large one nobody trusts.</p>
       format: full_html
-      summary: 'A feature file is the smallest useful piece of automated functional testing: one page of plain text that says what a visitor can do on your site.'
+  field_summary:
+    - value: 'A feature file is the smallest useful piece of automated functional testing: one page of plain text that says what a visitor can do on your site.'
   field_media:
     - entity: 27adba1e-ab87-5c5e-94d6-e26d76171967

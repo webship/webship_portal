@@ -27,7 +27,7 @@ default:
     - alias: /blog/given-when-then-done-well
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>Given, When, Then is easy to write and easy to write badly. A scenario that lists twenty clicks tells nobody what the feature is for. A few rules keep scenarios short, readable and useful as documentation.</p>
         <h2>Describe behaviour, not clicks</h2>
@@ -53,6 +53,7 @@ default:
         <p>When every scenario of a feature starts the same way, move those lines to a <code>Background</code>. Keep it to one or two lines: a long Background hides the context that makes a scenario readable.</p>
         <p>Scenarios written like this double as living documentation. When one fails, its title already says which promise to your visitors was broken.</p>
       format: full_html
-      summary: Given, When, Then is easy to write and easy to write badly. A few rules keep scenarios short, readable and useful as documentation.
+  field_summary:
+    - value: Given, When, Then is easy to write and easy to write badly. A few rules keep scenarios short, readable and useful as documentation.
   field_media:
     - entity: 9c259abc-4ff8-5a6b-8df5-5161856eb2e8

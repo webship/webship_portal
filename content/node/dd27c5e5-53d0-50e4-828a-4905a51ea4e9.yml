@@ -27,12 +27,13 @@ default:
     - alias: /products/webship-js
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>Webship-js is an Automated Functional Acceptance Testing tool. Helps to ease and speed the work with the End-to-end testing features in web apps or projects. Utilizing Playwright and Cucumber-js. Having custom and advanced general step definitions.</p>
         <pre><code class="language-shell">npm install webship-js --save-dev</code></pre>
         <p><a class="uk-button uk-button-primary uk-margin-small-right uk-margin-small-bottom" href="/docs/webship-js/2.0.x">Documentation of Webship-js</a> <a class="uk-button uk-button-default uk-margin-small-right uk-margin-small-bottom" href="https://github.com/webship/webship-js">Webship-js on GitHub</a> <a class="uk-button uk-button-default uk-margin-small-right uk-margin-small-bottom" href="https://www.npmjs.com/package/webship-js">Webship-js on npm</a></p>
       format: full_html
-      summary: Webship-js is an Automated Functional Acceptance Testing tool. Helps to ease and speed the work with the End-to-end testing features in web apps or projects. Utilizing Playwright and Cucumber-js. Having custom and advanced general step definitions.
+  field_summary:
+    - value: Webship-js is an Automated Functional Acceptance Testing tool. Helps to ease and speed the work with the End-to-end testing features in web apps or projects. Utilizing Playwright and Cucumber-js. Having custom and advanced general step definitions.
   field_image:
     - entity: 0e46252b-18a2-5b1d-acfb-800228762447

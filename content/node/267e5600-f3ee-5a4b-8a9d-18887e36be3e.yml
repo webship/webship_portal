@@ -28,7 +28,7 @@ default:
     - alias: /blog/what-playwright-why-companies-are-rapidly-moving-it
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>In the fast-evolving world of web development, testing tools must keep up with the demands of modern applications. <strong>Playwright</strong>, an open-source framework developed by Microsoft, has quickly become one of the most talked-about solutions for web automation and end-to-end testing.</p>
         <p><strong>What Is Playwright?</strong></p>
@@ -50,6 +50,7 @@ default:
         </li><li><strong>Playwright CLI</strong> It also supports <strong>command-line usage</strong>, allowing fast setup and execution of tests: <a href="https://github.com/microsoft/playwright-cli">read more</a></li><li><strong>Playwright MCP</strong> integrates <strong>very well with artificial intelligence</strong>, enabling smarter automation and testing workflows: <a href="https://github.com/microsoft/playwright-mcp">read more</a></li></ol>
         <p>In short, Playwright is more than just a testing tool; it is a <strong>modern solution for modern web challenges</strong>, simplifying browser testing, improving reliability, and saving time. <strong>Playwright plays it right</strong>, which is why more and more companies are rapidly adopting it.</p>
       format: full_html
-      summary: In the fast-evolving world of web development, testing tools must keep up with the demands of modern applications. Playwright , an open-source framework developed by Microsoft, has quickly become one of the most talked-about solutions for web automation and…
+  field_summary:
+    - value: In the fast-evolving world of web development, testing tools must keep up with the demands of modern applications. Playwright , an open-source framework developed by Microsoft, has quickly become one of the most talked-about solutions for web automation and…
   field_media:
     - entity: 21e1406b-8d68-50d8-a407-d51d7c138ad5

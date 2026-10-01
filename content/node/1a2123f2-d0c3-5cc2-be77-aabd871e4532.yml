@@ -23,7 +23,7 @@ default:
     - alias: /privacy-policy
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>At Webship.co, we collect and manage user data according to the following Privacy Policy.</p>
         <p><strong>Data Collected</strong><br>We collect information you provide directly to us. For example, we collect information when you create an account, subscribe, participate in any interactive features of our services, fill out a form, request customer support or otherwise communicate with us. The types of information we may collect include your name, email address, postal address, and other contact or identifying information you choose to provide.</p>
@@ -44,4 +44,3 @@ default:
         <p><strong>Changes to the Privacy Policy</strong><br>We may amend this Privacy Policy from time to time. Use of information we collect now is subject to the Privacy Policy in effect at the time such information is used.</p>
         <p>If we make major changes in the way we collect or use information, we will notify you by posting an announcement on the Website or sending you an email.</p>
       format: full_html
-      summary: ''

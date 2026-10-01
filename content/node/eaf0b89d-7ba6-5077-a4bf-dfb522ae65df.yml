@@ -27,7 +27,7 @@ default:
     - alias: /blog/webship-js-ai-agent-automated-testing
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>Now, with three new packages, webship-js brings AI directly into the testing workflow. Gives teams a rich library of ready-to-use Gherkin step definitions, no glue code, no boilerplate.</p>
         <h2>1- Webship-js AI Agent for Claude Code</h2>
@@ -104,6 +104,7 @@ default:
         <p>This agent is built for <strong>webship-js 2.0</strong>. See the <a href="/docs/webship-js/2.0.x">webship-js documentation</a> for details.</p>
         <p><strong>webship-js </strong>is an open-source automated functional acceptance testing framework built on Playwright and Cucumber-js.</p>
       format: full_html
-      summary: Now, with three new packages, webship-js brings AI directly into the testing workflow. Gives teams a rich library of ready-to-use Gherkin step definitions, no glue code, no boilerplate.
+  field_summary:
+    - value: Now, with three new packages, webship-js brings AI directly into the testing workflow. Gives teams a rich library of ready-to-use Gherkin step definitions, no glue code, no boilerplate.
   field_media:
     - entity: 3e109470-9ee8-53cd-bd10-1497dfe38cac

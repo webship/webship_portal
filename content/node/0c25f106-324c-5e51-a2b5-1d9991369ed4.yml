@@ -28,7 +28,7 @@ default:
     - alias: /products/webship-portal/releases/11.0.0-alpha1
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <h2>The initial release, <strong>Webship 11.0.0-alpha1</strong>, has been launched. It marks the first step toward full compatibility with <strong>Drupal 11</strong> and includes major changes, new features, and enhancements in performance and compatibility.</h2>
         <h3><br>Highlighted important changes</h3>
@@ -42,7 +42,8 @@ default:
         <h3>Fixes:</h3>
         <ul class="uk-list uk-list-bullet"><li>Issue <a href="https://www.drupal.org/i/3510470">#3510470</a>: Fixed CircleCI report file to work with the latest versions</li></ul>
       format: full_html
-      summary: 'The initial release, Webship 11.0.0-alpha1 , has been launched. It marks the first step toward full compatibility with Drupal 11 and includes major changes, new features, and enhancements in performance and compatibility. Highlighted important changes Issue #3449844 : Started an 11.0.x branch for the Webship profile to ensure…'
+  field_summary:
+    - value: 'The initial release, Webship 11.0.0-alpha1 , has been launched. It marks the first step toward full compatibility with Drupal 11 and includes major changes, new features, and enhancements in performance and compatibility. Highlighted important changes Issue #3449844 : Started an 11.0.x branch for the Webship profile to ensure…'
   field_product:
     - entity: 9330776f-0e98-5a3f-b89e-fedaa121e4b3
   field_release_image:

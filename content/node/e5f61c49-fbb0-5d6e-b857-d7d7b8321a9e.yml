@@ -28,7 +28,7 @@ default:
     - alias: /products/webship-js/releases/2.0.3
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>This release rewrites webship-js around a per-domain step-file layout, adds<br>TypeScript / JavaScript interop, ships 22 CMS and framework selector presets,<br>introduces a flat colored PDF report, and brings the documentation set up to<br>date. All 288 scenarios / 1,406 steps pass on chromium, firefox, and webkit.</p>
         <p><strong>Added since Webship-js 2.0.2:</strong></p>
@@ -36,7 +36,8 @@ default:
         <p><strong>Fixed since Webship-js 2.0.2:</strong></p>
         <ul class="uk-list uk-list-bullet"><li>Fix CI step loading: explicit globs per extension <a href="https://github.com/webship/webship-js/issues/278">#278</a></li></ul>
       format: full_html
-      summary: This release rewrites webship-js around a per-domain step-file layout, adds TypeScript / JavaScript interop, ships 22 CMS and framework selector presets, introduces a flat colored PDF report, and brings the documentation set up to date. All 288 scenarios / 1,406 steps pass on chromium, firefox, and webkit.
+  field_summary:
+    - value: This release rewrites webship-js around a per-domain step-file layout, adds TypeScript / JavaScript interop, ships 22 CMS and framework selector presets, introduces a flat colored PDF report, and brings the documentation set up to date. All 288 scenarios / 1,406 steps pass on chromium, firefox, and webkit.
   field_product:
     - entity: dd27c5e5-53d0-50e4-828a-4905a51ea4e9
   field_release_image:

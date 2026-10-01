@@ -214,12 +214,12 @@ config:
           -
             source_id: entity_field
             source:
-              derivable_context: 'field:node:webblog:body'
-              'field:node:webblog:body':
+              derivable_context: 'field:node:webblog:field_body'
+              'field:node:webblog:field_body':
                 value:
                   sources:
                     -
-                      source_id: 'field_formatter:node:webblog:body'
+                      source_id: 'field_formatter:node:webblog:field_body'
                       source:
                         type: text_default
                         label: hidden

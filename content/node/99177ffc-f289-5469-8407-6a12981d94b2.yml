@@ -28,7 +28,7 @@ default:
     - alias: /products/webship-js/releases/2.0.5
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>This batch covers architecture and command documentation, the refactoring of the Diffy step-pack into a standalone plugin, and keeping all guidelines synchronized with the latest correct paths.</p>
         <p><strong>Added since Webship-js 2.0.4:</strong></p>
@@ -37,7 +37,8 @@ default:
         <ul class="uk-list uk-list-bullet"><li><p>Refactor: extract the Diffy step-pack into its own diffy-steps plugin (<a href="https://github.com/webship/webship-js/issues/302">#302</a>)</p>
         </li></ul>
       format: full_html
-      summary: This batch covers architecture and command documentation, the refactoring of the Diffy step-pack into a standalone plugin, and keeping all guidelines synchronized with the latest correct paths.
+  field_summary:
+    - value: This batch covers architecture and command documentation, the refactoring of the Diffy step-pack into a standalone plugin, and keeping all guidelines synchronized with the latest correct paths.
   field_product:
     - entity: dd27c5e5-53d0-50e4-828a-4905a51ea4e9
   field_release_image:

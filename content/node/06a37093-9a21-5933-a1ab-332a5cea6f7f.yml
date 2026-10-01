@@ -23,7 +23,7 @@ default:
     - alias: /docs/webship-js/2.0.x
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>Webship-js is a BDD-first browser automation harness built on <a href="https://playwright.dev/">Playwright</a> and <a href="https://github.com/cucumber/cucumber-js">Cucumber-js</a>. Plain Gherkin feature files, a named-selector registry that survives redesigns, and BBR smart waits that never <code>sleep</code>.</p>
         <p><strong>411 built-in steps</strong> across <strong>36 step files</strong>. <strong>288 example scenarios / 1,406 step executions</strong> in the bundled suite, all green on chromium, firefox, and webkit.</p>
@@ -50,4 +50,5 @@ default:
         <h2>Benefits</h2>
         <p>Increased testing efficiency, reduced human error, improved test coverage, faster time-to-market. By automating the repetitive, the suite frees testers to focus on the exploratory and the critical.</p>
       format: full_html
-      summary: Webship-js is a BDD-first browser automation harness built on Playwright and Cucumber-js . Plain Gherkin feature files, a named-selector registry that survives redesigns, and BBR smart waits that never sleep .
+  field_summary:
+    - value: Webship-js is a BDD-first browser automation harness built on Playwright and Cucumber-js . Plain Gherkin feature files, a named-selector registry that survives redesigns, and BBR smart waits that never sleep .

@@ -32,7 +32,7 @@ default:
     - alias: /blog/webship-js-advanced-screenshots
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>When an automated test fails in CI at three in the morning, the first question is always the same: what did the page actually look like? Screenshots answer that question instantly. They give stakeholders visual evidence they can scan in seconds, and they give QA engineers the forensic detail they need to diagnose a failure without rerunning anything.</p>
         <p>Webship-js, the BDD-first browser automation harness built on Playwright and Cucumber-js, treats screenshots as a first-class feature. Version 2.0.x ships with a complete set of screenshot steps that cover viewport captures, full-page captures, on-the-fly viewport resizing, custom filenames with dynamic tokens, automatic failure captures, and flexible per-project configuration. This article walks through all of it.</p>
@@ -120,6 +120,7 @@ default:
         <pre><code>Then I save screenshot</code></pre>
         <p>To dig deeper, see the <a href="/docs/webship-js/2.0.x">Webship-js 2.0.x documentation</a> and the<a href="https://webship.co/docs/webship-js/2.0.x/screenshot-steps"> Screenshot Steps reference</a>.</p>
       format: full_html
-      summary: 'When an automated test fails in CI at three in the morning, the first question is always the same: what did the page actually look like? Screenshots answer that question instantly. They give stakeholders visual evidence they can scan in seconds, and they give…'
+  field_summary:
+    - value: 'When an automated test fails in CI at three in the morning, the first question is always the same: what did the page actually look like? Screenshots answer that question instantly. They give stakeholders visual evidence they can scan in seconds, and they give…'
   field_media:
     - entity: 0a22dd08-9868-5556-8325-6f35761a6211

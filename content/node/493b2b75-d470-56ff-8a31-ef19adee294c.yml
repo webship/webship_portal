@@ -28,10 +28,11 @@ default:
     - alias: /products/diffy-steps/releases/2.0.0
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: '<p>First release of <code>@webship-js/diffy-steps</code>: Diffy visual-regression step definitions for Webship-js.</p><p>Extracted from Webship-js, where these steps shipped as an opt-in layer, and removed there in <a href="/products/webship-js/releases/2.0.5">Webship-js 2.0.5</a>.</p>'
       format: full_html
-      summary: 'First release of @webship-js/diffy-steps : Diffy visual-regression step definitions for Webship-js. Extracted from Webship-js, where these steps shipped as an opt-in layer, and removed there in Webship-js 2.0.5 .'
+  field_summary:
+    - value: 'First release of @webship-js/diffy-steps : Diffy visual-regression step definitions for Webship-js. Extracted from Webship-js, where these steps shipped as an opt-in layer, and removed there in Webship-js 2.0.5 .'
   field_product:
     - entity: c98b596d-f2ec-5938-9e2f-446a09d388cf
   field_release_image:

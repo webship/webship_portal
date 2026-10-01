@@ -27,7 +27,7 @@ default:
     - alias: /blog/video-recording-playwright-recordvideo-integration-startstopsave
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>Anyone who has triaged a flaky <strong>end-to-end</strong> test from a <strong>CI</strong> log alone knows the drill: a red checkmark, a stack trace that explains what failed but not why, and a Slack thread full of "can you repro locally?" With <strong>Webship-JS 2.0.x</strong>, video recording stops being an afterthought bolted onto your test runner and becomes a first-class <strong>Gherkin</strong> citizen, controllable from the same feature files that describe your test scenarios.</p>
         <p><strong>Why bake the video into the BDD layer?</strong></p>
@@ -59,6 +59,7 @@ default:
         <p>The real win isn't the recording itself; Playwright has supported recordVideo for years. It's that Webship-JS treats the recording lifecycle as something a test author controls from the same file where the scenario lives, instead of something a test infrastructure engineer configures globally and hopes covers the right cases. Combined with on-failure mode, that turns video from "nice to have if someone remembers to wire it up" into a default safety net for exactly the runs where it matters: the ones that broke, on a machine nobody in the room has access to, at 2 a.m. their time.</p>
         <p>If you're already running Webship-JS, the video step group sits alongside the other 35 step groups, accessibility, network, REST, screenshots, and the rest, in the <a href="/docs/webship-js/2.0.x">2.0.x documentation</a>.</p>
       format: full_html
-      summary: 'Anyone who has triaged a flaky end-to-end test from a CI log alone knows the drill: a red checkmark, a stack trace that explains what failed but not why, and a Slack thread full of "can you repro locally?" With Webship-JS 2.0.x , video recording stops being…'
+  field_summary:
+    - value: 'Anyone who has triaged a flaky end-to-end test from a CI log alone knows the drill: a red checkmark, a stack trace that explains what failed but not why, and a Slack thread full of "can you repro locally?" With Webship-JS 2.0.x , video recording stops being…'
   field_media:
     - entity: fcb387d4-c84f-5c1e-aab6-bf7b22845545

@@ -32,7 +32,7 @@ default:
     - alias: /blog/test-first-development-age-ai-why-it-matters
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>The rise of AI in software development has changed the rules of the game. Tools like GitHub Copilot and autonomous coding agents can generate code in seconds. Productivity has increased dramatically.</p>
         <p>But speed does not guarantee reliability.</p>
@@ -79,6 +79,7 @@ default:
         <p>The future of development is not AI replacing the engineering discipline; it is AI operating within it.</p>
         <p>When guided by clear specifications and robust automated tests, AI becomes a powerful accelerator rather than a liability.</p>
       format: full_html
-      summary: The rise of AI in software development has changed the rules of the game. Tools like GitHub Copilot and autonomous coding agents can generate code in seconds. Productivity has increased dramatically.
+  field_summary:
+    - value: The rise of AI in software development has changed the rules of the game. Tools like GitHub Copilot and autonomous coding agents can generate code in seconds. Productivity has increased dramatically.
   field_media:
     - entity: e7236195-7bc3-56aa-8ddf-cc5a14a9c374

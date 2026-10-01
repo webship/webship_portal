@@ -23,7 +23,7 @@ default:
     - alias: /docs/webship-js/2.0.x/step-definitions
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>A step definition is a piece of JavaScript that maps a plain English Gherkin phrase (for example <code>When I press "Submit"</code>) to a Playwright action or assertion. Webship-js ships <strong>411 built-in steps across 36 step files</strong>, so Product Owners, PMs, QA, CQ, DevOps, and automation engineers can author end-to-end tests without writing custom code.</p>
         <h2>How steps are organized</h2>
@@ -52,4 +52,5 @@ default:
         <h2>Where the steps live</h2>
         <p>Source code: <code>tests/step-definitions/&lt;group&gt;.steps.js</code>. Every file carries a JSDoc block with at least five Gherkin examples per step, and every step phrasing supports the pronoun prefix <code>(I |we )*</code> so your scenarios read naturally in either voice. Visual-regression steps are documented separately under <a href="https://webship.co/docs/webship-js/2.0.x/diffy-step-definitions">Diffy Step Definitions</a>, and every configuration knob the steps honor is listed in <a href="https://webship.co/docs/webship-js/2.0.x/global-settings">Global Settings</a>.</p>
       format: full_html
-      summary: A step definition is a piece of JavaScript that maps a plain English Gherkin phrase (for example When I press "Submit" ) to a Playwright action or assertion. Webship-js ships 411 built-in steps across 36 step files , so Product Owners, PMs, QA, CQ, DevOps…
+  field_summary:
+    - value: A step definition is a piece of JavaScript that maps a plain English Gherkin phrase (for example When I press "Submit" ) to a Playwright action or assertion. Webship-js ships 411 built-in steps across 36 step files , so Product Owners, PMs, QA, CQ, DevOps…

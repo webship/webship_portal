@@ -28,14 +28,15 @@ default:
     - alias: /products/webship-js/releases/2.0.2
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>New updates in Webship-js<br>Added visual regression testing with Diffy, advanced screenshot capabilities, and unified selectors (CSS + XPath).<br>Also included new step definitions (follow-link, multi-select, element count, and debugging tools).</p>
         <p>Plus, new CLI commands for easier setup and reporting.</p>
         <p><strong>Added since Webship-js 2.0.1:</strong></p>
         <ul class="uk-list uk-list-bullet"><li>Added Diffy visual-regression step definitions to webship-js with Playwright screenshot capture and Diffy API integration <a href="https://github.com/webship/webship-js/issues/252">#252</a></li><li>Added screenshot step definitions to webship-js — save viewport, fullscreen, sized, and named screenshots with auto-capture on failure and per-step capture via @Screenshots tag <a href="https://github.com/webship/webship-js/issues/253">#253</a></li><li>Added an advanced Webship-js unified selectors step definitions: CSS + XPath registries, JSON file loading, 7 viewport breakpoints, relative-position assertions, and Playwright-native web-first helpers <a href="https://github.com/webship/webship-js/issues/254">#254</a></li><li>Added follow-link, multi-select additionally, element count, and page/URL debug step definitions to Webship-JS <a href="https://github.com/webship/webship-js/issues/255">#255</a></li><li>Added init-webship-js and generate-reports CLI commands; drop required/ folder; make postinstall one-shot <a href="https://github.com/webship/webship-js/issues/256">#256</a></li></ul>
       format: full_html
-      summary: New updates in Webship-js Added visual regression testing with Diffy, advanced screenshot capabilities, and unified selectors (CSS + XPath). Also included new step definitions (follow-link, multi-select, element count, and debugging tools).
+  field_summary:
+    - value: New updates in Webship-js Added visual regression testing with Diffy, advanced screenshot capabilities, and unified selectors (CSS + XPath). Also included new step definitions (follow-link, multi-select, element count, and debugging tools).
   field_product:
     - entity: dd27c5e5-53d0-50e4-828a-4905a51ea4e9
   field_release_image:

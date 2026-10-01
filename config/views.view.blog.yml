@@ -4,7 +4,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - node.type.webblog
-    - field.storage.node.body
+    - field.storage.node.field_body
   module:
     - node
     - user
@@ -251,7 +251,7 @@ display:
             group_items: {}
           fields:
             title: title
-            body: body
+            field_body: field_body
       fields:
         title:
           id: title
@@ -300,15 +300,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        body:
-          id: body
-          table: node__body
-          field: body
+        field_body:
+          id: field_body
+          table: node__field_body
+          field: field_body
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
-          entity_field: body
+          entity_field: field_body
           plugin_id: field
           label: ''
           exclude: true

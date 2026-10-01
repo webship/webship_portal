@@ -28,7 +28,7 @@ default:
     - alias: /products/webship-js/releases/2.0.0
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>We’ve unified all recent improvements into a stable version, bringing a smoother and more powerful testing experience. The biggest highlight is the full transition to Playwright, giving better performance, flexibility, and modern browser control.</p>
         <p>Along the way, we enhanced configuration handling and introduced new capabilities like starting the browser in maximized mode, making your automated tests closer to real user behavior.</p>
@@ -39,7 +39,8 @@ default:
         <p><strong>Added since Webship-js </strong><strong>2.0.0-beta1</strong><strong>:</strong></p>
         <ul class="uk-list uk-list-bullet"><li>Added start-maximized config for the browser <a href="https://github.com/webship/webship-js/issues/246">#246</a></li></ul>
       format: full_html
-      summary: We’ve unified all recent improvements into a stable version, bringing a smoother and more powerful testing experience. The biggest highlight is the full transition to Playwright, giving better performance, flexibility, and modern browser control.
+  field_summary:
+    - value: We’ve unified all recent improvements into a stable version, bringing a smoother and more powerful testing experience. The biggest highlight is the full transition to Playwright, giving better performance, flexibility, and modern browser control.
   field_product:
     - entity: dd27c5e5-53d0-50e4-828a-4905a51ea4e9
   field_release_image:

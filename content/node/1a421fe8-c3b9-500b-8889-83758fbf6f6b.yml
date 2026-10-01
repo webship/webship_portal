@@ -23,10 +23,9 @@ default:
     - alias: /services
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: ''
       format: full_html
-      summary: ''
   field_page_display:
     - source_id: component
       source:

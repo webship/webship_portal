@@ -27,7 +27,7 @@ default:
     - alias: /blog/accessibility-checks-in-the-pipeline
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>Most accessibility regressions are small: an image without alternative text, a second main heading, a field that lost its label in a redesign. Nobody notices until someone who depends on them does. These are easy to catch automatically, on every change.</p>
         <h2>Quick structural checks</h2>
@@ -60,6 +60,7 @@ default:
         <h2>Where to run it</h2>
         <p>Put these scenarios in the same suite as the functional ones, tagged <code>@a11y</code>, so they run in the pipeline on every merge request. The cheapest accessibility fix is the one made before the change is merged.</p>
       format: full_html
-      summary: 'Most accessibility regressions are small: an image without alternative text, a second main heading, a field without a label. They are easy to catch on every change.'
+  field_summary:
+    - value: 'Most accessibility regressions are small: an image without alternative text, a second main heading, a field without a label. They are easy to catch on every change.'
   field_media:
     - entity: f333e510-ea1f-565d-a894-ced0b4b97b56

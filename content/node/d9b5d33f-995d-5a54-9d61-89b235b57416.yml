@@ -27,12 +27,13 @@ default:
     - alias: /products/ddev-webship-js
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>This add-on integrates Webship-JS, a Playwright and Cucumber-JS Automated Functional Acceptance Testing framework, into your DDEV project. Write and run automated browser tests using Gherkin feature files directly inside your DDEV environment.</p>
         <pre><code class="language-shell">ddev add-on get webship/ddev-webship-js</code></pre>
         <p><a class="uk-button uk-button-primary uk-margin-small-right uk-margin-small-bottom" href="https://github.com/webship/ddev-webship-js">DDEV Webship-JS add-on on GitHub</a></p>
       format: full_html
-      summary: This add-on integrates Webship-JS, a Playwright and Cucumber-JS Automated Functional Acceptance Testing framework, into your DDEV project. Write and run automated browser tests using Gherkin feature files directly inside your DDEV environment.
+  field_summary:
+    - value: This add-on integrates Webship-JS, a Playwright and Cucumber-JS Automated Functional Acceptance Testing framework, into your DDEV project. Write and run automated browser tests using Gherkin feature files directly inside your DDEV environment.
   field_image:
     - entity: 0e46252b-18a2-5b1d-acfb-800228762447

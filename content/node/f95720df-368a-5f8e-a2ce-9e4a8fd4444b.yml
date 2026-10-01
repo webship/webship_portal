@@ -28,13 +28,14 @@ default:
     - alias: /products/webship-js/releases/2.0.0-rc1
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>This release enables browser window maximization by setting viewport: null in Playwright context options, while still allowing users to customize viewport dimensions as needed.</p>
         <p><strong>Added since Webship-js </strong><strong>2.0.0-beta1</strong><strong>:</strong></p>
         <ul class="uk-list uk-list-bullet"><li>Added start-maximized config for the browser <a href="https://github.com/webship/webship-js/issues/246">#246</a></li></ul>
       format: full_html
-      summary: 'This release enables browser window maximization by setting viewport: null in Playwright context options, while still allowing users to customize viewport dimensions as needed.'
+  field_summary:
+    - value: 'This release enables browser window maximization by setting viewport: null in Playwright context options, while still allowing users to customize viewport dimensions as needed.'
   field_product:
     - entity: dd27c5e5-53d0-50e4-828a-4905a51ea4e9
   field_release_image:

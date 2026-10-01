@@ -27,7 +27,7 @@ default:
     - alias: /blog/keeping-tests-stable-waits-and-selectors
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>A test that fails one run in ten is worse than no test: people stop reading the results. Two causes explain most flaky tests, and both have a simple cure.</p>
         <h2>Waiting for time instead of waiting for the page</h2>
@@ -50,6 +50,7 @@ default:
         <h2>A short checklist</h2>
         <ul class="uk-list uk-list-bullet"><li>No sleeps. Wait for a text, an element or the network.</li><li>Find elements by label and text first, by a named selector second.</li><li>Each scenario creates what it needs and does not depend on another one.</li><li>Run the suite twice in a row before you merge it. A test that passes once has not proven much.</li><li>When a test is flaky, fix it or remove it the same week.</li></ul>
       format: full_html
-      summary: 'A test that fails one run in ten is worse than no test: people stop reading the results. Two causes explain most flaky tests.'
+  field_summary:
+    - value: 'A test that fails one run in ten is worse than no test: people stop reading the results. Two causes explain most flaky tests.'
   field_media:
     - entity: e05d0113-2cf9-5117-a934-0d5e441a4b11

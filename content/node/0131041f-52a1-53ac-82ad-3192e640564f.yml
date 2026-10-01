@@ -28,10 +28,11 @@ default:
     - alias: /products/ddev-webship-js/releases/2.0.9
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: '<ul class="uk-list uk-list-bullet"><li>Follow webship-js 2.0.2: use init-webship-js CLI for scaffolding (<a href="https://github.com/webship/ddev-webship-js/issues/11">#11</a>)</li></ul>'
       format: full_html
-      summary: 'Follow webship-js 2.0.2: use init-webship-js CLI for scaffolding ( #11 )'
+  field_summary:
+    - value: 'Follow webship-js 2.0.2: use init-webship-js CLI for scaffolding ( #11 )'
   field_product:
     - entity: d9b5d33f-995d-5a54-9d61-89b235b57416
   field_release_image:

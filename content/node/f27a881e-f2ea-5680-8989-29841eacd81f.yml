@@ -27,7 +27,7 @@ default:
     - alias: /blog/running-your-tests-in-github-actions-and-gitlab-ci
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>Tests that only run on a laptop are run when somebody remembers. A pipeline runs them on every push, against a known environment, and keeps the report. The setup is short on both GitHub and GitLab.</p>
         <h2>What the job has to do</h2>
@@ -78,6 +78,7 @@ default:
         <h2>Practical notes</h2>
         <ul class="uk-list uk-list-bullet"><li>Test a deployed environment, such as staging or a preview of the merge request, not production data.</li><li>Keep secrets in the secret store of the pipeline and read them from environment variables.</li><li>Always upload the report: a failed run without a report gets re-run instead of fixed.</li><li>Run the fast scenarios on every push and the long ones on a schedule, with tags.</li></ul>
       format: full_html
-      summary: Tests that only run on a laptop are run when somebody remembers. A pipeline runs them on every push, against a known environment.
+  field_summary:
+    - value: Tests that only run on a laptop are run when somebody remembers. A pipeline runs them on every push, against a known environment.
   field_media:
     - entity: 60e4837c-47e5-5e2a-a17b-a11e20b027f9

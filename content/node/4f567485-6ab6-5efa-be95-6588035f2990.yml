@@ -27,7 +27,7 @@ default:
     - alias: /blog/testing-a-contact-form-end-to-end
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>A contact form is often the only way a visitor can reach you, and it breaks silently: the page still loads, but messages stop arriving. That makes it one of the first things worth covering with an automated functional test.</p>
         <h2>The happy path</h2>
@@ -62,6 +62,7 @@ default:
         <p>The browser test ends at the confirmation message. To prove that the email leaves the site, point your test environment at a mail catcher and assert on its inbox, or check the stored submission in the back office with a logged in user. Keep that in a separate scenario, so a mail problem and a form problem fail separately.</p>
         <p>Anti-spam protection needs a thought too. Time-based protections reject a form that is submitted within a second or two, which is exactly what a test does. Relax the limit on the test environment instead of adding waits to the scenario.</p>
       format: full_html
-      summary: A contact form is often the only way a visitor can reach you, and it breaks silently. Three scenarios cover it end to end.
+  field_summary:
+    - value: A contact form is often the only way a visitor can reach you, and it breaks silently. Three scenarios cover it end to end.
   field_media:
     - entity: d3a5279c-24bf-5bd8-a1ef-6a3f7825f055

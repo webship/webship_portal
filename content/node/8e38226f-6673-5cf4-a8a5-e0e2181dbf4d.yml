@@ -23,7 +23,7 @@ default:
     - alias: /docs/webship-js/2.0.x/install-webship-js
       langcode: en
       pathauto: 0
-  body:
+  field_body:
     - value: |-
         <p>Webship-js is an automated functional acceptance testing tool built on <a href="https://playwright.dev">Playwright</a> and <a href="https://github.com/cucumber/cucumber-js">Cucumber-js</a>. You write feature files in plain Gherkin; webship-js provides the browser automation, smart waits, screenshots, HTML reports, and a large library of ready-made step definitions. Installing it into a project takes one command, and the bundled scaffolder gives you a complete, runnable test skeleton.</p>
         <h2>Requirements</h2>
@@ -86,4 +86,5 @@ default:
         <ul class="uk-list uk-list-bullet"><li><a href="https://webship.co/docs/webship-js/2.0.x/global-settings">Global Settings</a></li><li><a href="/docs/webship-js/2.0.x/step-definitions">Step Definitions</a></li><li>API Step Definitions</li><li>Advanced Screenshots</li><li>Advanced Selectors</li><li><a href="https://webship.co/docs/webship-js/2.0.x/diffy-step-definitions">Diffy Step Definitions</a></li><li>Assertions</li><li>Commands</li></ul>
         <p>There is also a subsection on "<a href="https://webship.co/docs/webship-js/2.0.x/install-webship-js/ddev-webship-js">DDEV Webship-JS</a>" available under the installation guide, for teams running sites in DDEV.</p>
       format: full_html
-      summary: Webship-js is an automated functional acceptance testing tool built on Playwright and Cucumber-js . You write feature files in plain Gherkin; webship-js provides the browser automation, smart waits, screenshots, HTML reports, and a large library of ready-made…
+  field_summary:
+    - value: Webship-js is an automated functional acceptance testing tool built on Playwright and Cucumber-js . You write feature files in plain Gherkin; webship-js provides the browser automation, smart waits, screenshots, HTML reports, and a large library of ready-made…
