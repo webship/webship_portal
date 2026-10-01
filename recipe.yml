@@ -14,15 +14,19 @@ recipes:
   - modules/contrib/webassets/recipes/default
   - modules/contrib/webdev/recipes/default
   - core/recipes/tags_taxonomy
-  # The core recipes of the text formats, the themes, the roles and the
-  # recommended settings.
+  # The core recipes of the text formats, the admin theme, the roles and the
+  # recommended settings. No core front-end theme recipe: Drupal 12 removed
+  # it, and the front-end theme is installed below.
   - core/recipes/basic_block_type
   - core/recipes/basic_html_format_editor
   - core/recipes/full_html_format_editor
   - core/recipes/core_recommended_performance
   - core/recipes/core_recommended_maintenance
   - core/recipes/core_recommended_admin_theme
-  - core/recipes/core_recommended_front_end_theme
+  # The front-end theme, before the feature recipes: the editor recipes
+  # need an installed default theme. Drupal 12 has no core front-end theme
+  # recipe, so the template ships its own, inside this package.
+  - ../recipes/webship_portal/recipes/front_end_theme
   - core/recipes/user_picture
   - core/recipes/restricted_html_format
   - core/recipes/administrator_role
@@ -74,8 +78,6 @@ config:
       - system.action.node_unpublish_action
     # The search page and the view modes of the search index.
     search_node: '*'
-    olivero:
-      - block.block.olivero_help
     # The blocks of Webtheme are optional config, placed in the regions of
     # its UIkit page: the site branding, main and account menus in the navbar,
     # the main and account menus in the offcanvas on small screens, the
@@ -99,6 +101,12 @@ config:
       - block.block.webtheme_site_branding
       - block.block.webtheme_social_media_menu
   actions:
+    # The medium date format the Web Blog posts use. It came with the core
+    # front-end theme recipe (Olivero), which Drupal 12 no longer has.
+    core.date_format.olivero_medium:
+      createIfNotExists:
+        label: 'Olivero Medium'
+        pattern: 'j F Y'
     # The pages are built with Display Builder components; the text parts
     # keep their images, so the text format of the builder allows them.
     filter.format.display_builder_html:
@@ -142,7 +150,8 @@ config:
     # The products page is a page of the template, at /products, which groups
     # the products: the listing page of Web Releases gives it the path.
     views.view.products:
-      simpleConfigUpdate:
+      # A view is a config entity too: setProperties, not simpleConfigUpdate.
+      setProperties:
         display.products_page.display_options.enabled: false
     # Release versions keep their dots in the URL: /releases/2.0.6.
     pathauto.settings:
@@ -267,7 +276,9 @@ config:
         - 'edit own %bundle content'
     # The contact form of Webship.co, with anti-spam protection.
     webform.webform.contact:
-      simpleConfigUpdate:
+      # A webform is a config entity: Drupal 12 refuses simpleConfigUpdate on
+      # it, setProperties works on Drupal 11 and 12.
+      setProperties:
         elements: |-
           contact_paragraph:
             '#type': webform_markup
@@ -324,9 +335,6 @@ config:
             '#type': webform_actions
             '#title': 'Submit button(s)'
             '#submit__label': Submit
-        third_party_settings:
-          antibot:
-            antibot: true
-          honeypot:
-            honeypot: true
-            time_restriction: true
+        third_party_settings.antibot.antibot: true
+        third_party_settings.honeypot.honeypot: true
+        third_party_settings.honeypot.time_restriction: true

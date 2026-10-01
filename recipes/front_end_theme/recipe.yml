@@ -1,0 +1,12 @@
+name: 'Webship Portal front-end theme'
+description: 'Installs the front-end theme of the Webship Portal site template and makes it the default theme, before the editor and feature recipes need one.'
+type: 'Themes'
+install:
+  - block
+  - webtheme
+config:
+  strict: false
+  actions:
+    system.theme:
+      simpleConfigUpdate:
+        default: webtheme
