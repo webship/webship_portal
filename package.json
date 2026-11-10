@@ -8,12 +8,14 @@
   },
   "devDependencies": {
     "@cucumber/cucumber": "^12.9.0",
+    "@webship-js/drupal-core-steps": "^2.1.0",
     "webship-js": "^2.0.6"
   },
   "resolutions": {
     "@cucumber/cucumber": "~12.9.0"
   },
   "scripts": {
-    "test": "cucumber-js --config cucumber.js"
+    "test": "cucumber-js --config cucumber.js",
+    "test:dry": "cucumber-js --config cucumber.js --dry-run"
   }
 }
