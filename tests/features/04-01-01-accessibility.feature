@@ -25,3 +25,9 @@ Feature: Accessibility of the pages
       | /blog/webship-js-advanced-screenshots |
       | /about-us                             |
       | /contact                              |
+
+  Scenario: The page not found page has one h1
+    Given I am an anonymous user
+     When I go to "/page-that-does-not-exist"
+     Then the response status code should be 404
+      And the page should have exactly one h1

@@ -91,6 +91,10 @@ nothing is loaded from another site.
   Products, Services, Docs, About us and Contact pages are built in it, and an editor changes them from the
   "Display" tab of the page. A page without a display shows its body.
 - A section with a background goes from edge to edge when the display starts with a Container component.
+- The page layout puts the page title in the *Heading* component, level 1, on every page but the front page,
+  whose hero has the h1. Display Builder prints the title text only since 1.0.0-beta10, so a title placed
+  straight in a slot leaves the page without an h1. The template conflicts with the Display Builder releases
+  before that one, which print an h1 of their own.
 
 ## Tests
 

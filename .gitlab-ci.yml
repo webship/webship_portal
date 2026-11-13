@@ -107,6 +107,12 @@ recipe:
     - test "$($DRUSH php:eval 'print \Drupal::service("path_alias.manager")->getPathByAlias("/products");')" != "/products"
     - test "$($DRUSH php:eval 'print \Drupal::service("path_alias.manager")->getPathByAlias("/about-us");')" != "/about-us"
     - test "$($DRUSH php:eval 'print \Drupal::service("path_alias.manager")->getPathByAlias("/contact");')" != "/contact"
+    # A page prints one h1: the page layout puts the page title in a heading,
+    # and the hero of the front page has its own.
+    - test "$($DRUSH php:eval 'print substr_count((string) \Drupal::service("http_kernel")->handle(\Symfony\Component\HttpFoundation\Request::create("/"))->getContent(), "<h1");')" -eq 1
+    - test "$($DRUSH php:eval 'print substr_count((string) \Drupal::service("http_kernel")->handle(\Symfony\Component\HttpFoundation\Request::create("/about-us"))->getContent(), "<h1");')" -eq 1
+    - test "$($DRUSH php:eval 'print substr_count((string) \Drupal::service("http_kernel")->handle(\Symfony\Component\HttpFoundation\Request::create("/blog"))->getContent(), "<h1");')" -eq 1
+    - test "$($DRUSH php:eval 'print substr_count((string) \Drupal::service("http_kernel")->handle(\Symfony\Component\HttpFoundation\Request::create("/no-such-page"))->getContent(), "<h1");')" -eq 1
     # The main menu has one Products link.
     - test "$($DRUSH php:eval 'print count(\Drupal::entityTypeManager()->getStorage("menu_link_content")->loadByProperties(["menu_name" => "main", "title" => "Products"]));')" = "1"
 

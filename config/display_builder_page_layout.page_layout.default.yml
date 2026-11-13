@@ -239,8 +239,24 @@ sources:
                       id: request_path
                       negate: true
                       pages: <front>
-              - source_id: page_title
-                source: {}
+              # The page title is the h1 of the page. Display Builder prints
+              # the title text only, so the Heading component gives it level 1.
+              # Not on the front page: its hero has the h1.
+              - source_id: component
+                source:
+                  component:
+                    component_id: webtheme:heading
+                    variant_id: null
+                    props:
+                      heading_level:
+                        source_id: select
+                        source:
+                          value: 1
+                    slots:
+                      title:
+                        sources:
+                          - source_id: page_title
+                            source: {}
                 third_party_settings:
                   visibility_conditions:
                     request_path:

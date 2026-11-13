@@ -31,5 +31,8 @@
         "drupal/webseo": "~12.0",
         "drupal/webshare": "~2.0",
         "drupal/webtheme": "~12.0"
+    },
+    "conflict": {
+        "drupal/display_builder": "<1.0.0-beta10"
     }
 }
