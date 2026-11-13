@@ -108,11 +108,18 @@ recipe:
     - test "$($DRUSH php:eval 'print \Drupal::service("path_alias.manager")->getPathByAlias("/about-us");')" != "/about-us"
     - test "$($DRUSH php:eval 'print \Drupal::service("path_alias.manager")->getPathByAlias("/contact");')" != "/contact"
     # A page prints one h1: the page layout puts the page title in a heading,
-    # and the hero of the front page has its own.
-    - test "$($DRUSH php:eval 'print substr_count((string) \Drupal::service("http_kernel")->handle(\Symfony\Component\HttpFoundation\Request::create("/"))->getContent(), "<h1");')" -eq 1
-    - test "$($DRUSH php:eval 'print substr_count((string) \Drupal::service("http_kernel")->handle(\Symfony\Component\HttpFoundation\Request::create("/about-us"))->getContent(), "<h1");')" -eq 1
-    - test "$($DRUSH php:eval 'print substr_count((string) \Drupal::service("http_kernel")->handle(\Symfony\Component\HttpFoundation\Request::create("/blog"))->getContent(), "<h1");')" -eq 1
-    - test "$($DRUSH php:eval 'print substr_count((string) \Drupal::service("http_kernel")->handle(\Symfony\Component\HttpFoundation\Request::create("/no-such-page"))->getContent(), "<h1");')" -eq 1
+    # and the hero of the front page has its own. The pages are asked over
+    # HTTP, as a visitor gets them.
+    - php -d memory_limit=-1 -S 127.0.0.1:8080 -t $CI_PROJECT_DIR/$_WEB_ROOT $CI_PROJECT_DIR/$_WEB_ROOT/.ht.router.php > /dev/null 2>&1 &
+    - export SERVER_PID=$!
+    - sleep 3
+    - export H1_COUNT='print substr_count((string) file_get_contents("http://127.0.0.1:8080" . $argv[1], false, stream_context_create(["http" => ["ignore_errors" => true]])), "<h1");'
+    - test "$(php -r "$H1_COUNT" /)" -eq 1
+    - test "$(php -r "$H1_COUNT" /about-us)" -eq 1
+    - test "$(php -r "$H1_COUNT" /blog)" -eq 1
+    - test "$(php -r "$H1_COUNT" /blog/webship-js-advanced-screenshots)" -eq 1
+    - test "$(php -r "$H1_COUNT" /no-such-page)" -eq 1
+    - kill $SERVER_PID
     # The main menu has one Products link.
     - test "$($DRUSH php:eval 'print count(\Drupal::entityTypeManager()->getStorage("menu_link_content")->loadByProperties(["menu_name" => "main", "title" => "Products"]));')" = "1"
 
