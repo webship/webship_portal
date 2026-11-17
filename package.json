@@ -8,8 +8,8 @@
   },
   "devDependencies": {
     "@cucumber/cucumber": "^12.9.0",
-    "@webship-js/drupal-core-steps": "^2.1.0",
-    "webship-js": "^2.0.6"
+    "@webship-js/drupal-core-steps": "^2.2.3",
+    "webship-js": "^2.0.12"
   },
   "resolutions": {
     "@cucumber/cucumber": "~12.9.0"

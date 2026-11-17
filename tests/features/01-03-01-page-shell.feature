@@ -19,7 +19,7 @@ Feature: The shell of every page
       And the link "Privacy" with the href "/privacy-policy" within the element "footer" should exist
       And the link "GitHub" with the href "https://github.com/webship" within the element "footer" should exist
       And I should see "Copyrights 2022" in the "footer" element
-      And the page should not present Webship as a provider of site templates
+      And the page should not talk about site templates
 
     Examples:
       | path                               |

@@ -128,3 +128,72 @@ recipe:
 composer (next major):
   variables:
     _LENIENT_ALLOW_LIST: 'ai,ai_agents,ai_assistant_api,ai_chatbot,ai_content_suggestions,ai_image_alt_text,ai_logging,ai_penpot,ai_playwright,ai_provider_anthropic,ai_provider_huggingface,ai_provider_ollama,ai_provider_openai,ai_provider_xai,ai_translate,antibot,autocomplete_deluxe,automatic_updates,better_exposed_filters,captcha,coffee,config_filter,config_ignore,config_import_single,config_rewrite,config_split,config_update,config_update_ui,consumers,crop,ctools,dashboards,display_builder,display_builder_entity_view,display_builder_page_layout,display_builder_ui,display_builder_views,drupical,easy_breadcrumb,easy_encryption,editor_advanced_link,embed,entity_embed,field_group,field_validation,flood_control,focal_point,friendlycaptcha,gemini_provider,google_analytics,google_tag,honeypot,inline_entity_form,jsonapi_extras,key,klaro,login_emailusername,manage_display,media_directories_editor,media_directories_ui,media_remote_audio,media_remote_image,metatag,openapi,openapi_jsonapi,openapi_rest,openapi_ui,openapi_ui_swagger,pathauto,recaptcha_v3,redirect,restui,sam,schema_metatag,schemata,schemata_json_schema,seckit,security_review,shield,simple_oauth,smart_trim,tagify,token,token_filter,tracker,user_redirect,view_password,views_bulk_edit,views_bulk_operations,webform,xmlsitemap,yoast_seo'
+
+# The webship-js suite (tests/README.md) on a site installed from this recipe:
+# the site build creates the accounts of cucumber.js (worldParameters.users)
+# with drush, with passwords made for the job; the suite only logs in.
+webship-js-test:
+  extends: .testing-job-base
+  needs: [composer]
+  # Playwright brings its own Chromium: only the database is needed.
+  services:
+    - name: $_CONFIG_DOCKERHUB_ROOT/$_TARGET_DB_TYPE-$_TARGET_DB_VERSION:$_TARGET_DB_IMAGE_TAG
+      alias: database
+  variables:
+    DRUPAL_ADMIN_USER: "webmaster"
+    DRUPAL_ADMIN_MAIL: "webmaster@example.test"
+    DRUPAL_EDITOR_USER: "content_editor_user"
+    DRUPAL_EDITOR_MAIL: "content_editor_user@example.test"
+    DRUPAL_AUTHENTICATED_USER: "authenticated_user"
+    DRUPAL_AUTHENTICATED_MAIL: "authenticated_user@example.test"
+    LAUNCH_URL: "http://localhost"
+    SLOW_MO: "0"
+    FORCE_COLOR: "1"
+  before_script:
+    - cd $CI_PROJECT_DIR
+    - test "$COMPOSER_END_CODE" = "0"
+    # Web server.
+    - mkdir -pv $CI_PROJECT_DIR/$_WEB_ROOT/sites/default/files
+    - chmod -R 777 $CI_PROJECT_DIR/$_WEB_ROOT/sites/default/files
+    - rm -rf /var/www/html && ln -s $CI_PROJECT_DIR/$_WEB_ROOT /var/www/html
+    - chown -R www-data:www-data $CI_PROJECT_DIR
+    - service apache2 start
+    # Test account passwords, for this job only.
+    - export DRUPAL_ADMIN_PASS=$(php -r "echo bin2hex(random_bytes(12));")
+    - export DRUPAL_EDITOR_PASS=$(php -r "echo bin2hex(random_bytes(12));")
+    - export DRUPAL_AUTHENTICATED_PASS=$(php -r "echo bin2hex(random_bytes(12));")
+    # The site, from this recipe, with the Webmaster account.
+    - export DRUSH="php -d memory_limit=-1 $CI_PROJECT_DIR/vendor/drush/drush/drush.php --root=$CI_PROJECT_DIR/$_WEB_ROOT"
+    - $DRUSH site:install $CI_PROJECT_DIR/recipes/$PROJECT_NAME -y
+      --db-url=mysql://$MYSQL_USER:$MYSQL_PASSWORD@database/$MYSQL_DATABASE
+      --account-name="$DRUPAL_ADMIN_USER" --account-mail="$DRUPAL_ADMIN_MAIL"
+      --account-pass="$DRUPAL_ADMIN_PASS" --site-name="Webship"
+    # The other accounts of cucumber.js (worldParameters.users).
+    - $DRUSH user:create "$DRUPAL_EDITOR_USER" --mail="$DRUPAL_EDITOR_MAIL" --password="$DRUPAL_EDITOR_PASS"
+    - $DRUSH user:role:add content_editor "$DRUPAL_EDITOR_USER"
+    - $DRUSH user:create "$DRUPAL_AUTHENTICATED_USER" --mail="$DRUPAL_AUTHENTICATED_MAIL" --password="$DRUPAL_AUTHENTICATED_PASS"
+    # A test runner has no mail server: collect the mails instead of sending them.
+    - $DRUSH config:set system.mail interface.default test_mail_collector -y
+    # Drush ran as root: give the files it wrote back to the web server.
+    - chown -R www-data:www-data $CI_PROJECT_DIR/$_WEB_ROOT/sites/default/files
+    - 'curl -s -o /dev/null -w "front page HTTP=%{http_code}\n" http://localhost/'
+    # Node.js 24 and the suite with its browser.
+    - curl -fsSL https://deb.nodesource.com/setup_24.x | bash -
+    - apt-get install -y nodejs
+    - node --version && npm --version
+    # The webship-js install script may write a cucumber.js of its own: keep this one.
+    - cp cucumber.js .cucumber.js.bak
+    - npm install --no-audit --no-fund
+    - cp .cucumber.js.bak cucumber.js && rm .cucumber.js.bak
+    - ./node_modules/.bin/playwright install --with-deps chromium
+  script:
+    - ./node_modules/.bin/cucumber-js --config cucumber.js --dry-run
+    - ./node_modules/.bin/cucumber-js --config cucumber.js --tags "not @wip"
+  artifacts:
+    when: always
+    paths:
+      - tests/reports/
+      - tests/screenshots/
+      - tests/videos/
+    expire_in: 7 days
+  allow_failure: false

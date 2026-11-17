@@ -104,8 +104,11 @@ documentation, the contact and about pages, the roles and the accessibility of t
 
 ```shell
 npm install
-LAUNCH_URL=https://my-portal.ddev.site DRUPAL_PROJECT_DIR=~/workspace/projects/my-portal npm test
+LAUNCH_URL=https://my-portal.ddev.site DRUPAL_ADMIN_PASS='…' DRUPAL_EDITOR_PASS='…' npm test
 ```
+
+`tests/README.md` has the full install, from a DDEV site to a green run, and the test accounts the site
+build creates (the suite only logs in).
 
 ## Requirements
 

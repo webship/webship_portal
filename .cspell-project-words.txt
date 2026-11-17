@@ -56,3 +56,4 @@ webblog
 ultrawide
 domcontentloaded
 infobars
+caroot

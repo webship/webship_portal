@@ -6,3 +6,6 @@ node_modules
 yarn.lock
 package-lock.json
 pnpm-lock.yaml
+
+# The videos of failed scenarios (tests/reports and tests/screenshots ignore their own files).
+tests/videos/

@@ -59,4 +59,4 @@ Feature: The home page
       And the link "Privacy Policy" with the href "/privacy-policy" should exist
 
   Scenario: The home page is about automated functional testing
-     Then the page should not present Webship as a provider of site templates
+     Then the page should not talk about site templates

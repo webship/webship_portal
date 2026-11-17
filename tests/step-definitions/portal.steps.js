@@ -4,55 +4,7 @@
  */
 
 const assert = require("node:assert");
-const { execSync } = require("node:child_process");
-const { homedir } = require("node:os");
-const path = require("node:path");
-const { Given, When, Then } = require("@cucumber/cucumber");
-
-const PROJECT_DIR =
-  process.env.DRUPAL_PROJECT_DIR ||
-  path.join(homedir(), "workspace/test/webship-portal");
-const DRUSH = process.env.DRUSH || "ddev drush";
-
-/**
- * Runs a Drush command on the test site and returns its output.
- */
-function drush(command) {
-  return execSync(`${DRUSH} ${command}`, {
-    cwd: PROJECT_DIR,
-    encoding: "utf8",
-    stdio: ["ignore", "pipe", "pipe"],
-  }).trim();
-}
-
-/**
- * Logs in with a one-time login link as a test user that has one role.
- *
- * The user is created on first use. No password is stored anywhere.
- *
- * Example: Given I am logged in as a user with the "content_editor" role
- */
-Given(
-  /^I am logged in as a user with the "([a-z_]+)" role$/,
-  { timeout: 180000 },
-  async function (role) {
-    const name = `test_${role}`;
-    try {
-      drush(`user:information ${name} --fields=uid`);
-    } catch {
-      drush(`user:create ${name} --mail=${name}@example.com`);
-      drush(`user:role:add ${role} ${name}`);
-    }
-    const link = drush(`user:login --name=${name} --no-browser`)
-      .split("\n")
-      .pop();
-    const target = new URL(link);
-    await this.page.goto(
-      `${this.parameters.launchUrl}${target.pathname}${target.search}`,
-    );
-    await this.page.waitForURL((url) => /\/user\/\d+/.test(url.pathname));
-  },
-);
+const { Then } = require("@cucumber/cucumber");
 
 /**
  * Example: Then the links of "header .uk-navbar-nav" should be in this order:
@@ -101,10 +53,13 @@ Then(/^the page should not scroll horizontally$/, async function () {
 });
 
 /**
- * Example: Then the page should not present Webship as a provider of site templates
+ * Checks that the page does not talk about site templates: the portal is about
+ * automated functional testing.
+ *
+ * Example: Then the page should not talk about site templates
  */
 Then(
-  /^the page should not present Webship as a provider of site templates$/,
+  /^the page should not talk about site templates$/,
   async function () {
     const text = (await this.page.locator("body").innerText()).toLowerCase();
     ["site template", "installer", "website starter", "webship starter"].forEach(
@@ -126,18 +81,4 @@ Then(/^the hero headline should fit its card$/, async function () {
     return Math.max(box.right - cell.right, cell.left - box.left, heading.scrollWidth - heading.clientWidth);
   });
   assert.ok(overflow <= 1, `The headline overflows its card by ${overflow}px.`);
-});
-
-/**
- * Opens the edit form of the content at a path alias.
- *
- * Example: When I go to the edit form of "/about-us"
- */
-When(/^I go to the edit form of "([^"]*)"$/, async function (alias) {
-  const system = drush(
-    `php:eval ${JSON.stringify(`print \\Drupal::service("path_alias.manager")->getPathByAlias("${alias}");`)}`,
-  );
-  await this.page.goto(`${this.parameters.launchUrl}${system}/edit`, {
-    waitUntil: "domcontentloaded",
-  });
 });

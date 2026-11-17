@@ -1,38 +1,88 @@
-/**
- * @file
- * Webship-js (Cucumber-js + Playwright) configuration for Webship Portal.
- *
- * Environment:
- * - LAUNCH_URL: a site installed from this site template
- *   (default https://webship-portal.ddev.site).
- * - DRUSH: command running Drush for that site, used by the custom steps
- *   (default "ddev drush", run from DRUPAL_PROJECT_DIR).
- * - DRUPAL_PROJECT_DIR: the Drupal project directory
- *   (default ~/workspace/test/webship-portal).
- */
+// The webship-js configuration of Webship Portal, from the one `npx init-webship-js`
+// writes (webship-js 2.0.12), with @webship-js/drupal-core-steps and the test
+// accounts added. How to run it: tests/README.md.
+
+// A feature file, a scenario (file:line), a folder or a rerun file named on
+// the command line of cucumber-js runs alone (cucumber-js 12 would add it to
+// the paths below): `yarn test tests/features/01-02-01-home-page.feature`.
+const OPTIONS_WITH_A_VALUE = new Set([
+  '-c', '--config', '-f', '--format', '--format-options', '--i18n-keywords',
+  '-i', '--import', '-l', '--loader', '--language', '--name', '--order',
+  '-p', '--profile', '--parallel', '--plugin', '--plugin-options',
+  '-r', '--require', '--require-module', '--retry', '--retry-tag-filter',
+  '--shard', '-t', '--tags', '--world-parameters',
+]);
+
+function commandLinePaths() {
+  if (!/cucumber(-js|\.js)?$/.test(String(process.argv[1] || ''))) return [];
+  const args = process.argv.slice(2);
+  const paths = [];
+  for (let i = 0; i < args.length; i += 1) {
+    if (args[i].startsWith('-')) {
+      if (OPTIONS_WITH_A_VALUE.has(args[i])) i += 1;
+    } else {
+      paths.push(args[i]);
+    }
+  }
+  return paths;
+}
+
 module.exports = {
   default: {
-    timeout: 60000,
-    requireModule: ["tsx/cjs"],
+    timeout: 30000,                                                     // Overridden by webship-js's setDefaultTimeout (45s); raise it with WEBSHIP_STEP_TIMEOUT.
+    requireModule: ['tsx/cjs'],
     require: [
-      "node_modules/webship-js/tests/step-definitions/**/*.js",
-      'node_modules/@webship-js/drupal-core-steps/tests/step-definitions/**/*.js', // @webship-js/drupal-core-steps: login by handle, the testing users, named pages, messages, listings, the editor, the media library, access control, site structure.
-      "tests/step-definitions/**/*.js",
+      'node_modules/webship-js/tests/step-definitions/**/*.js',          // Webship-js core step definitions (auto HTML report on exit; disable: WEBSHIP_REPORT_DISABLE=1).
+      'node_modules/@webship-js/drupal-core-steps/tests/step-definitions/**/*.js', // @webship-js/drupal-core-steps: the login by handle, access control, content, the site structure.
+      'tests/step-definitions/**/*.js',                                  // This project's own steps.
     ],
-    paths: ["tests/features/**/*.feature"],
+    // FEATURES=tests/features/a.feature,tests/features/b.feature runs a subset too.
+    paths: process.env.FEATURES ? process.env.FEATURES.split(',') : (commandLinePaths().length ? [] : ['tests/features/**/*.feature']),
     format: [
-      "@cucumber/pretty-formatter",
-      "json:tests/reports/cucumber_report.json",
+      '@cucumber/pretty-formatter',
+      'json:tests/reports/cucumber_report.json',
     ],
+    formatOptions: {
+      theme: {
+        'feature keyword': ['bold', 'blue'],
+        'feature name': ['blue', 'underline'],
+        'feature description': ['blueBright'],
+        'scenario keyword': ['bold', 'magenta'],
+        'scenario name': ['magenta', 'underline'],
+        'step keyword': ['bold', 'green'],
+        'step text': ['greenBright', 'italic'],
+      },
+    },
     worldParameters: {
-      launchUrl: process.env.LAUNCH_URL || "https://webship-portal.ddev.site",
-      // Accounts the login by handle (@webship-js/drupal-core-steps) logs in as; `Given I add the
-      // testing users` creates the ones that are missing, with their roles. Webmaster is the
-      // site-install super-admin (drush site:install --account-name=webmaster --account-pass=...).
+      launchUrl: process.env.LAUNCH_URL || 'http://localhost:8080',
+      // A login form protected by a time limit (Honeypot) refuses a quick submit:
+      // the login by handle waits this long (milliseconds) before it submits.
+      // A site of this template protects its login form that way (2 seconds): 3000 by default.
+      loginWait: parseInt(process.env.DRUPAL_LOGIN_WAIT || '3000', 10),
+      // "I wait out the form time limit" waits this long (milliseconds).
+      formWait: parseInt(process.env.DRUPAL_FORM_WAIT || '5000', 10),
+      // The accounts the features log in as, by handle. The site build creates
+      // them (tests/README.md); the suite never creates or deletes accounts.
+      // Credentials come from the environment: CHANGE_ME is a placeholder.
       users: {
-        'Webmaster': { username: 'webmaster', email: 'webmaster@example.test', password: process.env.DRUPAL_ADMIN_PASSWORD || 'dD.123123ddd', isAdmin: true },
-        'Content editor': { username: 'content_editor_user', email: 'content_editor_user@example.test', password: 'dD.123123ddd', roles: ['content_editor'] },
-        'Authenticated user': { username: 'authenticated_user', email: 'authenticated_user@example.test', password: 'dD.123123ddd', roles: [] },
+        'Webmaster': {
+          username: process.env.DRUPAL_ADMIN_USER || 'webmaster',
+          password: process.env.DRUPAL_ADMIN_PASS || 'CHANGE_ME',
+          email: process.env.DRUPAL_ADMIN_MAIL || 'webmaster@example.test',
+          isAdmin: true,
+        },
+        'Content editor': {
+          username: process.env.DRUPAL_EDITOR_USER || 'content_editor_user',
+          password: process.env.DRUPAL_EDITOR_PASS || 'CHANGE_ME',
+          email: process.env.DRUPAL_EDITOR_MAIL || 'content_editor_user@example.test',
+          roles: ['content_editor'],
+        },
+        'Authenticated user': {
+          username: process.env.DRUPAL_AUTHENTICATED_USER || 'authenticated_user',
+          password: process.env.DRUPAL_AUTHENTICATED_PASS || 'CHANGE_ME',
+          email: process.env.DRUPAL_AUTHENTICATED_MAIL || 'authenticated_user@example.test',
+          roles: [],
+        },
       },
       minWaitTime: {
         page: 300,
@@ -44,26 +94,41 @@ module.exports = {
       selectors: {
         css: {},
         xpath: {},
-        filesPath: "./tests/selectors/",
+        filesPath: './tests/selectors/',
         files: [],
-        offset: 60,
+        // Named viewport sizes for the viewing-the-site and set-the-viewport
+        // steps and the @mobile / @desktop tags (built in: xs..xxxl, mobile,
+        // tablet, desktop). Without a desktop here, @desktop opens at the
+        // breakpoint marked default: true.
         breakpoints: {
           xs: { width: 390, height: 800 },
-          m: { width: 960, height: 900 },
-          l: { width: 1440, height: 900, default: true },
+          m:  { width: 960, height: 900 },
+          l:  { width: 1440, height: 900, default: true },
         },
       },
       screenshot: {
-        dir: "./tests/screenshots",
+        dir: './tests/screenshots',
         purge: false,
         onFailed: true,
         onEveryStep: false,
         alwaysFullscreen: false,
-        failedPrefix: "failed_",
-        filenamePattern: "{datetime}.{feature_file}.feature_{step_line}.{ext}",
-        filenamePatternFailed:
-          "{failed_prefix}{datetime}.{feature_file}.feature_{step_line}.{ext}",
-        infoTypes: "",
+        failedPrefix: 'failed_',
+        filenamePattern: '{datetime}.{feature_file}.feature_{step_line}.{ext}',
+        filenamePatternFailed: '{failed_prefix}{datetime}.{feature_file}.feature_{step_line}.{ext}',
+        infoTypes: '',
+      },
+      video: {
+        mode: 'on-failure',
+        dir: './tests/videos',
+        size: { width: 1280, height: 720 },
+        filenamePattern: '{datetime}.{feature_file}.{scenario}.{status}.{ext}',
+      },
+      javascript: {
+        mode: 'warn',
+        levels: ['error'],
+        ignore: '',
+        beforeScenario: false,
+        afterScenario: true,
       },
     },
   },
