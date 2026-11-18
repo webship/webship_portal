@@ -18,7 +18,7 @@ variables:
   # Also check that Composer resolves on the next major Drupal version.
   OPT_IN_TEST_NEXT_MAJOR: 1
   OPT_IN_TEST_MAX_PHP: 1
-  _TARGET_PHP: '8.4'
+  _TARGET_PHP: '8.5'
   DRUPAL_CORE: &drupal_core '11.4.x-dev'
   # No PHP, CSS, JavaScript or PHPUnit tests here: the recipe YAML is checked
   # by applying the recipe.
